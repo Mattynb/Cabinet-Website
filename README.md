@@ -7,7 +7,7 @@
 <br />
 
 # What is this project?
-We focus on recreating the website https://www.planaheadconstructions.com/ as the final project for the CS-410 class. The main objectives include practicing teamwork and learning to apply Scrum methodology effectively. This involves collaborative efforts to rebuild the mentioned website, with an emphasis on applying theoretical knowledge and practical skills in project management, web development, and team dynamics in a simulated professional environment.
+We focus on creating a cabinet e-commerce website for https://www.planaheadconstructions.com as the final project for the CS-410 class. The main objectives include practicing teamwork and learning to apply Scrum methodology effectively. This involves collaborative efforts to create the mentioned website, with an emphasis on applying theoretical knowledge and practical skills in project management, web development, and team dynamics in a simulated professional environment.
 
 We are using MERN stack for this project
 - **M** = [MongoDB](https://www.mongodb.com)
