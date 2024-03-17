@@ -1,6 +1,6 @@
 .contactSection {
     box-sizing: border-box;
-    min-width: 300px;
+    width: 100%;
     margin-bottom: 50px;
 }
 
@@ -21,14 +21,13 @@
 .contactContainer {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    max-width: 70vw;
-    margin: auto;
+    max-width: 50vw;
+    margin: 60px auto 0 auto;
 }
 
 .contactInfo {
     flex: 1;
-    min-width: 300px;
+    min-width: 450px;
 }
 
 .contactInfo strong {
@@ -53,12 +52,12 @@
 
 .form {
     flex: 2;
-    min-width: 100%;
+    width: 600px;
 }
 
 .form input {
     width: 100%;
-    padding: 10px;
+    padding: 16px;
     margin-top: 20px;
     margin-bottom: 40px;
     border: 1px solid #9f9f9f;
@@ -73,6 +72,7 @@
     margin-bottom: 40px;
     border: 1px solid #9f9f9f;
     border-radius: 5px;
+    font-family: Roboto, sans-serif;
 }
 
 .form button {
@@ -99,10 +99,27 @@
 
     .contactContainer {
         flex-direction: column;
+        margin: 60px auto 0 auto;
+        max-width: 80%;
+        text-align: center;
     }
 
     .contactInfo,
     .form {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .contactInfo p {
+        padding-left: 0;
+        ;
+    }
+
+    .contactInfo>div {
+        margin-bottom: 40px;
+    }
+
+    .form input {
         width: 100%;
     }
 }
