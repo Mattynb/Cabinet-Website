@@ -1,5 +1,6 @@
 import {useAuth} from './contexts/AuthContext'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 export default function App() {
   const {isLoggedIn} = useAuth()
@@ -9,6 +10,8 @@ export default function App() {
       <Header />
 
       {isLoggedIn ? <LoggedInText /> : <LoggedOutText />}
+
+      <Footer />
     </div>
   )
 }
@@ -20,5 +23,12 @@ const LoggedInText = () => {
 }
 
 const LoggedOutText = () => (
-  <p>Don't forget to start your backend server, then authenticate yourself.</p>
+  <p>Don't forget to start your backend server, then authenticate yourself.
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+  </p>
 )
