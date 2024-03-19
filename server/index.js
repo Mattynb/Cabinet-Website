@@ -1,9 +1,14 @@
 require('dotenv').config() // Secures variables
-const app = require('./utils/app') // Backend App (server)
+const express = require('express');
+const app = express();
 const mongo = require('./utils/mongo') // MongoDB (database)
 const {PORT} = require('./constants')
+
 const authRoutes = require('./routes/auth')
 const contactRoutes = require('./routes/contactRoutes'); // 
+
+// Middleware to parse JSON bodies.
+app.use(express.json());
 
 async function bootstrap() {
   await mongo.connect()
