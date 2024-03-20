@@ -1,6 +1,6 @@
 # Plan Ahead Constructions Website
 
-<img src='https://media.discordapp.net/attachments/1215179484110790706/1216082176085590177/pac-hero-section.png?ex=65ff17c8&is=65eca2c8&hm=3548a8f2c3c56bb31a0ffd1ce1f6cd9cd71ce5737fe18a76c9e0ea5fb533272f&=&format=webp&quality=lossless' alt='MERN banner' width='700' />
+<img src='https://media.discordapp.net/attachments/1215179484110790706/1216155285291401266/image.png?ex=65ff5bdf&is=65ece6df&hm=12788b0dd8fc5523673a29710c58aba52c3c147e1e374e1ecb6fd13efe5de5d0&=&format=webp&quality=lossless' alt='MERN banner' width='700' />
 
 
 <br />
