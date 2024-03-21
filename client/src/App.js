@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useAuth } from "./contexts/AuthContext";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Shop from "./components/ShopPage/Shop";
 import ContactForm from "./components/home/ContactSection";
 import ProductsSection from "./components/home/ProductsSection";
@@ -36,6 +37,7 @@ export default function App() {
           // Shop Page
           <Route path="/shop" element={<Shop />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

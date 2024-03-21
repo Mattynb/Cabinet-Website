@@ -7,10 +7,16 @@ import {
   List,
   ListSubheader,
   ListItemButton,
+  Button,
+  Stack,
 } from '@mui/material'
+
 import OnlineIndicator from './OnlineIndicator'
 import AuthModal from './AuthModal'
 import {useAuth} from '../contexts/AuthContext'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Search from '@mui/icons-material/Search';
+import style from '../styles/Nav/Header.module.css';
 
 export default function Header() {
   const {isLoggedIn, account, logout} = useAuth()
@@ -43,15 +49,37 @@ export default function Header() {
   }
 
   return (
-    <AppBar className='header' position='static'>
-      <h1>Web App</h1>
+    <div className={style.header} position='static'>
 
+      <Stack direction="row" justifyContent="space-between" alignItems="center">
+        <div>
+        <Stack direction="row" spacing={2}>
+          <p>ICON HERE</p>
+          <p class={style.icon}>Kitchen<br/> & Bath</p>
+          </Stack>
+        </div>
+        <div>
+        <Stack direction="row" spacing={2}>
+          <Button href="#">Home</Button>
+          <Button href="#">Shop</Button>
+          <Button href="#">About</Button>
+          <Button href="#">Galery</Button>
+        </Stack>
+        </div>
+        <div>
+        <IconButton>
+          <Search />
+        </IconButton>
+        <IconButton>
+          <AddShoppingCartIcon />
+        </IconButton>
+        
       <IconButton onClick={openPopover}>
         <OnlineIndicator online={isLoggedIn}>
           <Avatar src={account?.username || ''} alt={account?.username || ''} />
         </OnlineIndicator>
       </IconButton>
-
+      
       <Popover
         anchorEl={anchorEl}
         open={popover}
@@ -80,6 +108,8 @@ export default function Header() {
         isRegisterMode={register}
         toggleRegister={() => setRegister((prev) => !prev)}
       />
-    </AppBar>
+      </div>
+      </Stack>
+    </div>
   )
 }
