@@ -16,6 +16,7 @@ import AuthModal from './AuthModal'
 import {useAuth} from '../contexts/AuthContext'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Search from '@mui/icons-material/Search';
+import style from '../styles/Nav/Header.module.css';
 
 export default function Header() {
   const {isLoggedIn, account, logout} = useAuth()
@@ -48,13 +49,13 @@ export default function Header() {
   }
 
   return (
-    <AppBar className='header' position='static'>
+    <div className={style.header} position='static'>
 
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <div>
         <Stack direction="row" spacing={2}>
           <p>ICON HERE</p>
-          <p class="icon">Kitchen<br/> & Bath</p>
+          <p class={style.icon}>Kitchen<br/> & Bath</p>
           </Stack>
         </div>
         <div>
@@ -109,6 +110,6 @@ export default function Header() {
       />
       </div>
       </Stack>
-    </AppBar>
+    </div>
   )
 }

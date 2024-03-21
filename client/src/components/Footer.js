@@ -4,20 +4,21 @@ import {
   Stack
 } from '@mui/material'
 
+import style from '../styles/Nav/Footer.module.css';
 
 export default function Footer() {
   return (
-    <AppBar className='footer' position='static'>
+    <div className={style.footer} position='static'>
       
         <Stack direction="row" justifyContent="space-between" alignItems="center">
           <div>
-          <p class="bold">Plan Ahead Constructions</p>
-          <p class="icon">Kitchen & Bath</p>
-          <p class="gray">50 New Salem Street,<br></br>
+          <div class={style.bold}>Plan Ahead Constructions</div>
+          <p class={style.icon}>Kitchen & Bath</p>
+          <p class={style.gray}>50 New Salem Street,<br></br>
           Wakefield, MA 01880, USA</p>
           </div>
           <div>
-          <p class="gray">Links<br/></p>
+          <p class={style.gray}>Links<br/></p>
           <Stack direction="row" spacing={2}>
             <Button href="#">Home</Button>
             <Button href="#">Shop</Button>
@@ -26,7 +27,7 @@ export default function Footer() {
           </Stack>
           </div>
           <div>
-          <p class="gray">Newletter</p>
+          <p class={style.gray}>Newletter</p>
           <p>_Enter Your Email Address_ <a href="#">SUBSCRIBE</a></p>
           </div>
         </Stack>
@@ -36,6 +37,6 @@ export default function Footer() {
         <hr/>2023 Plan Ahead Constructions. All rights reverved
         </div>
         
-    </AppBar>
+    </div>
   )
 }
