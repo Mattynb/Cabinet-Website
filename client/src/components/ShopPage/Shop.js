@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CabinetProductCard from "./CabinetProductCard";
 import cabinetsData from "../../constants/cabinetsData";
 import "../../styles/ShopPage/Shop.css";
 
 function Shop() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, []);
+
   return (
     <section className="shop">
       <div className="shop-hero">

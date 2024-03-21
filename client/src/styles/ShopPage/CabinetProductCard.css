@@ -2,6 +2,7 @@
   position: relative;
   width: 285px;
   transition: background-color 0.3s ease;
+  margin: 0 auto;
 }
 
 .cabinet-image img {
@@ -51,7 +52,7 @@
   color: #0e3a77;
   border: none;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   display: none;
 }
 

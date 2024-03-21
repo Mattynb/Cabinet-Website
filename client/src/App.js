@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useAuth } from "./contexts/AuthContext";
 import Header from "./components/Header";
 import Shop from "./components/ShopPage/Shop";
-import ContactForm from './components/home/ContactSection';
+import ContactForm from "./components/home/ContactSection";
+import ProductsSection from "./components/home/ProductsSection";
 
 export default function App() {
   const { isLoggedIn } = useAuth();
@@ -13,26 +14,27 @@ export default function App() {
       <div className="App">
         <Header />
         <Routes>
-    
           // Home Page
           <Route
             path="/"
             element={
-              isLoggedIn ? 
-              (<>
-                <LoggedInText />
-                <ContactForm />
-              </>) 
-              : 
-              (<>
-                <LoggedOutText />
-                <ContactForm />
-              </>)}
+              isLoggedIn ? (
+                <>
+                  <LoggedInText />
+                  <ProductsSection />
+                  <ContactForm />
+                </>
+              ) : (
+                <>
+                  <LoggedOutText />
+                  <ProductsSection />
+                  <ContactForm />
+                </>
+              )
+            }
           />
-    
           // Shop Page
           <Route path="/shop" element={<Shop />} />
-
         </Routes>
       </div>
     </Router>

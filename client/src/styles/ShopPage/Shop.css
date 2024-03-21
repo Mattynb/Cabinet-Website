@@ -1,6 +1,7 @@
 .shop-hero {
   position: relative;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .shop-hero img {
@@ -44,11 +45,12 @@
 }
 
 .cabinet-products {
-  max-width: 1280px;
+  max-width: 90vw;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3.5rem;
+  gap: 1.5rem;
   padding-top: 3.5rem;
   padding-bottom: 2.5rem;
+  justify-content: center;
 }
