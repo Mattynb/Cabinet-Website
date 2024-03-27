@@ -1,0 +1,127 @@
+/* DesignInspirationSection.css */
+
+.design-inspiration {
+  text-align: center;
+  max-width: 1760px;
+  margin: 0 auto;
+  position: relative; /* Necessary for absolute positioning of children */
+}
+
+.text-section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  /* The title is centered with text-align from the parent container */
+  width: 672px;
+  height: 87px;
+  margin: 0 auto; /* Automatically center */
+  padding: 0px;
+}
+
+.section-description {
+  /* The description is centered with text-align from the parent container */
+  width: 672px;
+  margin: 0 auto; /* Automatically center */
+}
+
+/* .layout-background {
+  width: 1196px;
+  height: 582px;
+  top: 592px;
+  left: 186px;
+  gap: 0px;
+  opacity: 0px;
+}*/
+/* Example: Customizing pagination dots */
+.swiper-pagination-bullet {
+  background: #fff; /* Change dot color */
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background: #007bff; /* Change active dot color */
+}
+
+/* Example: Customizing navigation buttons */
+.swiper-button-next, .swiper-button-prev {
+  color: #007bff; /* Change button color */
+  /* Add more styles as needed */
+}
+/* Styling images within SwiperSlides */
+.swiper-slide img {
+  width: 100%; /* Example: Make images responsive */
+  height: auto;
+  /* Add more styles as needed */
+}
+
+
+.image-gallery {
+  display: flex;
+  justify-content: center; /* Center the images horizontally */
+  gap: 30px; /* Adjust the gap as needed */
+  /* position: relative;  */
+  margin-top: 20px; /* Spacing from the title and description */
+  overflow: hidden; /* In case images go out of bounds, they will be clipped */
+}
+
+.imageL, .TGW-OSCC, .imageR {
+  /* position: absolute; */
+  width: auto; 
+  height: 486px; 
+  object-fit: cover; /* Cover to ensure the images cover their area */
+  opacity: 1; /* Make images visible */
+  cursor: pointer; /* Indicates clickable images */
+
+}
+
+.imageL {
+  width: 404px;
+height: 582px;
+top: 592px;
+left: 186px;
+gap: 0px;
+opacity: 0px;
+
+}
+
+.TGW-OSCC {
+  width: 373px;
+height: 486px;
+top: 592px;
+left: 614px;
+gap: 0px;
+opacity: 0px;
+
+}
+
+.imageR {
+  width: 372px;
+height: 486px;
+top: 592px;
+left: 1010px;
+gap: 0px;
+opacity: 0px;
+
+}
+
+.explore-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  /* Style the button as needed */
+}
+/* Non-responsive styles */
+.element {
+  width: 100%;
+  padding: 20px;
+}
+
+/* Placing media query at the bottom */
+@media (max-width: 768px) {
+  .element {
+      padding: 10px;
+  }
+}
+
