@@ -29,10 +29,10 @@ async function bootstrap() {
   app.use('/api', collectionRoutes)
   
   // endpoint for cabinets whose attributes are: name, id, type?, description, price
-  app.use('/api/cabinet', cabinetRoutes); // Mat: changed to api/cabinet for consistency //Mount the cabinet routes
+  app.use('/api/', cabinetRoutes); // Mat: changed to api/cabinet for consistency //Mount the cabinet routes
   
   // endpoint for posting contact form input. Make sure to sanitize input if necessary. 
-  app.use('/api/contact', contactRoutes); // Mat: changed to contact for consistency
+  app.use('/api/', contactRoutes); // Mat: changed to contact for consistency
   
   app.listen(PORT, () => {
     console.log(`✅ Server is listening on port: ${PORT}`)
