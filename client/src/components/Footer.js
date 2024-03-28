@@ -7,6 +7,7 @@ import {
 import style from '../styles/Nav/Footer.module.css';
 import { useState } from "react";
 import styles from '../styles/home/ContactForm.module.css';
+import { Link } from "react-router-dom";
 
 export default function Footer() {
     const [email, setEmail] = useState('');
@@ -25,35 +26,39 @@ export default function Footer() {
             <div class={style.gray}>50 New Salem Street,<br></br>
             Wakefield, MA 01880, USA</div>
           </div>
-          <div>
+
+          <div class={style.buttonContainer}>
             <div class={style.gray}>Links</div>
-            <Stack direction="row" spacing={2}>
-              <button class={style.button} href="#">Home</button>
-              <button class={style.button} href="/shop">Shop</button>
-              <button class={style.button} href="#">About</button>
-              <button class={style.button} href="#">Galery</button>
+            <br />
+            <Stack direction="row" spacing={4}>
+              <Link to="/"><button class={style.button} href="#">Home</button></Link>
+              <Link to="/shop"><button class={style.button} >Shop</button></Link>
+              <Link to="/about"><button class={style.button} href="#">About</button></Link>
+              <Link to="/galery"><button class={style.button} href="#">Galery</button></Link>
             </Stack>
           </div>
-          <div>
-          <div className={styles.contactContainer}>
+          
+          <div className={styles.emailContainer}>
             <div className={styles.contactInfo}>
-              <form onSubmit={handleSubmit} className={styles.form}>
+              <form onSubmit={handleSubmit} className={style.form}>
                 <label htmlFor="customer_email">
                   <div class={style.gray}>Newsletter</div>
-                  <input
-                    style={{ display: 'block' }}
-                    type="email"
-                    value={email}
-                    id='customer_email'
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter Your Email Address"
-                    required
-                  />
-                  <button type="submit">Subscribe</button>
+                  <div className={styles.emailInput}> 
+                    <input
+                      style={{ display: 'block' }}
+                      type="email"
+                      value={email}
+                      id='customer_email'
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter Your Email Address"
+                      required
+                    />
+                    <button type="submit">Subscribe</button>
+                  </div>
                 </label>
               </form>
             </div>
-          </div>
+          
           </div>
         </Stack>
         <br/>
