@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import Shop from "./components/ShopPage/Shop";
 import ContactForm from "./components/home/ContactSection";
 import ProductsSection from "./components/home/ProductsSection";
+import BrowserRange from "./components/home/BrowseRange";
+
 
 export default function App() {
   const { isLoggedIn } = useAuth();
@@ -22,12 +24,14 @@ export default function App() {
               isLoggedIn ? (
                 <>
                   <LoggedInText />
+                  <BrowserRange />
                   <ProductsSection />
                   <ContactForm />
                 </>
               ) : (
                 <>
                   <LoggedOutText />
+                  <BrowserRange />
                   <ProductsSection />
                   <ContactForm />
                 </>
