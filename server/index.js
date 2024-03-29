@@ -1,7 +1,7 @@
 require('dotenv').config() // Secures variables
 const express = require('express');
 
-const app = express();
+//const app = express();
 const app = require('./utils/app') // Backend App (server)
 const mongo = require('./utils/mongo') // MongoDB (database)
 const {PORT} = require('./constants')
