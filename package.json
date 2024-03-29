@@ -22,9 +22,10 @@
     "delete-modules": "rm -r ./node_modules && cd ./server && rm -r ./node_modules && cd ../client && rm -r ./node_modules"
   },
   "devDependencies": {
-    "concurrently": "^6.3.0"
+    "concurrently": "^8.2.2"
   },
   "dependencies": {
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "swiper": "^11.1.0"
   }
 }

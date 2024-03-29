@@ -7,9 +7,9 @@ import {
   ListSubheader,
   ListItemButton,
   Stack,
-  ListItemText,
+  //ListItemText,
   ListItem,
-  Divider,
+  //Divider,
 } from '@mui/material'
 
 import OnlineIndicator from './OnlineIndicator'
@@ -20,7 +20,6 @@ import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
 import Search from '@mui/icons-material/Search';
 import style from '../styles/Nav/Header.module.css';
 import { Link } from "react-router-dom";
-import Shop from "../components/ShopPage/Shop";
 
 export default function Header() {
   const {isLoggedIn, account, logout} = useAuth()
@@ -76,7 +75,7 @@ export default function Header() {
             <Link to="/"><button class={style.button} href="#">Home</button></Link>
             <Link to="/shop"><button class={style.button} >Shop</button></Link>
             <Link to="/about"><button class={style.button} href="#">About</button></Link>
-            <Link to="/galery"><button class={style.button} href="#">Galery</button></Link>
+            <Link to="/gallery"><button class={style.button} href="#">Gallery</button></Link>
         </Stack>
         </div>
         <div>
