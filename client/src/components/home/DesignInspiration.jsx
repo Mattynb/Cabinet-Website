@@ -1,14 +1,9 @@
-
-
 import React from 'react';
-import 'swiper/swiper.min.css'; // core Swiper
-import 'swiper/modules/pagination/pagination.min.css'; // Pagination module
-import 'swiper/modules/navigation/navigation.min.css'; // Navigation module
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper/modules';
 import { useNavigate, Link } from 'react-router-dom';
 import './DesignInspiration.css';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react';
-import { Pagination, Navigation } from 'swiper';
-
+import 'swiper/css';
 
 const DesignInspiration = () => {
    const navigate = useNavigate();
@@ -17,7 +12,7 @@ const DesignInspiration = () => {
     <div className="design-inspiration">
       <div className="text-section">
         <h2 className="section-title">50+ Beautiful Design Inspiration</h2>
-        <p className="section-description">Our designer already made a lot of beautiful prototypes of rooms that inspire you</p>
+        <p className="section-description">Our designer already made a lot of beautiful prototype rooms that will inspire you</p>
       </div>
       <Swiper
         modules={[Pagination, Navigation]}
