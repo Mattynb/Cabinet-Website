@@ -11,8 +11,6 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      #-name: Pull Docker Image
-      #  run: docker pull ${{ secrets.DOCKER_USERNAME }}/cabinet_server:latest
       -name: Delete Old Container
         run: sudo docker rm -f cabinet_server || true
       -name: Run New Container
