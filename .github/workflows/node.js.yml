@@ -12,6 +12,7 @@ on:
     branches: [ "main" ]
     paths:
       - 'server/**'
+
 jobs:
   build:
 
@@ -31,8 +32,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
-    - name: Build & push Docker image
-      uses: mr-smithers-excellent/docker-build-push@v6
+    - uses: mr-smithers-excellent/docker-build-push@v6
+      name: Build & push Docker image
       with:
         image: ${{ secrets.DOCKER_USERNAME }}/cabinet_server/server-image
         tags: v1, latest
