@@ -20,4 +20,4 @@ jobs:
       run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         docker pull $DOCKER_USERNAME/cabinet_server:latest
-        docker run -d -p 8080:8080 --name cabinet_server $DOCKER_USERNAME/cabinet_server:latestW
+        docker run -d -p 8080:8080 --name cabinet_server $DOCKER_USERNAME/cabinet_server:latest
