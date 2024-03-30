@@ -6,9 +6,12 @@ name: Node.js CI
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - 'server/**'
   pull_request:
     branches: [ "main" ]
-
+    paths:
+      - 'server/**'
 jobs:
   build:
 
@@ -26,3 +29,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+
+    - uses: mr-smithers-excellent/docker-build-push@v6
+    name: Build & push Docker image
+    with:
+      image: ${{ secrets.DOCKER_USERNAME }}/cabinet_server/server-image
+      tags: v1, latest
+      registry: docker.io
+      username: ${{ secrets.DOCKER_USERNAME }}
+      password: ${{ secrets.DOCKER_PASSWORD }}
+      context: ./server
