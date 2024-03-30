@@ -11,13 +11,9 @@ jobs:
     runs-on: self-hosted
 
     steps:
+    -name: Pull Docker Image
+      run: sudo docker pull ${{ secrets.DOCKER_USERNAME }}/cabinet_server:latest
     -name: Delete Old Container
-      run: docker rm -f cabinet_server || true
+      run: sudo docker rm -f cabinet_server || true
     -name: Run New Container
-      env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      run: |
-        docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        docker pull $DOCKER_USERNAME/cabinet_server:latest
-        docker run -d -p 8080:8080 --name cabinet_server $DOCKER_USERNAME/cabinet_server:latestW
+      run: sudo docker run -d -p 8080:8080 --name cabinet_server ${{ secrets.DOCKER_USERNAME }}/cabinet_server:latest
