@@ -12,12 +12,12 @@ jobs:
 
     steps:
       -name: Delete Old Container
-        run: sudo docker rm -f cabinet_server || true
+        run: docker rm -f cabinet_server || true
       -name: Run New Container
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          sudo docker pull $DOCKER_USERNAME/cabinet_server:latest
-          sudo docker run -d -p 8080:8080 --name cabinet_server $DOCKER_USERNAME/cabinet_server:latestW
+          docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+          docker pull $DOCKER_USERNAME/cabinet_server:latest
+          docker run -d -p 8080:8080 --name cabinet_server $DOCKER_USERNAME/cabinet_server:latestW
