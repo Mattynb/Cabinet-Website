@@ -24,14 +24,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
-    - uses: mr-smithers-excellent/docker-build-push@v6
     - name: Build & push Docker image
+    - uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: ${{ secrets.DOCKER_USERNAME }}/cabinet_server/server-image
         tags: v1, latest
