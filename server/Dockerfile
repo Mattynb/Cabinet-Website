@@ -1,12 +1,6 @@
 # Specify the base image
 FROM node:alpine
 
-# Add the environment variables
-ARG MONGO_URI
-ARG JWT_SECRET
-ENV MONGO_URI=${MONGO_URI}
-ENV JWT_SECRET=${JWT_SECRET}
-
 # Set the working directory inside the container
 WORKDIR /usr/src/app
 

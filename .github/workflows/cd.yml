@@ -17,7 +17,12 @@ jobs:
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        MONGO_URI: ${{ secrets.MONGO_URI }}
+        JWT_SECRET: ${{ secrets.JWT_SECRET }}
       run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         docker pull $DOCKER_USERNAME/cabinet_server:latest
-        docker run -d -p 8080:8080 --name cabinet_server $DOCKER_USERNAME/cabinet_server:latest
+        docker run -d -p 8080:8080 --name cabinet_server \
+          -e MONGO_URI="${MONGO_URI}" \
+          -e JWT_SECRET="${JWT_SECRET}" \
+          $DOCKER_USERNAME/cabinet_server:latest
