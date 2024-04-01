@@ -2,7 +2,7 @@ require('dotenv').config() // Secures variables
 const express = require('express');
 
 // module imports
-const app = require('./utils/app') // Backend App (server)
+const server = require('./utils/server') // Backend server
 const mongo = require('./utils/mongo') // MongoDB (database)
 const {PORT} = require('./constants')
 
@@ -13,28 +13,28 @@ const contactRoutes = require('./routes/contactRoutes');
 const collectionRoutes = require('./routes/collectionRoute');
 
 // Middleware to parse JSON bodies.
-app.use(express.json());
+server.use(express.json());
 
 
 async function bootstrap() {
   await mongo.connect()
 
-  app.get('/', (req, res) => res.status(200).json({message: 'Hello World!'}))
-  app.get('/healthz', (req, res) => res.status(200).send())
+  server.get('/', (req, res) => res.status(200).json({message: 'Hello World!'}))
+  server.get('/healthz', (req, res) => res.status(200).send())
   
   // login endpoint
-  app.use('/auth', authRoutes)
+  server.use('/auth', authRoutes)
   
   // endpoint for kitchen pictures whose attributes are: imgURL, title, description
-  app.use('/api', collectionRoutes)
+  server.use('/api', collectionRoutes)
   
   // endpoint for cabinets whose attributes are: name, id, type?, description, price
-  app.use('/api/', cabinetRoutes); // Mat: changed to api/cabinet for consistency //Mount the cabinet routes
+  server.use('/api', cabinetRoutes); // Mat: changed to /api for consistency //Mount the cabinet routes
   
   // endpoint for posting contact form input. Make sure to sanitize input if necessary. 
-  app.use('/api/', contactRoutes); // Mat: changed to contact for consistency
+  server.use('/api', contactRoutes); // Mat: changed to /api for consistency
   
-  app.listen(PORT, () => {
+  server.listen(PORT, () => {
     console.log(`✅ Server is listening on port: ${PORT}`)
   })
 }

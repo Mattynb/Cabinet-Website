@@ -1,13 +1,9 @@
-const express = require('express') // Backend App (server)
+const express = require('express') // Backend server
 const cors = require('cors') // HTTP headers (enable requests)
 const morgan = require('morgan') // HTTP logger
+const bodyParser = require('body-parser'); // Middleware to parse JSON bodies. 
+const cabinetController = require('../controllers/cabinetController');
 const { ORIGIN } = require('../constants')
-
-// const mongoose = require('mongoose');
-
-// mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-//   .then(() => console.log('Successfully connected to MongoDB Atlas.'))
-//   .catch(err => console.error('Connection error:', err));
 
 // initialize app
 const app = express()
@@ -17,6 +13,8 @@ app.use(cors({ origin: ORIGIN }))
 app.use(express.json({ extended: true })) // body parser
 app.use(express.urlencoded({ extended: false })) // url parser
 app.use(morgan('dev')) // logger
+app.use(bodyParser.json()); // Middleware to parse JSON bodies.
+
 
 // error handling
 app.use((err, req, res, next) => {
@@ -25,4 +23,7 @@ app.use((err, req, res, next) => {
   next()
 })
 
+// routes
+app.post('/api/cabinet', cabinetController.createCabinet);
+app.post('/api/cabinets', cabinetController.createCabinets);
 module.exports = app
