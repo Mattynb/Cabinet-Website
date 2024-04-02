@@ -1,0 +1,52 @@
+.products-section {
+  margin-bottom: 5rem;
+}
+
+.products-title {
+  text-align: center;
+}
+
+.products-title h1 {
+  font-family: "Poppins", sans-serif;
+  color: #0e3a77;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.cabinet-products {
+  width: 85vw;
+  margin-top: -3rem;
+}
+
+.show-more-btn {
+  margin: 0 auto;
+  display: flex;
+  padding: 12px 20px;
+  width: 15rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #0e3a77;
+  border: 1px solid #0e3a77;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  justify-content: center;
+  text-decoration: none !important;
+}
+
+.show-more-btn:hover {
+  background-color: #0e3a77;
+  color: #f3f3f3;
+  text-decoration: none;
+}
+
+.show-more-link-container {
+  display: flex;
+  justify-content: center;
+}
+
+.show-more-link {
+  text-decoration: none;
+  display: inline-block;
+}
