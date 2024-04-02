@@ -5,12 +5,16 @@
   text-align: center;
 }
 
+.wrapper {
+  display: flex;
+}
+
 .text-section {
   margin-bottom: 20px;
 }
 
 .section-title { 
-  width: 672px;
+  width: 300px;
   height: 87px;
   margin: 0 auto; /* Automatically center */
   padding: 0px;
@@ -18,7 +22,7 @@
 
 .section-description {
   
-  width: 672px;
+  width: 300px;
   margin: 0 auto; /* Automatically center */
 }
 
