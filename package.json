@@ -23,5 +23,8 @@
   },
   "devDependencies": {
     "concurrently": "^6.3.0"
+  },
+  "dependencies": {
+    "swiper": "^11.1.0"
   }
 }
