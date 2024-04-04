@@ -54,7 +54,7 @@ export default function Footer() {
             <div className={style.emailContainer}>
               <div class={style.gray}>Newsletter</div>
               <div className={style.contactInfo}>
-                <form onSubmit={handleSubmit} className={style.form}>
+                <form onSubmit={handleNewsletterSubmit} className={style.form}>
                   <label htmlFor="customer_email">
                     <div className={style.emailInput}> 
                       <input
