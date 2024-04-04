@@ -1,5 +1,3 @@
-// routes/contactRoutes.js
-// routes/contactRoutes.js
 const express = require('express');
 const router = express.Router();
 const Contact = require('../models/Contact'); // Adjust the path as necessary
@@ -8,13 +6,12 @@ const { sendEmail } = require('../utils/emailUtility');
 // POST route for creating a new contact entry
 router.post('/', async (req, res) => {
   try {
-    const { name, email, category, message, createdAt } = req.body;
+    const { name, email, category, message,} = req.body;
     const newContact = new Contact({
       name,
       email,
       category,
       message,
-      createdAt
     });
 
     const savedContact = await newContact.save();
@@ -37,7 +34,9 @@ router.post('/', async (req, res) => {
   });
     res.status(201).json(savedContact);
   } catch (err) {
-    res.status(400).json({ message: err .message });
+    console.error(err); // log the full error
+    const status = err.name === 'ValidationError' ? 400 : 500;
+    res.status(status).json({ message: err.message || 'An error occurred' });
   }
 });
 
