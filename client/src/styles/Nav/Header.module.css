@@ -1,33 +1,30 @@
-
   .header {
     position: static;
     height: 100px;
 
-    width: 100% !important;
-    padding: 0 2rem !important;
-    background-color: white !important;
-    color: black !important;
+    width: 100% ;
+    padding: 0 2rem ;
+    background-color: white ;
+    color: black ;
   
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: stretch !important;
-    justify-content: space-between !important;
+    display: flex ;
+    flex-direction: row ;
+    align-items: center ;
+    justify-content: space-between ;
+  }
+
+  .logo {
+    width:69px ;
+    height:72px;
   }
   
   .icon {
-    color: rgb(27, 64, 116);
-    font-size: 27px;
-    font-weight: bold;
-    
-  }
-  
-  .gray {
-    color: gray;
-  }
-  
-  .bold {
-    font-size: large;
-    font-weight: bold;
+    color: #0E3A77;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 39.01px;
+    text-align: center;
   }
 
   .button {
@@ -41,8 +38,26 @@
     cursor: pointer;
   }
 
-  .cartButton {
+  .buttonContainer {
+    display: flex;
+    flex-direction: row ;
+    align-items: center ;
+    justify-content: space-between;
 
+    width: 316px;
+    height: 24px;
+    top: 38px;
+    left: 562px;
+  }
+
+  .topRightContainer {
+    display: flex;
+    flex-direction: row ;
+    align-items: center ;
+    justify-content: space-between;
+  }
+
+  .cartButton {
     width: Hug (87px)px;
     height: Hug (30px)px;
 
@@ -63,16 +78,6 @@
     cursor: pointer;
     
   }
-
-  .bottonContainer {
-    width: 316px;
-    height: 24px;
-    top: 38px;
-    left: 562px;
-    gap: 0px;
-    opacity: 0px;
-
-  }
   
   .cartPopout {
     display:flex; 
@@ -81,7 +86,6 @@
     height: flex;
     left: 1023px;
     padding: 10px 40px 10px 40px;
-
   }
 
   .cartflex {
@@ -93,64 +97,55 @@
 
   .cartitem {
     width: 347px;
-height: 105px;
-top: 132px;
-left: 1053px;
-gap: 0px;
-opacity: 0px;
-
+    height: 105px;
+    top: 132px;
+    left: 1053px;
   }
 
   .group150 {
     width: 350px;
-height: 334px;
-top: 28px;
-left: 1050px;
-gap: 0px;
-border: 1px 0px 0px 0px;
-opacity: 0px;
-
+    height: 334px;
+    top: 28px;
+    left: 1050px;
+    border: 1px 0px 0px 0px;
   }
+
   .frame153 {
     width: Hug (219px)px;
-height: Hug (30px)px;
-top: 685px;
-left: 1129px;
-gap: 14px;
-opacity: 0px;
-
+    height: Hug (30px)px;
+    top: 685px;
+    left: 1129px;
+    gap: 14px;
   }
+
   .subtotal {
     width: 68px;
-height: 24px;
-top: 615px;
-left: 1054px;
-gap: 0px;
-opacity: 0px;
+    height: 24px;
+    top: 615px;
+    left: 1054px;
 
-font-family: Poppins;
-font-size: 16px;
-font-weight: 400;
-line-height: 24px;
-text-align: left;
-
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
   }
+  
   .subtotalcount {
     width: 117px;
-height: 24px;
-top: 615px;
-left: 1298px;
-gap: 0px;
-opacity: 0px;
+    height: 24px;
+    top: 615px;
+    left: 1298px;
+    gap: 0px;
+    opacity: 0px;
 
-font-family: Poppins;
-font-size: 16px;
-font-weight: 600;
-line-height: 24px;
-text-align: left;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
 
-color: #0E3A77;
-
+    color: #0E3A77;
   }
   
   .cartButtons {
@@ -159,18 +154,17 @@ color: #0E3A77;
     border: 3px;
     padding: 10px;
     text-align: center;
-    align-items: stretch !important;
-    justify-content: space-between !important;
+    align-items: center ;
+    justify-content: space-between ;
 
   }
 
   .shoppingCart {
     width: 177px;
-height: 36px;
-top: 28px;
-left: 1053px;
-gap: 0px;
-opacity: 0px;
+    height: 36px;
+    top: 28px;
+    left: 1053px;
+    gap: 0px;
 
     font-family: Poppins;
     font-size: 24px;
@@ -181,49 +175,47 @@ opacity: 0px;
 
   .line11 {
     width: 287px;
-height: 0px;
-top: 90px;
-left: 1053px;
-gap: 0px;
-border: 1px 0px 0px 0px;
-opacity: 0px;
-
-border: 1px solid #D9D9D9;
+    height: 0px;
+    top: 90px;
+    left: 1053px;
+    border: 1px 0px 0px 0px;
+    border: 1px solid #D9D9D9;
   }
 
   .line12 {
     width: 417px;
-height: 0px;
-top: 662px;
-left: 1023px;
-gap: 0px;
-border: 1px 0px 0px 0px;
-opacity: 0px;
-
-border: 1px solid #D9D9D9;
+    height: 0px;
+    top: 662px;
+    left: 1023px;
+    border: 1px 0px 0px 0px;
+    border: 1px solid #D9D9D9;
   }
   
-  p {
-    margin: 0px;
-  }
-
-  /* Frame 168 */
-
-/* Auto layout */
-.frame {
+.frame168 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 0px;
-    gap: 5px;
 
-    position: absolute;
-    width: 205px;
-    height: 74px;
-    left: calc(50% - 205px/2 - 573.5px);
-    bottom: 14.5px;
+    top: 11.5px;
+    left: 44px;
+    gap: 10px;
+
 }
   /* Header */
 
+@media (max-width: 768px) {
+  .header {
+      height: 70px;
+      padding: 0;
+  }
 
+  .logo {
+    width:69px ;
+    height:72px;
+  }
 
+  .icon {
+    display:none;
+  }
+
+}
