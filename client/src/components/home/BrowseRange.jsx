@@ -10,16 +10,16 @@ const BrowseRange = () => {
       </div>
       <div className="image-container">
         <div className="image-wrapper">
-          <Link to="/image/1">
-          <img className="imageL" src="collections-image/ImageL.png" alt="Image 1" />
+          <Link to="../shop">
+          <img className="imageL" src="collections-image/ImageL.png" alt="" />
             <div className="title-bar">Framed</div>
           </Link>
-          <Link to="/image/2">
-            <img className="imageM" src="collections-image/FramelessCollec.png" alt="Image 2" />
+          <Link to="../shop">
+            <img className="imageM" src="collections-image/FramelessCollec.png" alt="" />
             <div className="title-bar">Frameless</div>
           </Link>
-          <Link to="/image/3">
-            <img className="imageR" src="collections-image/kitchenC2.png" alt="Image 3" />
+          <Link to="../shop">
+            <img className="imageR" src="collections-image/kitchenC2.png" alt="" />
             <div className="title-bar">Universal Design</div>
           </Link>
         </div>

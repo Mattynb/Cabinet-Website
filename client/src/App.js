@@ -7,12 +7,9 @@ import Footer from "./components/Footer";
 import Shop from "./components/ShopPage/Shop";
 import ContactForm from './components/home/ContactSection';
 import ProductsSection from "./components/home/ProductsSection";
-<<<<<<< HEAD
 import BrowserRange from "./components/home/BrowseRange";
-=======
 import DesignInspiration from './components/home/DesignInspiration';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
->>>>>>> origin/main
 
 
 export default function App() {

@@ -85,14 +85,29 @@ opacity: 0px;
   padding: 20px;
 }
 
-/* Placing media queries */
+/* Media queries */
+@media (max-width: 1200px) {
+  .browse-range {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .browse-range {
-    padding: 0 20px; /* Adjust padding */
+    padding: 0 20px;
   }
 
   .image-wrapper > * {
-    width: 100%; /* Make images fill the container */
-    max-width: calc(50% - 15px); /* Ensure two images per row with gap */
+    width: 100%;
+    max-width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 576px) {
+  .imageL, .imageM, .imageR {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 300px; /* Adjust the height as needed */
   }
 }
