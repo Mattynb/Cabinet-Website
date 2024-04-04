@@ -7,9 +7,9 @@ import {
   ListSubheader,
   ListItemButton,
   Stack,
-  //ListItemText,
   ListItem,
   //Divider,
+  ListItemText,
 } from '@mui/material'
 
 import OnlineIndicator from './OnlineIndicator'
@@ -61,99 +61,100 @@ export default function Header() {
   }
 
   return (
-    <div className={style.header} position='static'>
+    <div className={style.header}>
+      <div className={style.frame168} >
+        <img src="/pac_logo.jpeg" alt="Logo" className={style.logo}></img>
+        <p class={style.icon}>Kitchen<br/> & Bath</p>
+      </div>
 
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <div>
-        <Stack direction="row" spacing={2}>
-          <img src="/pac_logo.jpeg" alt="Logo" width="80" height="90"></img>
-          <p class={style.icon}>Kitchen<br/> & Bath</p>
-        </Stack>
-        </div>
-        <div class={style.buttonContainer}>
-        <Stack direction="row" spacing={4}>
-            <Link to="/"><button class={style.button} href="#">Home</button></Link>
-            <Link to="/shop"><button class={style.button} >Shop</button></Link>
-            <Link to="/about"><button class={style.button} href="#">About</button></Link>
-            <Link to="/gallery"><button class={style.button} href="#">Gallery</button></Link>
-        </Stack>
-        </div>
-        <div>
+      <div className={style.buttonContainer}>
+        <Link to="/"><button class={style.button} href="#">Home</button></Link>
+        <Link to="/shop"><button class={style.button} >Shop</button></Link>
+        <Link to="/about"><button class={style.button} href="#">About</button></Link>
+        <Link to="/galery"><button class={style.button} href="#">Galery</button></Link>
+      </div>
+      
+      <div className={style.topRightContainer}>
         <IconButton>
           <Search />
         </IconButton>
-        <IconButton onClick={openCart}>
-          <ShoppingCartIcon />
-        </IconButton>
-        <Popover
-        anchorEl={anchorEl}
-        open={cart}
-        onClose={closeCart}
-        anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
-        transformOrigin={{vertical: 'top', horizontal: 'right'}}>
-        <List class={style.cartPopout}>
-          <div class={style.group150}>
-          <ListItem class={style.cartflex}>
-            <div class={style.shoppingCart}>Shopping Cart</div> 
-            <RemoveShoppingCartIcon /> 
-          </ListItem>
-          <br/>
-          <div class={style.line11}></div>
 
-          <div class={style.cartitem}>Empty</div>
-          <div class={style.cartitem}>Empty</div>
-          <div class={style.cartitem}>Empty</div>
-          
-          </div>
-          <div class={style.cartflex}>
-            <div class={style.subtotal}>Subtotal</div> 
-            <div class={style.subtotalcount}>Rs. 520,000,000</div>
-          </div>
-        </List>
-          <div class={style.line12}></div>
-          <div class={style.frame153}>
-            <div class={style.cartButtons}>
-            <Link to="/cart"><button class={style.cartButton} href="#">Cart</button></Link>
+        <div>
+          <IconButton onClick={openCart}>
+            <ShoppingCartIcon />
+          </IconButton>
+
+          <Popover
+          anchorEl={anchorEl}
+          open={cart}
+          onClose={closeCart}
+          anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
+          transformOrigin={{vertical: 'top', horizontal: 'right'}}>
+          <List class={style.cartPopout}>
+            <div class={style.group150}>
+            <ListItem class={style.cartflex}>
+              <div class={style.shoppingCart}>Shopping Cart</div> 
+              <RemoveShoppingCartIcon /> 
+            </ListItem>
+            <br/>
+            <div class={style.line11}></div>
+
+            <div class={style.cartitem}>Empty</div>
+            <div class={style.cartitem}>Empty</div>
+            <div class={style.cartitem}>Empty</div>
+            
             </div>
-          </div>
-      </Popover>
-        
-      <IconButton onClick={openPopover}>
-        <OnlineIndicator online={isLoggedIn}>
-          <Avatar src={account?.username || ''} alt={account?.username || ''} />
-        </OnlineIndicator>
-      </IconButton>
-      
-      <Popover
-        anchorEl={anchorEl}
-        open={popover}
-        onClose={closePopover}
-        anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
-        transformOrigin={{vertical: 'top', horizontal: 'right'}}>
-        <List style={{minWidth: '100px'}}>
-          <ListSubheader style={{textAlign: 'center'}}>
-            Hello, {isLoggedIn ? account.username : 'Guest'}
-          </ListSubheader>
-
-          {isLoggedIn ? (
-            <ListItemButton onClick={logout}>Logout</ListItemButton>
-          ) : (
-            <Fragment>
-              <ListItemButton onClick={clickLogin}>Login</ListItemButton>
-              <ListItemButton onClick={clickRegister}>Reigster</ListItemButton>
-            </Fragment>
-          )}
-        </List>
-      </Popover>
-
-      <AuthModal
-        open={authModal}
-        close={() => setAuthModal(false)}
-        isRegisterMode={register}
-        toggleRegister={() => setRegister((prev) => !prev)}
-      />
+            <div class={style.cartflex}>
+              <div class={style.subtotal}>Subtotal</div> 
+              <div class={style.subtotalcount}>Rs. 520,000,000</div>
+            </div>
+          </List>
+            <div class={style.line12}></div>
+            <div class={style.frame153}>
+              <div class={style.cartButtons}>
+              <Link to="/cart"><button class={style.cartButton} href="#">Cart</button></Link>
+              </div>
+            </div>
+        </Popover>
       </div>
-      </Stack>
+
+      <div>
+        <IconButton onClick={openPopover}>
+          <OnlineIndicator online={isLoggedIn}>
+            <Avatar src={account?.username || ''} alt={account?.username || ''} />
+          </OnlineIndicator>
+        </IconButton>
+        
+        <Popover
+          anchorEl={anchorEl}
+          open={popover}
+          onClose={closePopover}
+          anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
+          transformOrigin={{vertical: 'top', horizontal: 'right'}}>
+          <List style={{minWidth: '100px'}}>
+            <ListSubheader style={{textAlign: 'center'}}>
+              Hello, {isLoggedIn ? account.username : 'Guest'}
+            </ListSubheader>
+
+            {isLoggedIn ? (
+              <ListItemButton onClick={logout}>Logout</ListItemButton>
+            ) : (
+              <Fragment>
+                <ListItemButton onClick={clickLogin}>Login</ListItemButton>
+                <ListItemButton onClick={clickRegister}>Reigster</ListItemButton>
+              </Fragment>
+            )}
+          </List>
+        </Popover>
+
+        <AuthModal
+          open={authModal}
+          close={() => setAuthModal(false)}
+          isRegisterMode={register}
+          toggleRegister={() => setRegister((prev) => !prev)}
+        />
+        </div>
+      </div>
     </div>
   )
 }
