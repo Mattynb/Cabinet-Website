@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from '../../styles/home/ContactForm.module.css';
+import axios from "../../utils/axios";
 
 const ContactForm = () => {
     const [name, setName] = useState('');
@@ -7,9 +8,15 @@ const ContactForm = () => {
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         // Here you can handle the form submission, e.g., sending the data to an API
+        await axios.post("/api/contact", {
+            name,
+            email, 
+            message, 
+            "category": "BUY"
+        })
         console.log({ name, email, subject, message });
     };
 

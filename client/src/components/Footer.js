@@ -11,11 +11,21 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
     const [email, setEmail] = useState('');
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Here you can handle the form submission, e.g., sending the data to an API
-        console.log({email});
-    };
+
+    const handleNewsletterSubmit = (e) => {
+      e.preventDefault();
+      // Assuming subscribeToNewsletter makes an API call
+      //subscribeToNewsletter(email)
+    fetch('http://localhost:8080/api/newsletter/subscribe', { // Replace with your actual backend URL
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+    })
+    // .then(response => response.json())
+    // .then(data => callback(null, data))
+    // .catch(error => callback(error, null));
   return (
     <div className={style.footer} position='static'>
       
@@ -40,7 +50,7 @@ export default function Footer() {
           
           <div className={styles.emailContainer}>
             <div className={styles.contactInfo}>
-              <form onSubmit={handleSubmit} className={style.form}>
+              <form onSubmit={handleNewsletterSubmit} className={style.form}>
                 <label htmlFor="customer_email">
                   <div class={style.gray}>Newsletter</div>
                   <div className={styles.emailInput}> 
@@ -69,4 +79,5 @@ export default function Footer() {
         
     </div>
   )
+}
 }
