@@ -26,11 +26,6 @@ app.use(express.json({ extended: true })) // body parser
 app.use(express.urlencoded({ extended: false })) // url parser
 app.use(morgan('dev')) // logger
 
-// Define routes here or import them
-// const authRoutes = require('../routes/auth');
-// const cabinetRoutes = require('../routes/cabinetRoutes');
-//const contactRoutes = require('../routes/contactRoutes');
-// const collectionRoutes = require('../routes/collectionRoute');
 
 // Use routes
 app.use('/auth', authRoutes);
