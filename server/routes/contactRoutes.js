@@ -1,7 +1,6 @@
 const express = require('express');
+const handleReceivedMessage = require('../controllers/contact/handle-received-message');
 const router = express.Router();
-const Contact = require('../models/Contact'); // Adjust the path as necessary
-const { sendEmail } = require('../utils/emailUtility'); 
 
 // POST route for creating a new contact entry
 router.post('/', async (req, res) => {
@@ -39,5 +38,6 @@ router.post('/', async (req, res) => {
     res.status(status).json({ message: err.message || 'An error occurred' });
   }
 });
+router.post('/', handleReceivedMessage);
 
 module.exports = router;
