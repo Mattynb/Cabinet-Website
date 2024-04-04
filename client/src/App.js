@@ -1,12 +1,18 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useAuth } from "./contexts/AuthContext";
-import Header from "./components/Header";
+
+import React from 'react';
+
+import { useAuth } from './contexts/AuthContext';
+import Header from './components/Header';
 import Footer from "./components/Footer";
 import Shop from "./components/ShopPage/Shop";
-import ContactForm from "./components/home/ContactSection";
+import ContactForm from './components/home/ContactSection';
 import ProductsSection from "./components/home/ProductsSection";
+<<<<<<< HEAD
 import BrowserRange from "./components/home/BrowseRange";
+=======
+import DesignInspiration from './components/home/DesignInspiration';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+>>>>>>> origin/main
 
 
 export default function App() {
@@ -17,7 +23,7 @@ export default function App() {
       <div className="App">
         <Header />
         <Routes>
-          // Home Page
+          [// Home Page]
           <Route
             path="/"
             element={
@@ -26,6 +32,7 @@ export default function App() {
                   <LoggedInText />
                   <BrowserRange />
                   <ProductsSection />
+                  <DesignInspiration/>
                   <ContactForm />
                 </>
               ) : (
@@ -33,13 +40,15 @@ export default function App() {
                   <LoggedOutText />
                   <BrowserRange />
                   <ProductsSection />
+                  <DesignInspiration/>
                   <ContactForm />
                 </>
               )
             }
           />
-          // Shop Page
+          [// Shop Page]
           <Route path="/shop" element={<Shop />} />
+          <Route path='/gallery' element={<DesignInspiration />} />
         </Routes>
         <Footer />
       </div>
@@ -47,14 +56,12 @@ export default function App() {
   );
 }
 
+
+
 const LoggedInText = () => {
   const { account } = useAuth();
 
-  return (
-    <p>
-      Hey, {account.username}! I'm happy to let you know: you are authenticated!
-    </p>
-  );
+  return <p>Hey, {account.username}! I'm happy to let you know: you are authenticated!</p>;
 };
 
 const LoggedOutText = () => (
