@@ -29,7 +29,7 @@ export default function App() {
                   <LoggedInText />
                   <BrowserRange />
                   <ProductsSection />
-                  <DesignInspiration/>
+                  <DesignInspiration />
                   <ContactForm />
                 </>
               ) : (
