@@ -1,15 +1,16 @@
+import React from "react";
 
-import React from 'react';
-
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
-import Header from './components/Header';
+import Header from "./components/Header";
 import Shop from "./components/ShopPage/Shop";
 import BrowserRange from "./components/home/BrowseRange";
-import ContactForm from './components/home/ContactSection';
-import DesignInspiration from './components/home/DesignInspiration';
-import ProductsSection from './components/home/ProductsSection';
-import { useAuth } from './contexts/AuthContext';
+
+import ContactForm from "./components/home/ContactSection";
+import DesignInspiration from "./components/home/DesignInspiration";
+import ProductsSection from "./components/home/ProductsSection";
+import { useAuth } from "./contexts/AuthContext";
+import HeroSection from "./components/home/HeroSection";
 import Cart from "./components/CartPage/Cart"
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
               isLoggedIn ? (
                 <>
                   <LoggedInText />
+                  <HeroSection />
                   <BrowserRange />
                   <ProductsSection />
                   <DesignInspiration />
@@ -34,6 +36,7 @@ export default function App() {
               ) : (
                 <>
                   <LoggedOutText />
+                  <HeroSection />
                   <BrowserRange />
                   <ProductsSection />
                   <DesignInspiration />
@@ -52,12 +55,14 @@ export default function App() {
   );
 }
 
-
-
 const LoggedInText = () => {
   const { account } = useAuth();
 
-  return <p>Hey, {account.username}! I'm happy to let you know: you are authenticated!</p>;
+  return (
+    <p>
+      Hey, {account.username}! I'm happy to let you know: you are authenticated!
+    </p>
+  );
 };
 
 const LoggedOutText = () => (
