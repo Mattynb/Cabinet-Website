@@ -1,11 +1,15 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useAuth } from "./contexts/AuthContext";
-import Header from "./components/Header";
+
+import React from 'react';
+
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Footer from "./components/Footer";
+import Header from './components/Header';
 import Shop from "./components/ShopPage/Shop";
-import ContactForm from "./components/home/ContactSection";
-import ProductsSection from "./components/home/ProductsSection";
+import BrowserRange from "./components/home/BrowseRange";
+import ContactForm from './components/home/ContactSection';
+import DesignInspiration from './components/home/DesignInspiration';
+import ProductsSection from './components/home/ProductsSection';
+import { useAuth } from './contexts/AuthContext';
 import Cart from "./components/CartPage/Cart"
 
 export default function App() {
@@ -16,29 +20,31 @@ export default function App() {
       <div className="App">
         <Header />
         <Routes>
-          // Home Page
           <Route
             path="/"
             element={
               isLoggedIn ? (
                 <>
                   <LoggedInText />
+                  <BrowserRange />
                   <ProductsSection />
+                  <DesignInspiration />
                   <ContactForm />
                 </>
               ) : (
                 <>
                   <LoggedOutText />
+                  <BrowserRange />
                   <ProductsSection />
+                  <DesignInspiration />
                   <ContactForm />
                 </>
               )
             }
           />
-          // Shop Page
           <Route path="/shop" element={<Shop />} />
-          // Cart Page
           <Route path="/cart" element={<Cart />} />
+          <Route path='/gallery' element={<DesignInspiration />} />
         </Routes>
         <Footer />
       </div>
@@ -46,14 +52,12 @@ export default function App() {
   );
 }
 
+
+
 const LoggedInText = () => {
   const { account } = useAuth();
 
-  return (
-    <p>
-      Hey, {account.username}! I'm happy to let you know: you are authenticated!
-    </p>
-  );
+  return <p>Hey, {account.username}! I'm happy to let you know: you are authenticated!</p>;
 };
 
 const LoggedOutText = () => (

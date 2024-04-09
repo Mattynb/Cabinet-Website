@@ -1,7 +1,7 @@
 {
-  "name": "Web Application",
-  "short_name": "Web App",
-  "description": "An awesome web application!",
+  "name": "PAC - Kitchen & Bath",
+  "short_name": "PAC - K&B",
+  "description": "Your Home for Kitchen & Bath Cabinetry",
   "icons": [
     {
       "src": "favicon.ico",
