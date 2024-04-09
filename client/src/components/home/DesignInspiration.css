@@ -1,142 +1,109 @@
-/* DesignInspiration.css */
+/* DesignInspiration.css*/
 
-.design-inspiration {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  width: 100%; 
-  padding: 20px 0;
-  background-color: #5b92e5;
-}
-
-@media (min-width: 768px) { 
-  .design-inspiration {
-    flex-direction: row; 
-    justify-content: center; 
-    align-items: flex-start; 
-  }
-}
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 700px;
-  max-width: 800px;
-  height: 300px;
-  margin: auto; 
-  padding: 0px; 
-}
-
-.swiper-container {
-  /* width: 100%; */
-  width: calc(100% - 20px); 
-  margin: auto;
-  padding-right: 20px; 
-}
-
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  /* width: 500px; */
-  flex: 1 0 auto;
-  height: 300px; 
-  /* margin: auto;  */
-  padding: 20px;
- } 
-
-.text-section {
-  /* margin-bottom: 20px;  */
-  text-align: center; 
-  margin-bottom: 20px;
-  
-}
-
-.section-title, .section-description {
+.designInspiration {
   width: 100%;
-  /* width: auto; */
-  height: auto;
-  justify-content: center;
-  margin: auto;
-  padding: 10px;
   text-align: center;
+  background-color: #A6CBF0;
+  padding-bottom: 2rem;
 }
 
-.explore-button, .gallery-button {
-  margin-top: 20px;
+.textSection {
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  width: 100%;
+  height: 87px;
+  margin: 2rem auto;
+  font-size: 2.2rem;
+  font-weight: bolder;
+  /* Automatically center */
+  padding: 0px;
+}
+
+.sectionDescription {
+  width: 100%;
+  margin: 0 auto;
+  opacity: 0.7;
+}
+
+.swiperContainer {
+  /* Full width to be responsive */
+  height: auto;
+  padding-bottom: 1rem;
+}
+
+.swiperSlide img {
+  display: block;
+  max-width: 236px;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+}
+
+
+.swiperItem {
+  width: 324px;
+  height: 500px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-bottom: 1rem;
+}
+
+.callToAction1 button,
+.callToAction2 button {
   padding: 10px 20px;
+  margin-top: 1rem;
   font-size: 16px;
   cursor: pointer;
-  background-color: #007bff;
-  color: white;
+  background-color: #0E3A77;
   border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  display: center;
-  justify-content:center
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
-.explore-button:hover {
-  background-color: #0056b3;
+.callToAction1 {
+  display: none;
 }
 
-.swiper-slide-image {
-  width: auto; /* Adjust based on layout needs */
-  height: 300px; /* Fixed height for uniformity */
-  object-fit: cover; 
-  max-width: 100%;
-}
+@media (min-width: 768px) {
 
+  .designInspiration {
+    display: flex;
+    height: 670px;
+    text-align: left;
+    padding-top: 2rem;
+    bottom: 2rem;
+  }
 
-.swiper-button-next, .swiper-button-prev {
-  color: #007bff; 
-}
+  .textSection {
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-top: 200px;
+    vertical-align: middle;
+  }
 
-.swiper-pagination-bullet {
-  background: #007bff;
-}
+  .textSection .sectionTitle {
+    font-size: 40px;
+  }
 
-.swiper-pagination-bullet-active {
-  background: #0056b3;
-}
-.swiper-button-next, .swiper-button-prev, .swiper-pagination {
-  display: block;
-}
+  .textSection .sectionDescription {
+    font-size: 16px;
+  }
 
-@media (max-width: 768px) {
-  .swiper-button-next, .swiper-button-prev, .swiper-pagination {
+  .swiperItem {
+    height: 582px;
+    width: 404px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+  .callToAction1 {
     display: block;
   }
-}
-@media (min-width: 1024px) {
-  .swiper-container {
-    max-width: 80%; /* Reducing the max-width might help in visually reducing gap */
-  }
-}
 
-/* Media queries for responsive adjustments */
- @media (max-width: 768px) {
-  .swiper-slide-image {
-    width: auto; /* Adjust based on layout needs */
-  height: 300px; /* Fixed height for uniformity */
-  object-fit: cover; 
-  max-width: 100%;
-    padding: 0px 0; /* Add padding to prevent images from touching */
-  }
-} 
-
-@media (max-width: 480px) {
-  .swiper-slide {
-    width: 100%; /* Make swiper slides take full width on small screens */
-  }
-
-  .text-section h2, .text-section p {
-    font-size: 14px; /* Adjust font size for smaller screens */
-  }
-
-  .explore-button {
-    font-size: 14px;
-    padding: 8px 16px;
+  .callToAction2 {
+    display: none;
   }
 }
