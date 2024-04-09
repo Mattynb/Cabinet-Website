@@ -1,15 +1,15 @@
 
 import React from 'react';
 
-import { useAuth } from './contexts/AuthContext';
-import Header from './components/Header';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Footer from "./components/Footer";
+import Header from './components/Header';
 import Shop from "./components/ShopPage/Shop";
-import ContactForm from './components/home/ContactSection';
-import ProductsSection from "./components/home/ProductsSection";
 import BrowserRange from "./components/home/BrowseRange";
+import ContactForm from './components/home/ContactSection';
 import DesignInspiration from './components/home/DesignInspiration';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ProductsSection from './components/home/ProductsSection';
+import { useAuth } from './contexts/AuthContext';
 
 
 export default function App() {
@@ -20,7 +20,6 @@ export default function App() {
       <div className="App">
         <Header />
         <Routes>
-          [// Home Page]
           <Route
             path="/"
             element={
@@ -37,13 +36,12 @@ export default function App() {
                   <LoggedOutText />
                   <BrowserRange />
                   <ProductsSection />
-                  <DesignInspiration/>
+                  <DesignInspiration />
                   <ContactForm />
                 </>
               )
             }
           />
-          [// Shop Page]
           <Route path="/shop" element={<Shop />} />
           <Route path='/gallery' element={<DesignInspiration />} />
         </Routes>
