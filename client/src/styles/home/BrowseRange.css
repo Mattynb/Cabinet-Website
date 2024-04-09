@@ -1,0 +1,113 @@
+.browse-range {
+  text-align: center;
+  max-width: 1760px;
+  margin: 0 auto;
+  position: relative; /* Necessary for absolute positioning of children */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  overflow: hidden; /* In case images go out of bounds, they will be clipped */
+}
+
+.image-wrapper {
+  display: flex;
+  flex-wrap: wrap; /* Allow images to wrap to next line */
+  gap: 30px;
+  justify-content: center;
+  position: relative; /* Necessary for positioning */
+}
+
+.image-wrapper > * {
+  flex-shrink: 0; /* Prevent images from shrinking */
+}
+
+.title-bar {
+  text-align: center;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.imageL, .imageM, .imageR {
+  width: 404px;
+  height: 582px;
+  object-fit: cover; /* Cover to ensure the images cover their area */
+  opacity: 1; /* Make images visible */
+  cursor: pointer; /* Indicates clickable images */
+}
+
+.imageL {
+  width: 404px;
+height: 582px;
+top: 592px;
+left: 186px;
+gap: 0px;
+opacity: 0px;
+
+}
+
+.imageM {
+  width: 404px;
+  height: 582px;
+  top: 592px;
+  left: 186px;
+  gap: 0px;
+  opacity: 0px;
+
+}
+
+.imageR {
+  width: 404px;
+  height: 582px;
+  top: 592px;
+  left: 186px;
+  gap: 0px;
+  opacity: 0px;
+
+}
+
+
+.explore-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  /* Style the button as needed */
+}
+
+/* Non-responsive styles */
+.element {
+  width: 100%;
+  padding: 20px;
+}
+
+/* Media queries */
+@media (max-width: 1200px) {
+  .browse-range {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .browse-range {
+    padding: 0 20px;
+  }
+
+  .image-wrapper > * {
+    width: 100%;
+    max-width: calc(50% - 15px);
+  }
+}
+
+@media (max-width: 576px) {
+  .imageL, .imageM, .imageR {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 300px; /* Adjust the height as needed */
+  }
+}

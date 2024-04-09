@@ -1,0 +1,32 @@
+name: CD Pipeline
+
+on:
+  workflow_run:
+    workflows: ["Node.js CI"]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Delete Old Container
+      run: sudo docker rm -f cabinet_server || true
+    - name: Run New Container
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        MONGO_URI: ${{ secrets.MONGO_URI }}
+        JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        EMAIL_USER: ${{ secrets.EMAIL_USER }}
+        EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+      run: |
+        sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+        sudo docker pull $DOCKER_USERNAME/cabinet_server:latest
+        sudo docker run -d -p 8080:8080 --name cabinet_server \
+          -e MONGO_URI="${MONGO_URI}" \
+          -e JWT_SECRET="${JWT_SECRET}" \
+          -e EMAIL_USER="${EMAIL_USER}"\
+          -e EMAIL_PASS="${EMAIL_PASS}" \
+          $DOCKER_USERNAME/cabinet_server:latest
