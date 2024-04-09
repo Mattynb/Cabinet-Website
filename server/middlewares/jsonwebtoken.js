@@ -17,16 +17,24 @@ const authorizeBearerToken = (request, response, next) => {
     }
 
     const auth = jwt.verify(token, JWT_SECRET)
-    if (!auth) {
-      return response.status(401).json({
-        message: 'Unauthorized - invalid token',
-      })
-    }
+    // if (!auth) {
+    //   return response.status(401).json({
+    //     message: 'Unauthorized - invalid token',
+    //   })
+    // }
 
     request.auth = auth
     next()
   } catch (error) {
     console.error(error)
+    // Specific handling for token expiration
+    if (error.name === "TokenExpiredError") {
+      return response.status(401).json({
+        message: 'Session has expired, please log in again.',
+      });
+    }
+
+    // General error response for other JWT-related issues
     return response.status(401).json({
       message: 'Unauthorized - invalid token',
     })

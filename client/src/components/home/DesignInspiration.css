@@ -1,0 +1,142 @@
+/* DesignInspiration.css */
+
+.design-inspiration {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  width: 100%; 
+  padding: 20px 0;
+  background-color: #5b92e5;
+}
+
+@media (min-width: 768px) { 
+  .design-inspiration {
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: flex-start; 
+  }
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+  max-width: 800px;
+  height: 300px;
+  margin: auto; 
+  padding: 0px; 
+}
+
+.swiper-container {
+  /* width: 100%; */
+  width: calc(100% - 20px); 
+  margin: auto;
+  padding-right: 20px; 
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* width: 500px; */
+  flex: 1 0 auto;
+  height: 300px; 
+  /* margin: auto;  */
+  padding: 20px;
+ } 
+
+.text-section {
+  /* margin-bottom: 20px;  */
+  text-align: center; 
+  margin-bottom: 20px;
+  
+}
+
+.section-title, .section-description {
+  width: 100%;
+  /* width: auto; */
+  height: auto;
+  justify-content: center;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.explore-button, .gallery-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: center;
+  justify-content:center
+}
+
+.explore-button:hover {
+  background-color: #0056b3;
+}
+
+.swiper-slide-image {
+  width: auto; /* Adjust based on layout needs */
+  height: 300px; /* Fixed height for uniformity */
+  object-fit: cover; 
+  max-width: 100%;
+}
+
+
+.swiper-button-next, .swiper-button-prev {
+  color: #007bff; 
+}
+
+.swiper-pagination-bullet {
+  background: #007bff;
+}
+
+.swiper-pagination-bullet-active {
+  background: #0056b3;
+}
+.swiper-button-next, .swiper-button-prev, .swiper-pagination {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-next, .swiper-button-prev, .swiper-pagination {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .swiper-container {
+    max-width: 80%; /* Reducing the max-width might help in visually reducing gap */
+  }
+}
+
+/* Media queries for responsive adjustments */
+ @media (max-width: 768px) {
+  .swiper-slide-image {
+    width: auto; /* Adjust based on layout needs */
+  height: 300px; /* Fixed height for uniformity */
+  object-fit: cover; 
+  max-width: 100%;
+    padding: 0px 0; /* Add padding to prevent images from touching */
+  }
+} 
+
+@media (max-width: 480px) {
+  .swiper-slide {
+    width: 100%; /* Make swiper slides take full width on small screens */
+  }
+
+  .text-section h2, .text-section p {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .explore-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}

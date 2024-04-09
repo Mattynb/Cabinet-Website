@@ -54,5 +54,14 @@ const DesignInspiration = () => {
     </div>
   );
 };
+
 export default DesignInspiration;
+
+
+
+
+
+
+
+
 
