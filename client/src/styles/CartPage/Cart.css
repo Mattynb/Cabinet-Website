@@ -1,0 +1,237 @@
+ .shop-hero {
+    position: relative;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .shop-hero img {
+    width: 100vw;
+    height: 316px;
+  }
+  
+  .shop-hero-title,
+  .shop-hero-home,
+  .shop-hero-cart {
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .shop-hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 48px;
+    color: #0e3a77;
+  }
+  
+  .shop-hero-subtitle {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .shop-hero-home {
+    font-weight: 600;
+    font-size: 16px;
+    color: #0e3a77;
+  }
+  
+  .shop-hero-cart {
+    font-weight: 300;
+    font-size: 16px;
+    color: #0e3a77;
+  }
+  /* Gray bar with text */
+
+  .cart-header-container {
+    position: relative;
+    width: 817px;
+    height: 55px;
+    top: 0;
+    left: 101px;
+  }
+
+  .cart-header {
+    position: absolute;
+    width: 817px;
+    height: 55px;
+    top: 72px;
+    left: 101px;
+    background-color: #f2f5ff;
+    display: flex;
+    align-items: center;
+    padding-left: 101px; /* Adjust padding to account for the left offset */
+    z-index: 2; /* Set a higher z-index than the cart elements */
+  }
+  
+/* Text elements */
+.cart-header-text {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 20px;
+  z-index: 2;
+}
+
+/* Individual text elements */
+.product-text,
+.price-text,
+.quantity-text,
+.subtotal-text {
+  position: absolute; /* Set position to relative */
+  display: inline-block; /* Ensure the elements are displayed inline */
+}
+
+.product-text {
+  width: 63px;
+  height: 24px;
+  left: 170px;
+}
+
+.price-text {
+  width: 40px;
+  height: 24px;
+  left: 350px;
+}
+
+.quantity-text {
+  width: 70px;
+  height: 24px;
+  left: 550px;
+}
+
+.subtotal-text {
+  width: 69px;
+  height: 24px;
+  left: 650px;
+}
+/************************************/
+
+/* Cart total element */
+.cart-total {
+  position: absolute;
+  width: 393px;
+  height: 390px;
+  left: 1050px;
+  top: 540px;
+  background-color: #f2f5ff; /* Add background color */
+}
+
+
+/* Cart totals title */
+.cart-totals-title {
+  position: absolute;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif; /* Add font-family */
+  color: #000; /* Add color property */
+  font-size: 32px;
+  width: 179px;
+  height: 48px;
+  top: 15%; /* Move the element 50% from the top */
+  left: 50%; /* Move the element 50% from the left */
+  transform: translate(-50%, -50%); /* Center the element */
+  font-weight: 600;
+  z-index: 2; /* Set a higher z-index */
+}
+
+/* Subtotal label */
+.subtotal-label {
+  position: absolute;
+  font-family: "Poppins", sans-serif; /* Add font-family */
+  color: #000; /* Add color property */
+  width: 69px;
+  height: 24px;
+  top: 35%;
+  left: 18%;
+  font-weight: 500;
+  z-index: 2; /* Set a higher z-index */
+}
+
+/* Subtotal value */
+.subtotal-value {
+  position: absolute;
+  font-family: "Poppins", sans-serif; /* Add font-family */
+  color: #9F9F9F; /* Add color property */
+  width: 112px;
+  height: 24px;
+  top: 35%;
+  right: 3%;
+  z-index: 2; /* Set a higher z-index */
+}
+
+/* Total label */
+.total-label {
+  position: absolute;
+  font-family: "Poppins", sans-serif; /* Add font-family */
+  color: #000; /* Add color property */
+  width: 41px;
+  height: 24px;
+  top: 52%;
+  left: 18%;
+  z-index: 2; /* Set a higher z-index */
+}
+
+/* Total value */
+.total-value {
+  position: absolute;
+  font-family: "Poppins", sans-serif; /* Add font-family */
+  color: #0E3A77; /* Add color property */
+  width: 144px;
+  height: 30px;
+  top: 50%;
+  right: 1%;
+  font-size: 25px;
+  font-weight: 500;
+  z-index: 2; /* Set a higher z-index */
+}
+
+/* Checkout button */
+.checkout-button {
+  position: absolute;
+  width: 222px;
+  height: 58.95px;
+  top: 275px;
+  right: 20px;
+  border: 1px solid #000000; /* Add border with solid style and black color */
+  border-radius: 15px;
+  background-color: none; /* Set background color */
+  color: #000000; /* Set text color */
+  font-family: "Poppins", sans-serif; /* Set font family */
+  font-size: 20px; /* Set font size */
+  font-weight: 400; /* Set font weight */
+  line-height: 58.95px; /* Set line height to match button height */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Add cursor pointer */
+  z-index: 2; /* Set a higher z-index */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+.checkout-button:hover {
+  background-color: #e6ebff; /* Darker background color on hover */
+}
+
+
+/*Checkout Cart Element*/
+
+.checkout-cart-container {
+  width: 1440px;
+  height: 525px;
+}
+
+.cart-container {
+  position: relative;
+  width: 817px;
+  height: 335px;
+  top: 127px;
+  left: 101px;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.cart-scrollable {
+  height: 100%; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}

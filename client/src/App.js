@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Shop from "./components/ShopPage/Shop";
 import ContactForm from "./components/home/ContactSection";
 import ProductsSection from "./components/home/ProductsSection";
+import Cart from "./components/CartPage/Cart"
 
 export default function App() {
   const { isLoggedIn } = useAuth();
@@ -36,6 +37,8 @@ export default function App() {
           />
           // Shop Page
           <Route path="/shop" element={<Shop />} />
+          // Cart Page
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </div>
