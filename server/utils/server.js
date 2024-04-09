@@ -1,6 +1,10 @@
 const express = require('express') // Backend App (server)
 const cors = require('cors') // HTTP headers (enable requests)
 const morgan = require('morgan') // HTTP logger
+const bodyParser = require('body-parser'); // Middleware to parse JSON bodies. 
+const createCabinet = require('../controllers/cabinet/create-cabinet');
+const createCabinets = require("../controllers/cabinet/create-cabinets")
+
 const { ORIGIN } = require('../constants')
 
 // const mongoose = require('mongoose');
@@ -25,4 +29,7 @@ app.use((err, req, res, next) => {
   next()
 })
 
+// routes
+app.post('/api/cabinet', cabinetController.createCabinet);
+app.post('/api/cabinets', cabinetController.createCabinets);
 module.exports = app

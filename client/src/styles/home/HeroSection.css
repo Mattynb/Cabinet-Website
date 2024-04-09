@@ -1,0 +1,18 @@
+.hero-img img {
+  width: 100vw;
+  height: 716px;
+}
+
+.hero-container {
+  margin-left: 2rem;
+  width: 643px;
+  height: 443px;
+  background-color: #ffff;
+}
+
+.new-arrival {
+  font-family: "Poppins", sans-serif;
+  color: #333333;
+  font-weight: 500;
+  font-size: 16px;
+}

@@ -1,0 +1,35 @@
+.banner-container {
+  background-color: #d2e5f7;
+  height: 240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  padding: 0 7%;
+}
+
+.banner-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 0.5rem;
+}
+
+.banner-detail h2 {
+  margin-top: 0.5rem;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.banner-detail p {
+  margin-top: -1.2rem;
+  color: #898989;
+  font-weight: 400;
+}

@@ -1,7 +1,7 @@
 const Cabinet = require('../../models/Cabinet');
 
 // for multiple
-exports.createCabinets = async (req, res) => {
+const createCabinets = async (req, res) => {
     try {
         // Use insertMany to add all cabinet objects in the array
         const cabinets = await Cabinet.insertMany(req.body);
@@ -10,3 +10,5 @@ exports.createCabinets = async (req, res) => {
         res.status(400).send(error);
     }
 };
+
+module.exports = createCabinets
