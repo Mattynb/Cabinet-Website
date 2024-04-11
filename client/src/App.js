@@ -8,6 +8,7 @@ import Shop from "./components/ShopPage/Shop";
 import ContactForm from './components/home/ContactSection';
 import ProductsSection from "./components/home/ProductsSection";
 import DesignInspiration from './components/home/DesignInspiration';
+import Checkout from './components/CheckoutPage/Checkout';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
@@ -43,6 +44,7 @@ export default function App() {
           [// Shop Page]
           <Route path="/shop" element={<Shop />} />
           <Route path='/gallery' element={<DesignInspiration />} />
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
         <Footer />
       </div>
