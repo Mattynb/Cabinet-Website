@@ -13,6 +13,8 @@ jobs:
     steps:
     - name: Delete Old Container
       run: sudo docker rm -f cabinet_server || true
+    -name: Delete all Stopped images and containers
+      run: yes | sudo docker system prune -a 
     - name: Run New Container
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
