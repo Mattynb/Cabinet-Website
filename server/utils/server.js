@@ -30,6 +30,6 @@ app.use((err, req, res, next) => {
 })
 
 // routes
-app.post('/api/cabinet', cabinetController.createCabinet);
-app.post('/api/cabinets', cabinetController.createCabinets);
+app.post('/api/cabinet', createCabinet);
+app.post('/api/cabinets', createCabinets);
 module.exports = app
