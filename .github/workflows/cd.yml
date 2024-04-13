@@ -20,7 +20,7 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         MONGO_URI: ${{ secrets.MONGO_URI }}
-        JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        JWT_SECRET: super_secret_jwt_salt
         EMAIL_USER: ${{ secrets.EMAIL_USER }}
         EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
       run: |

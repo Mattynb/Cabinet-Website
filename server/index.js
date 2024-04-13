@@ -24,7 +24,7 @@ async function bootstrap() {
   server.get('/', (req, res) => res.status(200).json({message: 'Hello World!'}))
   server.get('/healthz', (req, res) => res.status(200).send())
   
-  server.use((req, res, next) => {
+  server.use((req, res, next) => { 
     console.log('Request URL:', req.originalUrl); // Logs the URL of every request
     next();
   });
