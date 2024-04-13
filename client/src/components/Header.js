@@ -16,7 +16,13 @@ import { Link } from "react-router-dom"
 import { useAuth } from '../contexts/AuthContext'
 import style from '../styles/Nav/Header.module.css'
 import AuthModal from './AuthModal'
-import OnlineIndicator from './OnlineIndicator'
+import {useAuth} from '../contexts/AuthContext'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
+import Search from '@mui/icons-material/Search';
+import style from '../styles/Nav/Header.module.css';
+import { Link } from "react-router-dom";
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Header() {
   const { isLoggedIn, account, logout } = useAuth()
@@ -27,6 +33,7 @@ export default function Header() {
   const [register, setRegister] = useState(false)
 
   const [cart, setCart] = useState(false)
+  const [nav, setNav] = useState(false)
 
   const openPopover = (e) => {
     setPopover(true)
@@ -57,6 +64,15 @@ export default function Header() {
     setAnchorEl(null)
   }
 
+  const openNav = (e) => {
+    setNav(true)
+    setAnchorEl(e.currentTarget)
+  }
+  const closeNav = () => {
+    setNav(false)
+    setAnchorEl(null)
+  }
+
   return (
     <div className={style.header}>
       <div className={style.frame168} >
@@ -65,10 +81,32 @@ export default function Header() {
       </div>
 
       <div className={style.buttonContainer}>
-        <Link to="/"><button class={style.button} href="#">Home</button></Link>
+        <Link to="/"><button class={style.button}>Home</button></Link>
         <Link to="/shop"><button class={style.button} >Shop</button></Link>
-        <Link to="/about"><button class={style.button} href="#">About</button></Link>
-        <Link to="/galery"><button class={style.button} href="#">Galery</button></Link>
+        <Link to="/checkout"><button class={style.button} >About</button></Link>
+        <Link to="/gallery"><button class={style.button} >Gallery</button></Link>
+      </div>
+
+      <div className={style.menu}>
+      <IconButton onClick={openNav}>
+        <MenuIcon />
+      </IconButton>
+
+      <Popover
+          anchorEl={anchorEl}
+          open={nav}
+          onClose={closeNav}
+          anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
+          transformOrigin={{vertical: 'top', horizontal: 'center'}}>
+          <List style={{width: '300px'}}>
+          
+            <Link to="/"><ListItemButton><button class={style.button}>Home</button></ListItemButton></Link>
+            <Link to="/shop"><ListItemButton><button class={style.button}>Shop</button></ListItemButton></Link>
+            <Link to="/about"><ListItemButton><button class={style.button}>About</button></ListItemButton></Link>
+            <Link to="/gallery"><ListItemButton><button class={style.button}>Gallery</button></ListItemButton></Link>
+            
+          </List>
+        </Popover>
       </div>
       
       <div className={style.topRightContainer}>

@@ -13,47 +13,46 @@ export default function Footer() {
     <div className={style.footer} position='static'>
         <div className={style.group45}>
           <div className={style.group32}>
+
             <div className={style.text}>
-              <div class={style.name}>
+              <div className={style.name}>
                 <div>Plan Ahead Constructions</div>
                 <div className={style.blue}>Kitchen & Bath</div>
               </div>
 
-              <div class={style.address}>
-              50 New Salem Street,
+              <div className={style.address}>
+              50 New Salem Street,{"\n"}
               Wakefield, MA 01880, USA</div>
             </div>
 
-            <div class={style.buttonContainer}>
-              <div class={style.gray}>Links</div>
-              <div class={style.frame24}>
+            <div className={style.buttonContainer}>
+              <div className={style.gray}>Links</div>
+              <div className={style.frame24}>
                 <Link to="/"><button class={style.button} href="#">Home</button></Link>
                 <Link to="/shop"><button class={style.button} >Shop</button></Link>
                 <Link to="/about"><button class={style.button} href="#">About</button></Link>
-                <Link to="/galery"><button class={style.button} href="#">Galery</button></Link>
+                <Link to="/galery"><button class={style.button} href="#">Gallery</button></Link>
               </div>
             </div>
             
             <div className={style.emailContainer}>
-              <div class={style.gray}>Newsletter</div>
-              <div className={style.contactInfo}>
-                <form onSubmit={handleSubmit} className={style.form}>
-                  <label htmlFor="customer_email">
-                    <div className={style.emailInput}> 
-                      <input
-                        style={{ display: 'block' }}
-                        type="email"
-                        value={email}
-                        id='customer_email'
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter Your Email Address"
-                        required
-                      />
-                      <button type="submit">Subscribe</button>
-                    </div>
-                  </label>
-                </form>
-              </div>
+              <div className={style.newsletter}>Newsletter</div>
+              <form onSubmit={handleSubmit} className={style.form}>
+                <label htmlFor="customer_email">
+                  <div className={style.emailInput}> 
+                    <input
+                      style={{ display: 'block'}}
+                      type="email"
+                      value={email}
+                      id='customer_email'
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Enter Your Email Address"
+                      required
+                    />
+                    <button type="submit">Subscribe</button>
+                  </div>
+                </label>
+              </form>
             </div>
           </div>
         
