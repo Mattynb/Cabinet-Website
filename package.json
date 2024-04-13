@@ -17,15 +17,19 @@
     "email": "Matheus.Berbet001@umb.edu"
   },
   "scripts": {
-    "install-all": "concurrently \"cd ./server && npm i\" \"cd ./client && npm i\"",
+    "install": "concurrently \"cd ./server && npm i\" \"cd ./client && npm i\"",
     "start": "concurrently \"cd ./server && npm start\" \"cd ./client && npm start\"",
     "delete-modules": "rm -r ./node_modules && cd ./server && rm -r ./node_modules && cd ../client && rm -r ./node_modules"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^6.3.0"
   },
   "dependencies": {
+    "swiper": "^11.1.1",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
+    "@reduxjs/toolkit": "^2.2.3",
     "react-router-dom": "^6.22.3",
-    "swiper": "^11.1.0"
+    "redux": "^5.0.1"
   }
 }

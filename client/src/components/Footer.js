@@ -1,21 +1,14 @@
-import {
-  AppBar,
-  Button,
-  Stack
-} from '@mui/material'
-
-import style from '../styles/Nav/Footer.module.css';
 import { useState } from "react";
-import styles from '../styles/home/ContactForm.module.css';
 import { Link } from "react-router-dom";
+import style from '../styles/Nav/Footer.module.css';
 
 export default function Footer() {
-    const [email, setEmail] = useState('');
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Here you can handle the form submission, e.g., sending the data to an API
-        console.log({email});
-    };
+  const [email, setEmail] = useState('');
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here you can handle the form submission, e.g., sending the data to an API
+    console.log({ email });
+  };
   return (
     <div className={style.footer} position='static'>
         <div className={style.group45}>

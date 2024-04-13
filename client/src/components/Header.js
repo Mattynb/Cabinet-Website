@@ -1,8 +1,6 @@
-import {Fragment, useState} from 'react'
 import {
-  IconButton,
   Avatar,
-  Popover,
+  IconButton,
   List,
   ListSubheader,
   ListItemButton,
@@ -10,19 +8,21 @@ import {
   ListItem,
   //Divider,
   ListItemText,
+  Popover
 } from '@mui/material'
+import { Fragment, useState } from 'react'
 
-import OnlineIndicator from './OnlineIndicator'
+import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart'
+import Search from '@mui/icons-material/Search'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import { Link } from "react-router-dom"
+import { useAuth } from '../contexts/AuthContext'
+import style from '../styles/Nav/Header.module.css'
 import AuthModal from './AuthModal'
-import {useAuth} from '../contexts/AuthContext'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
-import Search from '@mui/icons-material/Search';
-import style from '../styles/Nav/Header.module.css';
-import { Link } from "react-router-dom";
+import OnlineIndicator from './OnlineIndicator'
 
 export default function Header() {
-  const {isLoggedIn, account, logout} = useAuth()
+  const { isLoggedIn, account, logout } = useAuth()
 
   const [anchorEl, setAnchorEl] = useState(null)
   const [popover, setPopover] = useState(false)
