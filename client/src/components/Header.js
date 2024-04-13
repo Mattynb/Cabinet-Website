@@ -16,12 +16,7 @@ import { Link } from "react-router-dom"
 import { useAuth } from '../contexts/AuthContext'
 import style from '../styles/Nav/Header.module.css'
 import AuthModal from './AuthModal'
-import {useAuth} from '../contexts/AuthContext'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
-import Search from '@mui/icons-material/Search';
-import style from '../styles/Nav/Header.module.css';
-import { Link } from "react-router-dom";
+import OnlineIndicator from './OnlineIndicator'
 import MenuIcon from '@mui/icons-material/Menu';
 
 export default function Header() {
