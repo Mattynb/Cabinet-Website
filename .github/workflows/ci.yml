@@ -5,11 +5,11 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "mergin_server_debug" ]
     paths:
       - 'server/**'
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "mergin_server_debug"]
     paths:
       - 'server/**'
 
