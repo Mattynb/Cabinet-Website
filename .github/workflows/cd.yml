@@ -16,14 +16,11 @@ jobs:
         sudo rm -r Cabinet-Website \
         git clone git@github.com:Mattynb/Cabinet-Website.git -b main --single-branch \
         cd Cabinet-Website/server
-
-    - name: Set environment variables and start server 
+    - name: Set environment variables and start server
       run: |
-        sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        sudo docker pull $DOCKER_USERNAME/cabinet_server:latest
-        sudo docker run -d -p 8080:8080 --name cabinet_server \
-          -e MONGO_URI="${MONGO_URI}" \
-          -e JWT_SECRET="${JWT_SECRET}" \
-          -e EMAIL_USER="${EMAIL_USER}"\
-          -e EMAIL_PASS="${EMAIL_PASS}" \
-          $DOCKER_USERNAME/cabinet_server:latest
+        export PORT=""
+        export MONGO_URI=${{ secrets.MONGO_URI }}
+        export JWT_SECRET=${{ secrets.JWT_SECRET }}
+        export EMAIL_USER=${{ secrets.EMAIL_USER }}
+        export EMAIL_PASS=${{ secrets.EMAIL_PASS }}
+        npm start
