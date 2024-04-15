@@ -18,7 +18,7 @@ jobs:
     steps:
     - name: Clone repository server folder
       run: |
-        git clone git@github.com:Mattynb/Cabinet-Website.git --single-branch \
+        git clone git@github.com:Mattynb/Cabinet-Website.git --single-branch
         cd Cabinet-Website/server
     - name: Set environment variables and start server
       run: |
