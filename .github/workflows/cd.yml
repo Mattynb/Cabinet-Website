@@ -20,15 +20,15 @@ jobs:
         git clone git@github.com:Mattynb/Cabinet-Website.git -b main --single-branch \
         cd Cabinet-Website/server
 
-      - name: Set environment variables and start server
-        env:
-          MONGO_URI: ${{ secrets.MONGO_URI }}
-          JWT_SECRET: ${{ secrets.JWT_SECRET }}
-          EMAIL_USER: ${{ secrets.EMAIL_USER }}
-          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
-        run: |
-          export MONGO_URI=${{ secrets.MONGO_URI }}
-          export JWT_SECRET=${{ secrets.JWT_SECRET }}
-          export EMAIL_USER=${{ secrets.EMAIL_USER }}
-          export EMAIL_PASS=${{ secrets.EMAIL_PASS }}
-          npm start
+    - name: Set environment variables and start server
+      env:
+        MONGO_URI: ${{ secrets.MONGO_URI }}
+        JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        EMAIL_USER: ${{ secrets.EMAIL_USER }}
+        EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+      run: |
+        export MONGO_URI=${{ secrets.MONGO_URI }}
+        export JWT_SECRET=${{ secrets.JWT_SECRET }}
+        export EMAIL_USER=${{ secrets.EMAIL_USER }}
+        export EMAIL_PASS=${{ secrets.EMAIL_PASS }}
+        npm start
