@@ -1,10 +1,15 @@
 name: CD Pipeline
 
 on:
-  workflow_run:
-    workflows: ["Node.js CI"]
-    types:
-      - completed
+  push:
+    branches: [ "main", "mergin_server_debug" ]
+    paths:
+      - 'server/**'
+  pull_request:
+    branches: [ "main", "mergin_server_debug"]
+    paths:
+      - 'server/**'
+      - '.github/workflows/**'
 
 jobs:
   build:
