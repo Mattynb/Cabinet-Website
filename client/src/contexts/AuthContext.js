@@ -31,8 +31,10 @@ export function AuthProvider({ children }) {
           resolve(true)
         })
         .catch((error) => {
-          console.error(error)
-          reject(error?.response?.data?.message || error.message)
+          console.error('Error occurred during register:', error);
+          console.error('Error response:', error?.response);
+          console.error('Error message:', error?.response?.data?.message || error.message);
+          reject(error?.response?.data?.message || error.message);
         })
     })
 
@@ -52,7 +54,10 @@ export function AuthProvider({ children }) {
           resolve(true)
         })
         .catch((error) => {
-          console.error(error)
+          console.error('Error occurred during login:', error);
+          console.error('Error response:', error?.response);
+          console.error('Error message:', error?.response?.data?.message || error.message);
+          console.log('token: ', token)
           reject(error?.response?.data?.message || error.message)
         })
     })
