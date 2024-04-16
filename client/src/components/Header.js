@@ -78,7 +78,7 @@ export default function Header() {
       <div className={style.buttonContainer}>
         <Link to="/"><button class={style.button}>Home</button></Link>
         <Link to="/shop"><button class={style.button} >Shop</button></Link>
-        <Link to="/checkout"><button class={style.button} >About</button></Link>
+        <Link to="/about"><button class={style.button} >About</button></Link>
         <Link to="/gallery"><button class={style.button} >Gallery</button></Link>
       </div>
 
