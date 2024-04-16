@@ -18,7 +18,7 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - MONGO_DB_URI= ${{ secrets.MONGO_URI }}
+      - MONGO_DB_URI= "mongodb+srv://pac-admin:pac-password@cluster0.mdu0fsz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     depends_on:
       - mongo
 

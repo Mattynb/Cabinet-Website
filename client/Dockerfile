@@ -11,6 +11,8 @@ COPY ./package*.json ./
 # Install dependencies
 RUN npm i
 
+RUN npm audit fix
+
 # Copy the rest of the application code
 COPY . .
 
