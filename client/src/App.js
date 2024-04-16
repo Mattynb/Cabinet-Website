@@ -5,11 +5,13 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Shop from "./components/ShopPage/Shop";
 import BrowserRange from "./components/home/BrowseRange";
+import Checkout from './components/CheckoutPage/Checkout';
 import ContactForm from "./components/home/ContactSection";
 import DesignInspiration from "./components/home/DesignInspiration";
 import ProductsSection from "./components/home/ProductsSection";
 import { useAuth } from "./contexts/AuthContext";
 import HeroSection from "./components/home/HeroSection";
+import Cart from "./components/CartPage/Cart"
 
 export default function App() {
   const { isLoggedIn } = useAuth();
@@ -44,7 +46,9 @@ export default function App() {
             }
           />
           <Route path="/shop" element={<Shop />} />
-          <Route path="/gallery" element={<DesignInspiration />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path='/gallery' element={<DesignInspiration />} />
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
         <Footer />
       </div>

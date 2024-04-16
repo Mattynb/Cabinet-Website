@@ -1,6 +1,6 @@
 const Cabinet = require('../../models/Cabinet'); // Update the path accordingly
 
-exports.createCabinet = async (req, res) => {
+const createCabinet = async (req, res) => {
     try {
         const cabinet = new Cabinet({
             productId: req.body.productId,
@@ -14,4 +14,7 @@ exports.createCabinet = async (req, res) => {
     } catch (error) {
         res.status(400).send(error);
     }
+    
 };
+
+module.exports = createCabinet
