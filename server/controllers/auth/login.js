@@ -24,15 +24,9 @@ async function login(request, response, next) {
 
     // Get account from DB, and verify existance
     const foundAccount = await Account.findOne({username})
-    if (!foundAccount) {
-      return response.status(400).json({
-        message: 'Bad credentials',
-      })
-    }
-
     // Decrypt and verify password
     const passOk = await bcrypt.compare(password, foundAccount.password)
-    if (!passOk) {
+    if (!passOk || !foundAccount) {
       return response.status(400).json({
         message: 'Bad credentials',
       })

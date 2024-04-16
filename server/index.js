@@ -23,7 +23,7 @@ async function bootstrap() {
 
   server.get('/', (req, res) => res.status(200).json({message: 'Hello World!'}))
   server.get('/healthz', (req, res) => res.status(200).send())
-  
+
   // login endpoint
   server.use('/auth', authRoutes)
   
