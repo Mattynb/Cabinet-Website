@@ -5,121 +5,156 @@
 }
 
 .header {
-    font-size: 36px;
+    font-size: 36px; 
     font-weight: 600;
     text-align: center;
     margin-bottom: 0;
+
+    text-align: center;
+	font-size: 40px;
+	font-weight: bolder;
+	font-family: "Lato", sans-serif;
+	color: #2d385e;
+	margin-bottom: 20px;
 }
 
 .paragraph {
-    text-align: center;
-    max-width: 600px;
     margin: auto;
+    width: 50%; 
+    font-size: 16px;  
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
     color: #9f9f9f;
+	font-family: "Lato", sans-serif;
+	margin-bottom: 20px;
+    flex-direction: column;
 }
 
 .contactContainer {
     display: flex;
     justify-content: space-between;
-    max-width: 50vw;
+    max-width: 55vw;
     margin: 60px auto 0 auto;
 }
 
 .contactInfo {
     flex: 1;
-    min-width: 450px;
+    min-width: 300px; 
 }
 
 .contactInfo strong {
-    font-size: 24px;
+    font-size: 24px; 
 }
 
-.contactInfo>div {
+.contactInfo > div {
     margin-bottom: 60px;
 }
 
-.contactInfo>div>svg {
+.contactInfo > div > svg {
     margin-right: 10px;
 }
 
 .contactInfo p {
-    font-size: 16px;
+    font-size: 16px; 
     margin-top: 0;
     margin-bottom: 0;
-    padding-left: 34px;
+    padding-left: 34px; 
     white-space: pre-wrap;
 }
 
 .form {
-    flex: 2;
-    width: 600px;
+    width: 100%;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	padding-left: 10px;
+	font-size: 17px;
 }
 
-.form input {
+
+.form input, .form textarea {
     width: 100%;
-    padding: 16px;
+    padding: 16px; 
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 40px; 
     border: 1px solid #9f9f9f;
     border-radius: 5px;
 }
 
 .form textarea {
-    width: 100%;
-    height: 105px;
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    border: 1px solid #9f9f9f;
-    border-radius: 5px;
+    height: 105px; 
     font-family: Roboto, sans-serif;
 }
 
 .form button {
-    width: 40%;
-    padding: 10px;
-    color: white;
+    width: 200px; 
+    height: 41px;
     background-color: #0E3A77;
-    border: 1px solid #9f9f9f;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 1rem; 
+    text-align: center;
+    margin-left: 10px; 
 }
 
 @media (max-width: 768px) {
     .header {
+        max-width: 100%; 
+        width: 100%;
+      text-align: center;
         font-size: 24px;
     }
 
     .paragraph {
         font-size: 14px;
-        width: 80%;
+        max-width: 85%; 
+        width: 50%;
+      text-align: center;
+      color: #9F9F9F;
+      flex-direction: column;
+      text-align: center;
+      
     }
-
 
     .contactContainer {
         flex-direction: column;
-        margin: 60px auto 0 auto;
-        max-width: 80%;
-        text-align: center;
+        max-width: 100%; 
+        height: 50%;
+      align-items: center;
+        
+        
     }
 
-    .contactInfo,
+    .contactInfo {
+        width: 50%;
+        padding: 10px;
+        
+    }
+
     .form {
-        min-width: 0;
-        width: 100%;
+        width: 80%;
     }
 
     .contactInfo p {
-        padding-left: 0;
-        ;
+        padding-left: 0; 
+        height: 50%;
+      align-items: center;
     }
 
-    .contactInfo>div {
+    .form input, .form textarea {
+        padding: 10px;
+        margin-top: 20px;
         margin-bottom: 40px;
-    }
+        border: 1px solid #9f9f9f;
+        border-radius: 5px; 
+     } 
 
-    .form input {
-        width: 100%;
-    }
-}
+    .form button {
+       
+        width: 50%;
+        padding: 10px;
+    } 
+}   
+
