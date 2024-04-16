@@ -1,0 +1,45 @@
+name: CICD Pipeline
+
+on:
+  push:
+    branches: [ "main", "mergin_server_debug" ]
+    paths:
+      - 'server/**'
+  pull_request:
+    branches: [ "main", "mergin_server_debug" ]
+    paths:
+      - 'server/**'
+      - '.github/workflows/**'
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        path: 'server'
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '21'  # Set this to your project's required Node.js version
+
+    - name: Install PM2
+      run: npm install pm2@latest -g
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./server
+
+    - name: Start server with PM2
+      run: pm2 start index.js --name "cabinet_server"
+      env:
+        PORT: 8080  # Specify your preferred port
+        MONGO_URI: ${{ secrets.MONGO_URI }}
+        ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+        JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        EMAIL_USER: ${{ secrets.EMAIL_USER }}
+        EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+      working-directory: ./server
