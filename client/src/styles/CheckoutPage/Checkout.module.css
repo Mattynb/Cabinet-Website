@@ -50,6 +50,11 @@
     white-space: pre-wrap;
 }
 
+.billingDetailsTitle {
+    font-size: 25px; 
+}
+
+
 .form {
     flex: 2;
     width: 300px;
@@ -84,6 +89,38 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 16;
+}
+
+.productSubtotal {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+    gap: 100px; /* Adjust the gap between columns */
+}
+
+.productTitle,
+.subtotalTitle {
+    font-weight: bold;
+}
+
+.productItem,
+.productSubtotalAmount {
+    flex: 1;
+
+}
+
+.additionalInfo {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.placeOrderButton {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.separator {
+    border-top: 1px solid #ccc;
+    margin: 20px 0;
 }
 
 @media (max-width: 768px) {
@@ -122,4 +159,8 @@
     .form input {
         width: 100%;
     }
+
+
+
 }
+
