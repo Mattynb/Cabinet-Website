@@ -27,11 +27,8 @@ jobs:
         node-version: '21'  # Set this to your project's required Node.js version
 
     - name: Install dependencies
-      run: |
-        cd server
-        npm install
-      working-directory: ./server
-
+      run: npm install-server
+      
     - name: Start server with PM2
       run: pm2 start index.js --name "cabinet_server"
       env:
