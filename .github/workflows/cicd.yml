@@ -28,18 +28,11 @@ jobs:
         node-version: '21'  # Set this to your project's required Node.js version
 
     - name: Install dependencies
-      run: | 
-        cd server 
+      run: |
+        cd server
         npm install
-      
+
     - name: Start server with PM2
       run: |
-        pm2 start index.js --name "cabinet_server"
+        pm2 start ecosystem.config.js --env prod
         pm2 save
-      env:
-        PORT: 8080  # Specify your preferred port
-        MONGO_URI: ${{ secrets.MONGO_URI }}
-        ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
-        JWT_SECRET: ${{ secrets.JWT_SECRET }}
-        EMAIL_USER: ${{ secrets.EMAIL_USER }}
-        EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
