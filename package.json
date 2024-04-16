@@ -18,7 +18,6 @@
   },
   "scripts": {
     "install-all": "concurrently \"cd ./server && npm i\" \"cd ./client && npm i\"",
-    "install-server": "cd ./server && npm i",
     "start": "concurrently \"cd ./server && npm start\" \"cd ./client && npm start\"",
     "delete-modules": "rm -r ./node_modules && cd ./server && rm -r ./node_modules && cd ../client && rm -r ./node_modules"
   },
