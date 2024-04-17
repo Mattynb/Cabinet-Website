@@ -36,7 +36,6 @@
   width: 404px;
   height: 582px;
   object-fit: cover; /* Cover to ensure the images cover their area */
-  opacity: 1; /* Make images visible */
   cursor: pointer; /* Indicates clickable images */
 }
 
