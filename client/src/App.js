@@ -24,25 +24,14 @@ export default function App() {
           <Route
             path="/"
             element={
-              isLoggedIn ? (
                 <>
-                  <LoggedInText />
+                  <InDevelopmentText />
                   <HeroSection />
                   <BrowserRange />
                   <ProductsSection />
                   <DesignInspiration />
                   <ContactForm />
                 </>
-              ) : (
-                <>
-                  <LoggedOutText />
-                  <HeroSection />
-                  <BrowserRange />
-                  <ProductsSection />
-                  <DesignInspiration />
-                  <ContactForm />
-                </>
-              )
             }
           />
           <Route path="/shop" element={<Shop />} />
@@ -68,4 +57,10 @@ const LoggedInText = () => {
 
 const LoggedOutText = () => (
   <p>Don't forget to start your backend server, then authenticate yourself.</p>
+);
+
+const InDevelopmentText = () => (
+  <p>
+    This website is still in development. Please check back later for more!
+  </p>
 );

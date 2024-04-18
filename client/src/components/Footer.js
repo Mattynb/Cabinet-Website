@@ -1,14 +1,24 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import style from '../styles/Nav/Footer.module.css';
+import subscribeToNewsletter from "../utils/subscribeToNewsletter";
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you can handle the form submission, e.g., sending the data to an API
-    console.log({ email });
+    subscribeToNewsletter(email, (error, data) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(data);
+        alert('You have successfully subscribed to our newsletter!');
+      }
+    }
+    );
   };
+
   return (
     <div className={style.footer} position='static'>
         <div className={style.group45}>
