@@ -12,7 +12,6 @@ export default function Footer() {
       if (error) {
         console.error(error);
       } else {
-        console.log(data);
         alert('You have successfully subscribed to our newsletter!');
       }
     }
