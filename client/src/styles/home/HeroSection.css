@@ -1,18 +1,72 @@
+.hero-section {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.hero {
+  display: flex;
+  position: relative;
+}
+
 .hero-img img {
   width: 100vw;
   height: 716px;
+  overflow: hidden;
 }
 
 .hero-container {
-  margin-left: 2rem;
-  width: 643px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-right: 2rem;
+  width: 50%;
+  max-width: 643px;
   height: 443px;
-  background-color: #ffff;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0 2rem;
+  padding-top: 3rem;
 }
 
 .new-arrival {
   font-family: "Poppins", sans-serif;
   color: #333333;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
+  margin-bottom: -2rem;
+  letter-spacing: 2px;
+}
+
+.hero-container h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 52px;
+  font-weight: 800;
+  color: #0e3a77;
+  width: 500px;
+  line-height: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.lorem {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  width: 480px;
+  line-height: 25px;
+}
+
+.hero-container button {
+  padding: 1rem 2.5rem;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-weight: 600;
+  background-color: #0e3a77;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hero-container button:hover {
+  color: white;
+  background-color: #365887;
 }

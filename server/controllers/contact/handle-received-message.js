@@ -13,7 +13,7 @@ const handleReceivedMessage = async (req, res) => {
 
         // Send acknowledgment email to the sender
         await sendEmail({
-            from: '"Your Company Name" <yourcompanyemail@gmail.com>',
+            from: '"PAC Kitchen & Bath " <yourcompanyemail@gmail.com>',
             to: email,
             subject: "We've received your message",
             text: `Hello ${name},\n\nThank you for contacting us. Your message is very important to us and we will get back to you as soon as possible.\n\nBest Regards,\nYour Company Name`,
@@ -24,7 +24,7 @@ const handleReceivedMessage = async (req, res) => {
         const { sendEmail } = require('../utils/emailUtility'); // Send notification email to the admin
 
         await sendEmail({
-            from: '"Your Company Name" <yourcompanyemail@gmail.com>',
+            from: '"PAC Kitchen & Bath" <yourcompanyemail@gmail.com>',
             to: process.env.ADMIN_EMAIL,
             subject: "New Contact Form Submission",
             text: `A new contact form submission from ${name} (${email}): ${message}`,
