@@ -1,3 +1,7 @@
+const Contact = require('../../models/Contact'); // Adjust the path as necessary
+const { sendEmail } = require('../../utils/emailUtility'); // Send notification email to the admin
+
+
 const handleReceivedMessage = async (req, res) => {
     try {
         const { name, email, category, message, createdAt } = req.body;
@@ -20,9 +24,7 @@ const handleReceivedMessage = async (req, res) => {
             html: `<p>Hello ${name},</p><p>Thank you for contacting us. Your message is very important to us and we will get back to you as soon as possible.</p><p>Best Regards,<br>Your Company Name</p>`
         });
 
-        const Contact = require('../models/Contact'); // Adjust the path as necessary
-        const { sendEmail } = require('../utils/emailUtility'); // Send notification email to the admin
-
+        // Send notification email to the admin
         await sendEmail({
             from: '"PAC Kitchen & Bath" <yourcompanyemail@gmail.com>',
             to: process.env.ADMIN_EMAIL,
