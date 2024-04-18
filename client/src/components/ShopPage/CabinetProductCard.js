@@ -2,6 +2,22 @@ import React from "react";
 import "../../styles/ShopPage/CabinetProductCard.css";
 
 function CabinetProductCard({ cabinet }) {
+  // const dispatch = useDispatch();
+
+  // function addCart() {
+  //   return (
+  //     dispatch(
+  //       addToCart({
+  //         id: cabinet.id,
+  //         item: cabinet.item,
+  //         description: cabinet.description,
+  //         price: cabinet.price,
+  //         image: cabinet.image,
+  //       })
+  //     ) & toast.success(`${cabinet.item} has been added to your cart!`)
+  //   );
+  // }
+
   return (
     <div className="cabinet-product-card">
       <div className="cabinet-image">
