@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';  
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';  
 
 const ThreeD = () => {
   const sceneRef = useRef();
@@ -12,18 +12,18 @@ const ThreeD = () => {
     window.onload = function() {
       // Set up scene
       scene = new THREE.Scene();
-      scene.background = new THREE.Color(0xeeeeee);
 
       // setup the camera
       var fov = 75;
-      var ratio =  (window.innerHeight/2) / window.innerWidth;
+      var ratio =  (window.innerHeight) / window.innerWidth;
       var zNear = 0.1;
       var zFar = 10000;
       camera = new THREE.PerspectiveCamera(fov, ratio, zNear, zFar);
       camera.position.set(-20, 10, 30);
 
-      renderer = new THREE.WebGLRenderer({antialias: true});
-      renderer.setSize(window.innerHeight / 4, window.innerWidth / 2);
+      renderer = new THREE.WebGLRenderer({antialias: true},{alpha: true});
+      renderer.setClearColor(0x000000, 0);
+      renderer.setSize(window.innerHeight / 2, window.innerWidth / 2);
       sceneRef.current.appendChild(renderer.domElement);
 
       // set up ambient light
@@ -31,19 +31,22 @@ const ThreeD = () => {
       scene.add( ambientLight );
 
       // set up directional light
-      var light = new THREE.DirectionalLight( 0xffffff, 5.0 );
-      light.position.set( 0, 100, 10);
+      var light = new THREE.DirectionalLight( 0xffffff, 10.0 );
+      light.position.set( 10, 50, 10);
       scene.add( light );
+      var light2 = new THREE.DirectionalLight( 0xffffff, 10.0 );
+      light2.position.set( -10, 50, -10);
+      scene.add( light2 );
+      var light3 = new THREE.DirectionalLight( 0xffffff, 10.0 );
+      light3.position.set( 10, -50, 10);
+      scene.add( light3 );
 
       controls = new OrbitControls( camera, renderer.domElement);
 
       // Load GTFL model
       loader = new GLTFLoader();
-      loader.load("cabinet.gltf", (gltf) => {
+      loader.load("cabinet.glb", function (gltf)  {
         var poly = gltf.scenes[0].children[0];
-          //poly.scale.x = 10;
-          //poly.scale.y = 10;
-          //poly.scale.z = 10;
 
           poly.quaternion.w = 1;
           poly.quaternion.x = 0;

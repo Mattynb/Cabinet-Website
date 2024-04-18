@@ -30,18 +30,16 @@ function About() {
                • ½” Plywood Box with UV Coated Matching Exterior<br/>
                • Glue & Staple or Metal Clip Assembly<br/>
                • UV Coated Natural Interior</p>
-          <div className={style.model}>
-            <Three />
+            <div className={style.model}>
+              <Three />
+            </div>
           </div>
-          </div>
-          <div>
           <img src="/image 11.png" alt="Shaker" />
-          </div>
         </div>
         
         <div className={style.group179}>
-        <div className="text">Take a Closer Look</div>
-        <img src="/Framed 1.png" alt="Closer Look" />
+          <div className={style.text}>Take a Closer Look</div>
+          <img src="/Framed 1.png" alt="Closer Look" />
         </div>
       </div>
     )
