@@ -69,3 +69,4 @@ Open terminal #2 (frontend)
 Special Thanks To Our Collaborators (In no specific order)
 (ADD YOUR NAME HERE), ...
 Minh Nguyen
+Kevin Tran
