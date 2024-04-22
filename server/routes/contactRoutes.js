@@ -4,6 +4,6 @@ const router = express.Router();
 
 
 // POST route for creating a new contact entry
-router.post('/', handleReceivedMessage);
+router.post('/contact', handleReceivedMessage);
 
 module.exports = router;
