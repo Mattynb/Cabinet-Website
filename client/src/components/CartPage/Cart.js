@@ -49,57 +49,7 @@ function Cart() {
     const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
     return total.toFixed(2); // Limit to two decimal places
   };
-
-  useEffect(() => {
-    // Mock product object for testing
-    const testProduct = {
-      id: 1,
-      name: "Test Product",
-      price: 10.99,
-      quantity: 1, // Initial quantity
-      // Other properties if needed
-    };
-
-    const testProduct2 = {
-      id: 2,
-      name: "Test Product2",
-      price: 8.99,
-      quantity: 5, // Initial quantity
-      // Other properties if needed
-    };
-
-    const testProduct3 = {
-      id: 3,
-      name: "Test Product3",
-      price: 15.99,
-      quantity: 8, // Initial quantity
-      // Other properties if needed
-    };
-
-    const testProduct4 = {
-      id: 4,
-      name: "Test Product4",
-      price: 15.99,
-      quantity: 6, // Initial quantity
-      // Other properties if needed
-    };
-
-    const testProduct5 = {
-      id: 5,
-      name: "Test Product5",
-      price: 15.99,
-      quantity: 6, // Initial quantity
-      // Other properties if needed
-    };
-
-    // Add the test product to the cart
-    addToCart(testProduct);
-    addToCart(testProduct2);
-    addToCart(testProduct3);
-    addToCart(testProduct4);
-    addToCart(testProduct5);
-  }, []);
-
+  
   return (
     <section className="shop">
   <div className="shop-hero">

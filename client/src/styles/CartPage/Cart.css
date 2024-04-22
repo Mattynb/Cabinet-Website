@@ -120,13 +120,13 @@
 
 .cart-total {
   display: inline-block;
-  position: relative;
+  position: absolute;
   max-width: 393px;
   max-height: 390px;
   width: 30vw;
   height: 50vw;
-  left: 68%;
-  top: -30vw;
+  left: 70vw;
+  top: 34vw;
   background-color: #f2f5ff;
   z-index: 2;
 }
@@ -233,6 +233,7 @@
   position: relative;
   width: 817px;
   height: 100%;
+  min-height: 50vh;
   margin-top: 10%;
   left: 10%;
   z-index: 1;
@@ -271,6 +272,7 @@
     position: relative;
     top: 0;
     left: 145%;
+    margin-top: 3%;
     transition: none;
   }
 
@@ -283,7 +285,8 @@
     max-width: 90vw;
     width: 100%;
     max-height: 390px;
-    margin-top: 35%; /* Adjust the distance from the top as needed */
+    top: 15%;
+    margin-top: 15%; /* Adjust the distance from the top as needed */
     left: 5%; /* Adjust left position relative to the viewport */
   }
   .cart-totals-title {
