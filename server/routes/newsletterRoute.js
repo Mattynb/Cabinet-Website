@@ -1,9 +1,9 @@
 // newsletterRoutes.js
 const express = require('express');
 const router = express.Router();
-const Subscriber = require('../models/NewsLetter');
+const Subscriber = require('../models/Newsletter');
 
-router.post('/subscribe', async (req, res) => {
+router.post('/newsletter/subscribe', async (req, res) => {
   const { email } = req.body;
 
   try {

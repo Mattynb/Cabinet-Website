@@ -58,14 +58,6 @@ const DesignInspiration = () => {
               }}
               alt="Inspiration Middle"
             />
-            <div
-              className={styles.swiperItem}
-              style={{
-                backgroundImage:
-                  "url(https://media.discordapp.net/attachments/1215179484110790706/1226253330083221547/TGW-OSCC.jpg?ex=66241868&is=6611a368&hm=6367f7eb96a3a14d069106184be3a6f9e70f65d31def58740430e6c38fe8875c&=&format=webp&width=1248&height=702)",
-              }}
-              alt="Inspiration Middle"
-            />
           </Link>
         </SwiperSlide>
         <SwiperSlide>
