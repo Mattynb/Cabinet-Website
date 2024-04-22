@@ -1,0 +1,301 @@
+.contactSection {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.header {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.paragraph {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+    color: #9f9f9f;
+}
+
+.contactContainer {
+    display: flex;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 60px auto 0 auto;
+}
+
+.contactInfo {
+    flex: 1;
+    min-width: 400px;
+}
+
+.contactInfo strong {
+    font-size: 24px;
+}
+
+.contactInfo>div {
+    margin-bottom: 60px;
+}
+
+.contactInfo>div>svg {
+    margin-right: 10px;
+}
+
+.contactInfo p {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 34px;
+    white-space: pre-wrap;
+}
+
+.billingDetailsTitle {
+    font-size: 22px; 
+    margin-top: 0;
+    margin-bottom: 100px;
+    white-space: pre-wrap;
+}
+
+
+.form {
+    flex: 2;
+    width: 510px;
+}
+
+.form input {
+    width: 80%;
+    padding: 16px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: 1px solid #9f9f9f;
+    border-radius: 5px;
+}
+
+.form textarea {
+    width: 100%;
+    height: 105px;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: 1px solid #9f9f9f;
+    border-radius: 5px;
+    font-family: Roboto, sans-serif;
+}
+
+.form button {
+    width: 40%;
+    padding: 10px;
+    color: white;
+    background-color: #0E3A77;
+    border: 1px solid #9f9f9f;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16;
+}
+
+/* Checkout.module.css */
+.checkoutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 34px; 
+    white-space: pre-wrap;
+    margin: auto 60px auto 0;
+    margin: 20px auto auto 0;
+    max-width: 80%;
+    text-align: center;
+}
+
+
+.inputGroup {
+    justify-content: space-between;
+    width: 89%;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+}    
+
+.firstname,
+.lastname {
+    font-weight: normal;
+    font-size: 16px; 
+    white-space: pre-wrap;
+    padding-left: 5px;
+}
+
+
+.setCountry {
+    display: grid;
+    margin-top: 10px;
+    font-size: 17px; /* Increase font size */
+    font-weight: normal; /* Make the label bold */
+    margin-bottom: 25px; /* Add some space below the label */
+}
+
+.countryDropdown {
+    width: 80%; /* Make the dropdown fill its container */
+    font-size: 16px; /* Increase font size */
+    padding: 5px; /* Add padding for better visual appearance */
+    padding-left: 20px;
+}
+
+.productSubtotal {
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 200px
+}
+
+.productTitle,
+.subtotalTitle {
+    font-weight: bold;
+    font-size: 21px; 
+    margin-top: 0;
+    margin-bottom: 10;
+    padding-left: 34px; 
+    white-space: pre-wrap;
+    padding-left: 10px;
+}
+
+.totalPrice {
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 200px;
+}
+
+.totalTitle{
+    font-size: 15px;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 200px;
+    padding: 10px 30px;
+    padding-left: 10px;
+}
+
+.price {
+    font-size: 25px;
+    color:#003d82;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 200px;
+    padding: 10px 30px;
+    padding-left: 10px; 
+}
+
+.itemTitle{
+    font-size: 15px;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 200px;
+    padding: 10px 30px;
+}
+
+.additionalInfo {
+    font-size: 14px;
+    color: #000000;
+    /*color: #6c757d;*/
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    padding-top: 10px; 
+}
+
+
+
+.additionalInfoLine {
+    border-top: 1px solid #C0C0C0 ; 
+    margin-bottom: 10px;    
+}
+
+.placeOrderButton {
+    width: 40%;
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16;
+}
+
+.placeOrderButton button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 15px;
+    color: black;
+    background-color: white;
+    border: 1px solid #000000; /* Add border with solid style and black color */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+.placeOrderButton button:hover {
+    background-color: #003d82;
+}
+
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 24px;
+    }
+
+    .paragraph {
+        font-size: 14px;
+        width: 80%;
+    }
+
+
+    .contactContainer {
+        flex-direction: column;
+        margin: 60px auto 0 auto;
+        max-width: 80%;
+        text-align: center;
+    }
+
+    .contactInfo,
+    .form {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .contactInfo p {
+        padding-left: 0;
+        ;
+    }
+
+    .contactInfo>div {
+        margin-bottom: 40px;
+    }
+
+    .form input {
+        width: 100%;
+    }
+
+    .countryDropdown {
+        width: 100%;
+    }
+
+    .inputGroup {
+        min-width: 0;
+        width: 100%;
+    }
+
+
+
+}
+

@@ -25,7 +25,14 @@
     "concurrently": "^6.3.0"
   },
   "dependencies": {
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
+    "@reduxjs/toolkit": "^2.2.3",
+    "react-redux": "^9.1.1",
     "react-router-dom": "^6.22.3",
-    "swiper": "^11.1.1"
+    "react-toastify": "^10.0.5",
+    "redux": "^5.0.1",
+    "redux-persist": "^6.0.0",
+    "swiper": "^11.1.0"
   }
 }

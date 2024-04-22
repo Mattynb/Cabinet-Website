@@ -13,16 +13,17 @@ jobs:
     steps:
     - name: Delete Old Container
       run: sudo docker rm -f cabinet_server || true
+    - name: Delete all Stopped images and containers
+      run: yes | sudo docker system prune -a 
     - name: Run New Container
       env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         MONGO_URI: ${{ secrets.MONGO_URI }}
         JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        EMAIL_USER: ${{ secrets.EMAIL_USER }}
+        EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
       run: |
-        sudo docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        sudo docker pull $DOCKER_USERNAME/cabinet_server:latest
-        sudo docker run -d -p 8080:8080 --name cabinet_server \
-          -e MONGO_URI="${MONGO_URI}" \
-          -e JWT_SECRET="${JWT_SECRET}" \
-          $DOCKER_USERNAME/cabinet_server:latest
+        export MONGO_URI=${{ secrets.MONGO_URI }}
+        export JWT_SECRET=${{ secrets.JWT_SECRET }}
+        export EMAIL_USER=${{ secrets.EMAIL_USER }}
+        export EMAIL_PASS=${{ secrets.EMAIL_PASS }}
+        npm start

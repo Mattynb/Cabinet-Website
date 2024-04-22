@@ -1,5 +1,5 @@
 # Specify the base image
-FROM node:alpine
+FROM node:21-alpine
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
@@ -8,13 +8,13 @@ WORKDIR /usr/src/app
 COPY ./package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm i 
 
 # Copy the rest of the application code
-COPY . .
+COPY . . 
 
 # Expose the port the app runs on
-EXPOSE 8080 
+EXPOSE 8080
   
 # Command to run the server
 CMD ["node", "index.js"]

@@ -36,7 +36,6 @@
   width: 404px;
   height: 582px;
   object-fit: cover; /* Cover to ensure the images cover their area */
-  opacity: 1; /* Make images visible */
   cursor: pointer; /* Indicates clickable images */
 }
 
@@ -46,7 +45,6 @@ height: 582px;
 top: 592px;
 left: 186px;
 gap: 0px;
-opacity: 0px;
 
 }
 
@@ -56,7 +54,7 @@ opacity: 0px;
   top: 592px;
   left: 186px;
   gap: 0px;
-  opacity: 0px;
+  
 
 }
 
@@ -66,7 +64,6 @@ opacity: 0px;
   top: 592px;
   left: 186px;
   gap: 0px;
-  opacity: 0px;
 
 }
 

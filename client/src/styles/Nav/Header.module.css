@@ -58,14 +58,13 @@
   }
 
   .cartButton {
-    width: Hug (87px)px;
-    height: Hug (30px)px;
+    width: 87px;
+    height: 30px;
 
     padding: 6px 30px 6px 30px;
     gap: 10px;
   
     border: 1px solid black;
-    opacity: 0px;
     background-color: white;
     border-radius: 50px;
 
@@ -110,14 +109,6 @@
     border: 1px 0px 0px 0px;
   }
 
-  .frame153 {
-    width: Hug (219px)px;
-    height: Hug (30px)px;
-    top: 685px;
-    left: 1129px;
-    gap: 14px;
-  }
-
   .subtotal {
     width: 68px;
     height: 24px;
@@ -136,8 +127,6 @@
     height: 24px;
     top: 615px;
     left: 1298px;
-    gap: 0px;
-    opacity: 0px;
 
     font-family: Poppins;
     font-size: 16px;
@@ -164,7 +153,6 @@
     height: 36px;
     top: 28px;
     left: 1053px;
-    gap: 0px;
 
     font-family: Poppins;
     font-size: 24px;
@@ -195,12 +183,28 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-
     top: 11.5px;
     left: 44px;
     gap: 10px;
-
 }
+
+.menu{
+  display: none;
+}
+
+.myLinks ul{
+  display: flex;
+  flex-wrap: wrap;
+  float: right;
+  margin: 20 0px;
+  padding: 0 25px;
+}
+
+.myLinks ul li{
+  list-style-type: none;
+  padding-right: 10px;
+}
+
   /* Header */
 
 @media (max-width: 768px) {
@@ -208,14 +212,15 @@
       height: 70px;
       padding: 0;
   }
-
   .logo {
     width:69px ;
     height:72px;
   }
-
-  .icon {
-    display:none;
+  .buttonContainer{
+    display: none;
+  }
+  .menu{
+    display:block;
   }
 
 }
