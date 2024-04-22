@@ -46,7 +46,8 @@ const Checkout = () => {
                 <div>
                 <strong className={styles.billingDetailsTitle}>Billing details</strong>
                 <form onSubmit={handleSubmit} className={styles.form}>
-                    <div className={styles.inputGroup}>
+                   <div className= {styles.inputGroup}> 
+                    <div className={styles.firstname}>
                         <label htmlFor="first_name">First Name </label>
                         <input
                             type="text"
@@ -55,10 +56,11 @@ const Checkout = () => {
                             onChange={(e) => setFirstName(e.target.value)}
                             placeholder=""
                             required
+                         
                         />
                  
                     </div>  
-                    <div className={styles.inputGroup}>
+                    <div className={styles.lastname}>
                     <label htmlFor="last_name">Last Name  </label>
                         <input
                             type="text"
@@ -68,87 +70,72 @@ const Checkout = () => {
                             placeholder=""
                             required
                         />   
-            
-                    </div>
+                      </div>
+                    </div> 
                     <label htmlFor="customer_email">Company Name (optional)
                         <input
                             style={{ display: 'block' }}
-                            type="email"
-                            value={email}
-                            id='customer_email'
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder=""
                             required
                         />
                     </label>
                     
-                    <label htmlFor="country" className={styles.inputLabel} > Country </label>
+
+                    <div className={styles.setCountry}>
+                    <label htmlFor="country"> Country </label>
                         <CountryDropdown
-                         country={country}
-                         region={region}
-                         onCountryChange={(val) => setCountry(val)}
-                         valueType="short"
+                         value={country}
+                         onChange={(val) => setCountry(val)}
+                         valueType="full"
+                         required
+                         className={styles.countryDropdown}
                         />
+                   </div>
 
-        
-
+    
                     <label htmlFor="customer_message">Street address
                         <input
                             style={{ display: 'block' }}
-                            value={message}
-                            id='customer_message'
-                            onChange={(e) => setMessage(e.target.value)}
-                            placeholder=""
+                           
                             required
                         />
                     </label>
                     <label htmlFor="customer_message">Town / City
                         <input
                             style={{ display: 'block' }}
-                            value={message}
-                            id='customer_message'
-                            onChange={(e) => setMessage(e.target.value)}
-                            placeholder=""
+                           
                             required
                         />
                     </label>
                     <label htmlFor="customer_message">Province
                         <input
                             style={{ display: 'block' }}
-                            value={message}
-                            id='customer_message'
-                            onChange={(e) => setMessage(e.target.value)}
-                            placeholder=""
+                            
                             required
                         />
                     </label>
                     <label htmlFor="customer_message">ZIP code
                         <input
                             style={{ display: 'block' }}
-                            value={message}
-                            id='customer_message'
-                            onChange={(e) => setMessage(e.target.value)}
-                            placeholder=""
+                            
                             required
                         />
                     </label>
                     <label htmlFor="customer_message">Phone
                         <input
                             style={{ display: 'block' }}
-                            value={message}
-                            id='customer_message'
-                            onChange={(e) => setMessage(e.target.value)}
-                            placeholder=""
+                            
                             required
                         />
                     </label>
-                    <label htmlFor="customer_message">Email address
+                    <label htmlFor="email_address">Email address
                         <input
+                            type="email"
+                            id="email_address"
                             style={{ display: 'block' }}
-                            value={message}
-                            id='customer_message'
-                            onChange={(e) => setMessage(e.target.value)}
-                            placeholder=""
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             required
                         />
                     </label>
@@ -158,30 +145,37 @@ const Checkout = () => {
                             value={message}
                             id='customer_message'
                             onChange={(e) => setMessage(e.target.value)}
-                            placeholder="Additional infomation"
+                            placeholder="Additional Information"
                             required
                         />
                     </label>
                     <button type="submit">Submit</button>
                 </form>
                 </div>
-                <div className={styles.productSubtotal}>
+                <div className={styles.checkoutContainer}>
+                  <div className={styles.productSubtotal}>
                     <div className={styles.productTitle}><strong>Product</strong></div>
                     <div className={styles.subtotalTitle}><strong>Subtotal</strong></div>
-                
-                </div>
+                  </div>
 
-                <div>Total Price: ${totalPrice}</div>
+                  <div className={styles.itemTitle}>Item 1</div>
 
+                  <div className={styles.totalPrice}>
+                    <div className={styles.totalTitle}>Total</div>
+                    <div className={styles.price}> ${totalPrice}</div>
+                  </div>
+            
 
                 <div className={styles.additionalInfo}>
+                <div className={styles.additionalInfoLine}></div> 
                       Your personal data will be used to support your experience throughout this website, 
-                      to manage access to your account, and for other purposes described in our privacy policy.
+                      to manage access to your account, and for other purposes described in our <strong>privacy policy. </strong>
                 </div>
 
 
                 <div className={styles.placeOrderButton}>
                     <button type="submit">Place Order</button>
+               </div>
                </div>
             </div>
 
