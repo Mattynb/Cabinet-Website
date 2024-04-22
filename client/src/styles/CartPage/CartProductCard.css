@@ -1,44 +1,37 @@
-.product-card {
-  display: flex;
-  padding: 10px;
-  border-bottom: none;
-}
-
 .product-details {
-  width: auto;
+  width: 100%; /* Set width to 100% to ensure it fills its container */
   display: flex;
-  flex-direction: row; /* Change to row */
-  justify-content: center;
-  margin-left: 20px; /* Adjust spacing between image and details */
+  flex-direction: row; /* Ensure items are laid out horizontally */
+  justify-content: center; /* Center items horizontally within the container */
+  margin-left: 9vw; /* Adjust spacing between image and details using vw */
 }
 
 .product-details img {
-  width: 105px; /* Adjust width as needed */
-  height: 105px; /* Adjust height as needed */
+  width: 1.8vw; /* Adjust image width as a percentage of viewport width */
+  height: auto; /* Let height adjust proportionally based on width */
 }
 
 .product-details h3 {
-  margin-top: 17px;
-  margin-left : 11px;
-  font-weight: normal;
+  margin-top: 1.8vh; /* Adjust top margin using percentage of viewport height */
+  margin-left: 1vw; /* Adjust left margin using vw */
 }
 
 .product-details p {
-  margin-left: 84px;
-  margin-top: 20px;
+  margin-left: 3vw; /* Adjust left margin using vw */
+  margin-top: 2vh; /* Adjust top margin using percentage of viewport height */
 }
 
 .product-details input {
-  width: 40px; /* Adjust width as needed */
-  height: 35px;
-  margin-left: 170px; /* Adjust margin to move the quantity */
-  margin-top: 10px;
+  width: 5vw; /* Adjust input width using percentage of viewport width */
+  height: 5vh; /* Adjust input height using percentage of viewport height */
+  margin-left: 5vw; /* Adjust left margin using vw */
+  margin-top: 1vh; /* Adjust top margin using percentage of viewport height */
 }
 
 .subtotal-container {
   position: relative;
-  margin-left: 55px;
-  margin-top: 15px;
+  margin-left: 3vw; /* Adjust margin using vw */
+  margin-top: 2vh; /* Adjust margin using percentage of viewport height */
 }
 
 .product-details button {
@@ -48,8 +41,113 @@
 }
 
 .product-details button img {
-  margin-left: 40px;
-  margin-top: -10px;
-  width: 28px; /* Adjust width as needed */
-  height: 28px; /* Adjust height as needed */
+  margin-left: 2vw; /* Adjust margin using vw */
+  margin-top: -1vh; /* Adjust margin using percentage of viewport height */
+  width: 1.8vw; /* Adjust image width using percentage of viewport width */
+  height: auto; /* Let height adjust proportionally based on width */
+}
+
+@media (max-width: 1400px) {
+
+  .product-details {
+    display: flex;
+    width: 80%; /* Reduce the width to 90% */
+  }
+  
+  .product-details img {
+    width: 10%; /* Set the image width to a percentage */
+    
+  }
+  
+  .product-details h3 {
+    position: relative;
+    margin-top: 1.5vh; /* Reduce the top margin */
+    font-size: 1.5vw; /* Reduce the font size */
+    margin-left: 1vw; /* Adjust the left margin */
+    left: 10vw;
+  }
+  
+  .product-details p {
+    position: relative;
+    margin-left: 5vw; /* Adjust the left margin */
+    margin-top: 1.5vh; /* Reduce the top margin */
+    font-size: 1.5vw; /* Reduce the font size */
+    left: 11vw;
+  }
+  
+  .product-details input {
+    position: relative;
+    width: 15%; /* Set the input width to a percentage */
+    height: 4vh; /* Reduce the input height */
+    margin-left: 1.5vw; /* Adjust the left margin */
+    margin-top: 1vh; /* Adjust the top margin */
+    left: 15vw;
+  }
+  
+  .subtotal-container {
+    position: relative;
+    left: 4.5vw;
+    margin-left: 1.5vw; /* Adjust the left margin */
+    margin-top: 1.5vh; /* Reduce the top margin */
+  }
+  
+  .product-details button img {
+    position: relative;
+    left: 5vw;
+    margin-left: 1vw; /* Adjust the left margin */
+    margin-top: -0.5vh; /* Reduce the top margin */
+    width: 50%; /* Set the image width to a percentage */
+  }
+}
+
+@media (max-width: 700px) {
+
+  .product-details {
+    display: flex;
+    width: 80%; /* Reduce the width to 90% */
+  }
+  
+  .product-details img {
+    width: 10%; /* Set the image width to a percentage */
+  }
+  
+  .product-details h3 {
+    position: relative;
+    margin-top: 1.5vh; /* Reduce the top margin */
+    font-size: 1.2vw; /* Reduce the font size */
+    margin-left: 1vw; /* Adjust the left margin */
+    left: 15vw;
+  }
+  
+  .product-details p {
+    position: relative;
+    margin-left: 5vw; /* Adjust the left margin */
+    margin-top: 1.5vh; /* Reduce the top margin */
+    font-size: 1.5vw; /* Reduce the font size */
+    left: 16vw;
+  }
+  
+  .product-details input {
+    position: relative;
+    width: 15%; /* Set the input width to a percentage */
+    height: 4vh; /* Reduce the input height */
+    margin-left: 1.5vw; /* Adjust the left margin */
+    margin-top: 1vh; /* Adjust the top margin */
+    left: 19vw;
+  }
+  
+  .subtotal-container {
+    position: relative;
+    left: 4.5vw;
+    margin-left: 1.5vw; /* Adjust the left margin */
+    margin-top: 1.5vh; /* Reduce the top margin */
+  }
+  
+  .product-details button img {
+    position: relative;
+    left: 5vw;
+    margin-left: 1vw; /* Adjust the left margin */
+    margin-top: -0.5vh; /* Reduce the top margin */
+    width: 50%; /* Set the image width to a percentage */
+  }
 }
