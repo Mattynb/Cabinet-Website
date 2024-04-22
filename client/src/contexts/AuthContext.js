@@ -15,52 +15,47 @@ export function AuthProvider({ children }) {
   const [account, setAccount] = useState(null)
   const [token, setToken] = useState(localStorage.getItem('token') || null)
 
-  const register = (formData = {}) =>
-    new Promise((resolve, reject) => {
-      axios
-        .post('/auth/register', formData)
-        .then(({
-          data: {
-            data: accountData,
-            token: accessToken,
-          },
-        }) => {
-          setAccount(accountData)
-          setToken(accessToken)
-          setIsLoggedIn(true)
-          resolve(true)
-        })
-        .catch((error) => {
-          console.error('Error occurred during register:', error);
-          console.error('Error response:', error?.response);
-          console.error('Error message:', error?.response?.data?.message || error.message);
-          reject(error?.response?.data?.message || error.message);
-        })
-    })
+const register = (formData = {}) =>
+  new Promise((resolve, reject) => {
+    axios
+      .post('/auth/register', formData)
+      .then(({
+        data: {
+          data: accountData,
+          token: accessToken,
+        },
+      }) => {
+        setAccount(accountData)
+        setToken(accessToken)
+        setIsLoggedIn(true)
+        resolve(true)
+      })
+      .catch((error) => {
+        console.error(error)
+        reject(error?.response?.data?.message || error.message)
+      })
+  })
 
-  const login = (formData = {}) =>
-    new Promise((resolve, reject) => {
-      axios
-        .post('/auth/login', formData)
-        .then(({
-          data: {
-            data: accountData,
-            token: accessToken,
-          },
-        }) => {
-          setAccount(accountData)
-          setToken(accessToken)
-          setIsLoggedIn(true)
-          resolve(true)
-        })
-        .catch((error) => {
-          console.error('Error occurred during login:', error);
-          console.error('Error response:', error?.response);
-          console.error('Error message:', error?.response?.data?.message || error.message);
-          console.log('token: ', token)
-          reject(error?.response?.data?.message || error.message)
-        })
-    })
+const login = (formData = {}) =>
+  new Promise((resolve, reject) => {
+    axios
+      .post('/auth/login', formData)
+      .then(({
+        data: {
+          data: accountData,
+          token: accessToken,
+        },
+      }) => {
+        setAccount(accountData)
+        setToken(accessToken)
+        setIsLoggedIn(true)
+        resolve(true)
+      })
+      .catch((error) => {
+        console.error(error)
+        reject(error?.response?.data?.message || error.message)
+      })
+  }) 
 
   const logout = () => {
     setIsLoggedIn(false)

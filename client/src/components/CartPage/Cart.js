@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../styles/CartPage/Cart.css";
 import CartProductCard from './CartProductCard';
 import { Link } from 'react-router-dom';
+import Banner from "../Banner";
 
 function Cart() {
   // State to manage the items in the shopping cart
@@ -108,7 +109,11 @@ function Cart() {
           <div className="subtotal-value">${calculateTotal()}</div>
           <div className="total-label">Total</div>
           <div className="total-value">${calculateTotal()}</div>
-          <Link to="/checkout" className="checkout-button">Checkout</Link>
+          <Link to={{
+                    pathname: "/checkout",
+                    state: { cartItems: cartItems,
+                    totalPrice: calculateTotal() }  // Pass cartItems to the checkout page
+                }}  className="checkout-button">Checkout</Link>
         </div>
         <div className="cart-header-container">
           <div className="cart-header">
@@ -132,7 +137,9 @@ function Cart() {
           </div>
         </div>
       </div>
+      <Banner />
     </section>
+    
   );
 
 }
