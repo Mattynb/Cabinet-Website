@@ -50,9 +50,17 @@
     white-space: pre-wrap;
 }
 
+.billingDetailsTitle {
+    font-size: 22px; 
+    margin-top: 0;
+    margin-bottom: 100px;
+    white-space: pre-wrap;
+}
+
+
 .form {
     flex: 2;
-    width: 300px;
+    width: 510px;
 }
 
 .form input {
@@ -85,6 +93,161 @@
     cursor: pointer;
     font-size: 16;
 }
+
+/* Checkout.module.css */
+.checkoutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 34px; 
+    white-space: pre-wrap;
+    margin: auto 60px auto 0;
+    margin: 20px auto auto 0;
+    max-width: 80%;
+    text-align: center;
+}
+
+
+.inputGroup {
+    justify-content: space-between;
+    width: 89%;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+}    
+
+.firstname,
+.lastname {
+    font-weight: normal;
+    font-size: 16px; 
+    white-space: pre-wrap;
+    padding-left: 5px;
+}
+
+
+.setCountry {
+    display: grid;
+    margin-top: 10px;
+    font-size: 17px; /* Increase font size */
+    font-weight: normal; /* Make the label bold */
+    margin-bottom: 25px; /* Add some space below the label */
+}
+
+.countryDropdown {
+    width: 80%; /* Make the dropdown fill its container */
+    font-size: 16px; /* Increase font size */
+    padding: 5px; /* Add padding for better visual appearance */
+    padding-left: 20px;
+}
+
+.productSubtotal {
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 200px
+}
+
+.productTitle,
+.subtotalTitle {
+    font-weight: bold;
+    font-size: 21px; 
+    margin-top: 0;
+    margin-bottom: 10;
+    padding-left: 34px; 
+    white-space: pre-wrap;
+    padding-left: 10px;
+}
+
+.totalPrice {
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 200px;
+}
+
+.totalTitle{
+    font-size: 15px;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 200px;
+    padding: 10px 30px;
+    padding-left: 10px;
+}
+
+.price {
+    font-size: 25px;
+    color:#003d82;
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 200px;
+    padding: 10px 30px;
+    padding-left: 10px; 
+}
+
+.itemTitle{
+    font-size: 15px;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 200px;
+    padding: 10px 30px;
+}
+
+.additionalInfo {
+    font-size: 14px;
+    color: #000000;
+    /*color: #6c757d;*/
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    padding-top: 10px; 
+}
+
+
+
+.additionalInfoLine {
+    border-top: 1px solid #C0C0C0 ; 
+    margin-bottom: 10px;    
+}
+
+.placeOrderButton {
+    width: 40%;
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16;
+}
+
+.placeOrderButton button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 15px;
+    color: black;
+    background-color: white;
+    border: 1px solid #000000; /* Add border with solid style and black color */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+.placeOrderButton button:hover {
+    background-color: #003d82;
+}
+
 
 @media (max-width: 768px) {
     .header {
@@ -122,4 +285,17 @@
     .form input {
         width: 100%;
     }
+
+    .countryDropdown {
+        width: 100%;
+    }
+
+    .inputGroup {
+        min-width: 0;
+        width: 100%;
+    }
+
+
+
 }
+

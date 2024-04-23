@@ -1,3 +1,5 @@
+const Cabinet = require('../../models/Cabinet');
+
 const getCabinetTypeById = async (req, res) => {
     try {
         const cabinet = await Cabinet.findOne({ productId: req.params.productId });
