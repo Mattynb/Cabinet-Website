@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { Scene, PerspectiveCamera, WebGLRenderer, AmbientLight, DirectionalLight } from 'three';
+import { Scene, PerspectiveCamera, WebGLRenderer, AmbientLight, DirectionalLight } from 'three/src';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';  
 import style from "../../styles/AboutPage/About.module.css";
