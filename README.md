@@ -67,7 +67,10 @@ Open terminal #2 (frontend)
 > npm start
 
 Special Thanks To Our Collaborators (In no specific order)
-(ADD YOUR NAME HERE), ...
-Minh Nguyen
-Kevin Tran
-Hussein Khawal El Sultan
+
+Hussein Khawal El Sultan,
+Minh Nguyen, 
+Kevin Tran, 
+Waliyat Afolabi, 
+Xiaoyan Lin,
+Matheus Berbet
