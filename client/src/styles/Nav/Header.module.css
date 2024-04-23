@@ -1,7 +1,6 @@
   .header {
     position: static;
     height: 100px;
-
     width: 100% ;
     padding: 0 2rem ;
     background-color: white ;
@@ -43,7 +42,6 @@
     flex-direction: row ;
     align-items: center ;
     justify-content: space-between;
-
     width: 316px;
     height: 24px;
     top: 38px;
@@ -60,7 +58,6 @@
   .cartButton {
     width: 87px;
     height: 30px;
-
     padding: 6px 30px 6px 30px;
     gap: 10px;
   
@@ -68,32 +65,35 @@
     background-color: white;
     border-radius: 50px;
 
-    padding: 6px, 30px, 6px, 30px;
     color: black;
     font-size: 12px;
-    padding: 5%;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
     
   }
-  
+  /* Rectangle 60*/
   .cartPopout {
     display:flex; 
     flex-direction:column;
     width: 417px;
+    min-height: 746px;
     height: flex;
     left: 1023px;
     padding: 10px 40px 10px 40px;
+    justify-content: space-between;
   }
 
   .cartflex {
+    width: 100%;
+    padding-top: 19px;
+    padding-bottom: 19px;
     display:flex; 
     flex-direction:row;
-    align-items: stretch !important;
-    justify-content: space-between !important;
+    align-items:center;
+    justify-content: space-between;
   }
-
+  /* Group 149 */
   .cartitem {
     width: 347px;
     height: 105px;
@@ -103,10 +103,12 @@
 
   .group150 {
     width: 350px;
-    height: 334px;
+    height: auto;
     top: 28px;
     left: 1050px;
     border: 1px 0px 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .subtotal {
@@ -203,6 +205,28 @@
 .myLinks ul li{
   list-style-type: none;
   padding-right: 10px;
+}
+
+.cartContainer {
+  width: 817px;
+  height: 335px;
+  height: auto;
+  top: 127px;
+  left: 101px;
+  z-index: 1;
+  overflow-y: auto;
+}
+
+.cartScrollable {
+  max-height: 600px;
+  height: 100%; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.product-card {
+  display: none;
+  padding: 10px;
+  border-bottom: none;
 }
 
   /* Header */

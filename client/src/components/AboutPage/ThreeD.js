@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';  
+import style from "../../styles/AboutPage/About.module.css";
 
 const ThreeD = () => {
   const sceneRef = useRef();
@@ -15,15 +16,15 @@ const ThreeD = () => {
 
       // setup the camera
       var fov = 75;
-      var ratio =  (window.innerHeight) / window.innerWidth;
+      var ratio =  309 / 523; // figma layout
       var zNear = 0.1;
-      var zFar = 10000;
+      var zFar = 1000;
       camera = new THREE.PerspectiveCamera(fov, ratio, zNear, zFar);
-      camera.position.set(-20, 10, 30);
+      camera.position.set(5, 10, 20);
 
       renderer = new THREE.WebGLRenderer({antialias: true},{alpha: true});
       renderer.setClearColor(0x000000, 0);
-      renderer.setSize(window.innerHeight / 2, window.innerWidth / 2);
+      renderer.setSize(309, 523);
       sceneRef.current.appendChild(renderer.domElement);
 
       // set up ambient light
@@ -32,14 +33,11 @@ const ThreeD = () => {
 
       // set up directional light
       var light = new THREE.DirectionalLight( 0xffffff, 10.0 );
-      light.position.set( 10, 50, 10);
+      light.position.set( -50, 50, 50);
       scene.add( light );
       var light2 = new THREE.DirectionalLight( 0xffffff, 10.0 );
-      light2.position.set( -10, 50, -10);
+      light2.position.set( 50, -50, -50);
       scene.add( light2 );
-      var light3 = new THREE.DirectionalLight( 0xffffff, 10.0 );
-      light3.position.set( 10, -50, 10);
-      scene.add( light3 );
 
       controls = new OrbitControls( camera, renderer.domElement);
 
@@ -47,14 +45,7 @@ const ThreeD = () => {
       loader = new GLTFLoader();
       loader.load("cabinet.glb", function (gltf)  {
         var poly = gltf.scenes[0].children[0];
-
-          poly.quaternion.w = 1;
-          poly.quaternion.x = 0;
-          poly.quaternion.y = 0;
-          poly.quaternion.z = 0;
-
-          poly.translateY(2);
-
+        poly.translateY(-3);
         scene.add( gltf.scene );
       });
 
@@ -72,7 +63,7 @@ const ThreeD = () => {
   }, []);
 
   return (
-    <div ref={sceneRef} />
+    <div className={style.model} ref={sceneRef} />
   );
 };
 

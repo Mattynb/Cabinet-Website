@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
-import style from "../../styles/AboutPage/About.module.css";
 import { Link } from 'react-router-dom';
 import Three from "./ThreeD";
+import style from "../../styles/AboutPage/About.module.css";
 
 function About() {
     return (
@@ -30,13 +29,10 @@ function About() {
                • ½” Plywood Box with UV Coated Matching Exterior<br/>
                • Glue & Staple or Metal Clip Assembly<br/>
                • UV Coated Natural Interior</p>
-            <div className={style.model}>
               <Three />
-            </div>
           </div>
           <img src="/image 11.png" alt="Shaker" />
         </div>
-        
         <div className={style.group179}>
           <div className={style.text}>Take a Closer Look</div>
           <img src="/Framed 1.png" alt="Closer Look" />
