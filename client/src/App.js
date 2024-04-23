@@ -11,7 +11,8 @@ import DesignInspiration from "./components/home/DesignInspiration";
 import ProductsSection from "./components/home/ProductsSection";
 import { useAuth } from "./contexts/AuthContext";
 import HeroSection from "./components/home/HeroSection";
-import Cart from "./components/CartPage/Cart"
+import Cart from "./components/CartPage/Cart";
+import About from "./components/AboutPage/About";
 
 export default function App() {
   const { isLoggedIn } = useAuth();
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path='/gallery' element={<DesignInspiration />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/about' element={<About />} />
         </Routes>
         <Footer />
       </div>
