@@ -69,6 +69,7 @@ Open terminal #2 (frontend)
 Special Thanks To Our Collaborators (In no specific order)
 
 Hussein Khawal El Sultan,
+Tsegereda Bisrat,
 Minh Nguyen, 
 Kevin Tran, 
 Waliyat Afolabi, 
