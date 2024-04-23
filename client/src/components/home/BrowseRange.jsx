@@ -11,11 +11,11 @@ const BrowseRange = () => {
       <div className="image-container">
         <div className="image-wrapper">
           <Link to="../shop">
-          <img className="imageL" src="https://media.discordapp.net/attachments/1215179484110790706/1226253331023003790/ImageL.jpg?ex=66241868&is=6611a368&hm=f9b040ffad011854fe5216b19f5cbf12bb663176410d351ddbbafc861a07b010&=&format=webp&width=936&height=702" alt="" />
+          <img className="imageL" src="https://media.discordapp.net/attachments/1073422681808048231/1232378496760811671/ImageL.png?ex=66293d6a&is=6627ebea&hm=d7fad4efa05dd9960285b9d57cbdf08d968f86f2064866c6b6175b785f938b15&=&format=webp&quality=lossless&width=762&height=960" alt="" />
             <div className="title-bar">Framed</div>
           </Link>
           <Link to="../shop">
-            <img className="imageM" src="https://media.discordapp.net/attachments/1215179484110790706/1226253330083221547/TGW-OSCC.jpg?ex=66241868&is=6611a368&hm=6367f7eb96a3a14d069106184be3a6f9e70f65d31def58740430e6c38fe8875c&=&format=webp&width=1248&height=702" alt="" />
+            <img className="imageM" src="https://media.discordapp.net/attachments/1073422681808048231/1232378498220429403/FramelessCollec.png?ex=66293d6a&is=6627ebea&hm=0ad8147af9b629c81ab5218a80f05cb5496a7b17495833ab9ce9cf3d0296e1f5&=&format=webp&quality=lossless&width=1790&height=1006" alt="" />
             <div className="title-bar">Frameless</div>
           </Link>
           <Link to="../shop">

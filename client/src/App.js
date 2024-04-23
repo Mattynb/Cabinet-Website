@@ -13,6 +13,7 @@ import { useAuth } from "./contexts/AuthContext";
 import HeroSection from "./components/home/HeroSection";
 import Cart from "./components/CartPage/Cart"
 
+
 export default function App() {
   const { isLoggedIn } = useAuth();
 
