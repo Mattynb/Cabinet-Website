@@ -11,13 +11,17 @@ const ContactForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         // Here you can handle the form submission, e.g., sending the data to an API
-        await axios.post("/api/contact", {
-            name,
-            email, 
-            message, 
-            "category": "BUY"
-        })
-        console.log({ name, email, subject, message });
+        try {
+            await axios.post("/api/contact", {
+                name,
+                email, 
+                message, 
+                "category": "BUY"
+            });
+            alert('We have received your message! A representative will contact you soon. Thank you');
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     return (

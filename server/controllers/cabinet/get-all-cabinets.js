@@ -1,3 +1,5 @@
+const Cabinet = require('../../models/Cabinet');
+
 const getAllCabinets = async (req, res) => {
     try {
         const cabinets = await Cabinet.find();

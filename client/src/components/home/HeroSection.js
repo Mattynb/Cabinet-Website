@@ -6,7 +6,7 @@ function HeroSection() {
     <section className="hero-section">
       <div className="hero">
         <div className="hero-img">
-          <img src="/hero-img.png" alt="Hero" />
+          <img src="/hero-img1.png" alt="Hero" />
         </div>
         <div className="hero-container">
           <p className="new-arrival">New Arrival</p>

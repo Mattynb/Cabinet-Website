@@ -33,7 +33,7 @@ Then open your terminal and clone the repository:
 Go to the root of your repository's folder, and install all dependecies:
 
 > cd ~/Desktop/Cabinet-Website<br />
-> npm run install-all
+> npm run install
 
 <br />
 
@@ -65,3 +65,13 @@ Open terminal #1 (backend)
 Open terminal #2 (frontend)
 > cd ./client<br />
 > npm start
+
+Special Thanks To Our Collaborators (In no specific order)
+
+Hussein Khawal El Sultan,
+Tsegereda Bisrat,
+Minh Nguyen, 
+Kevin Tran, 
+Waliyat Afolabi, 
+Xiaoyan Lin,
+Matheus Berbet
