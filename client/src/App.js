@@ -11,7 +11,8 @@ import DesignInspiration from "./components/home/DesignInspiration";
 import ProductsSection from "./components/home/ProductsSection";
 import { useAuth } from "./contexts/AuthContext";
 import HeroSection from "./components/home/HeroSection";
-import Cart from "./components/CartPage/Cart"
+import Cart from "./components/CartPage/Cart";
+import About from "./components/AboutPage/About";
 
 export default function App() {
   const { isLoggedIn } = useAuth();
@@ -24,31 +25,21 @@ export default function App() {
           <Route
             path="/"
             element={
-              isLoggedIn ? (
                 <>
-                  <LoggedInText />
+                  <InDevelopmentText />
                   <HeroSection />
                   <BrowserRange />
                   <ProductsSection />
                   <DesignInspiration />
                   <ContactForm />
                 </>
-              ) : (
-                <>
-                  <LoggedOutText />
-                  <HeroSection />
-                  <BrowserRange />
-                  <ProductsSection />
-                  <DesignInspiration />
-                  <ContactForm />
-                </>
-              )
             }
           />
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path='/gallery' element={<DesignInspiration />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/about' element={<About />} />
         </Routes>
         <Footer />
       </div>
@@ -68,4 +59,10 @@ const LoggedInText = () => {
 
 const LoggedOutText = () => (
   <p>Don't forget to start your backend server, then authenticate yourself.</p>
+);
+
+const InDevelopmentText = () => (
+  <p>
+    This website is still in development. Please check back later for more!
+  </p>
 );

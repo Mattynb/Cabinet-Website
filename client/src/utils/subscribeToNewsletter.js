@@ -1,7 +1,8 @@
 // src/utils/subscribeToNewsletter.js
+import { BACKEND_URL } from '../constants'
 
 const subscribeToNewsletter = (email, callback) => {
-    fetch('http://localhost:8080/api/newsletter/subscribe', { // Replace with your actual backend URL
+    fetch(BACKEND_URL+"/api/newsletter/subscribe", { // Replace with your actual backend URL
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
