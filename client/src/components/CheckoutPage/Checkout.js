@@ -5,6 +5,7 @@ import styles from '../../styles/CheckoutPage/Checkout.module.css';
 import Banner from "../Banner";
 import { useLocation } from 'react-router-dom';
 import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
+import axios from "../../utils/axios";
 
 
 const Checkout = () => {
@@ -57,7 +58,23 @@ const Checkout = () => {
         e.preventDefault();
 
         if (isFormValid) {
-            console.log("Form submitted:", { firstname, lastname, email, message });
+            //POST request to the backend endpoint
+            axios.post('/api/sendEmailOnCheckout', {
+                firstname,
+                lastname,
+                email,
+                message,
+                totalPrice,
+                cartItems
+            })
+            .then(response => {
+                console.log(response.data);
+                alert('Order placed successfully!');
+            })
+            .catch(error => {
+                console.error('Error placing order:', error);
+                alert('Error placing order. Please try again.');
+            });
         } else {
             alert("Please fill in all required fields.");
         }
