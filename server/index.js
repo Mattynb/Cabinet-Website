@@ -3,10 +3,12 @@
 require('dotenv').config() // Secures variables
 const express = require('express');
 
+
 // module imports
 const server = require('./utils/server') // Backend server
 const mongo = require('./utils/mongo') // MongoDB (database)
 const {PORT} = require('./constants')
+const bodyParser = require('body-parser');
 
 // import routes
 const authRoutes = require('./routes/auth')
@@ -14,8 +16,9 @@ const cabinetRoutes = require('./routes/cabinetRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const collectionRoutes = require('./routes/collectionRoute');
 const newsletterRoutes = require('./routes/newsletterRoute');
+const checkoutRoutes = require('./routes/checkoutRoutes');
 
-// Middleware to parse JSON bodies.
+// Middleware to parse JSON bodies. 
 server.use(express.json());
 
 
@@ -39,6 +42,9 @@ async function bootstrap() {
 
   // endpoint for newsletter subscription. Make sure to sanitize input if necessary.
   server.use('/api', newsletterRoutes);
+
+  // Include the new route for handling orders
+  server.use('/api', checkoutRoutes);
 
   server.listen(PORT, () => {
     console.log(`✅ Server is listening on port: ${PORT}`)
