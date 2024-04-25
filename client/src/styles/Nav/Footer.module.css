@@ -299,7 +299,11 @@
       align-items: center;
     }
     .form button {
-      padding: 10px;
-      
-  }
+      padding: 10px;  
+    }
+
+    .confirmation {
+      text-align: center;
+      padding: auto;  
+    }
   }
