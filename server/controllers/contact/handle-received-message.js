@@ -20,8 +20,8 @@ const handleReceivedMessage = async (req, res) => {
             from: '"PAC Kitchen & Bath " <yourcompanyemail@gmail.com>',
             to: email,
             subject: "We've received your message",
-            text: `Hello ${name},\n\nThank you for contacting us. Your message is very important to us and we will get back to you as soon as possible.\n\nBest Regards,\nYour Company Name`,
-            html: `<p>Hello ${name},</p><p>Thank you for contacting us. Your message is very important to us and we will get back to you as soon as possible.</p><p>Best Regards,<br>Your Company Name</p>`
+            text: `Hello ${name},\n\nThank you for contacting us. Your message is very important to us and we will get back to you as soon as possible.\n\nBest Regards,\nPAC Kitchen & Bath`,
+            html: `<p>Hello ${name},</p><p>Thank you for contacting us. Your message is very important to us and we will get back to you as soon as possible.</p><p>Best Regards,<br>PAC Kitchen & Bath</p>`
         });
 
         // Send notification email to the admin

@@ -70,6 +70,7 @@
     
   }
   /* Rectangle 60*/
+  /* Rectangle 60*/
   .cartPopout {
     width: 417px;
     max-height: 746px;
@@ -84,11 +85,17 @@
     width: 100%;
     padding-top: 19px;
     padding-bottom: 19px;
+    width: 100%;
+    padding-top: 19px;
+    padding-bottom: 19px;
     display:flex; 
     flex-direction:row;
     align-items:center;
     justify-content: space-between;
+    align-items:center;
+    justify-content: space-between;
   }
+  /* Group 149 */
   /* Group 149 */
   .cartitem {
     width: 347px;
@@ -99,6 +106,8 @@
     width: 350px;
     height: auto;
     border: 1px 0px 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
     display: flex;
     flex-wrap: wrap;
   }

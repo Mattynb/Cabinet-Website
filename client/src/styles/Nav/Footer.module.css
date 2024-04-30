@@ -215,4 +215,9 @@
     .group44text {
       text-align: center;
     }
+
+    .confirmation {
+      text-align: center;
+      padding: auto;  
+    }
   }

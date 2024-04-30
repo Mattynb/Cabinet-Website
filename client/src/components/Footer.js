@@ -5,14 +5,15 @@ import subscribeToNewsletter from "../utils/subscribeToNewsletter";
 
 export default function Footer() {
   const [email, setEmail] = useState('');
+  const [confirmation, setConfirmation] = useState('');
+
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you can handle the form submission, e.g., sending the data to an API
     subscribeToNewsletter(email, (error, data) => {
-      if (error) {
-        console.error(error);
-      } else {
-        alert('You have successfully subscribed to our newsletter!');
+      
+      if (data) {
+        setConfirmation(data.message);
       }
     }
     );
@@ -47,7 +48,12 @@ export default function Footer() {
               </div>
             </div>
             <div className={style.emailContainer}>
-              <div className={style.gray}>Newsletter</div>
+              <div className={style.newsletter}>Newsletter</div>
+              <div className={style.newsletter.text}>
+                <p>
+                  {confirmation}
+                </p>
+              </div>
               <form onSubmit={handleSubmit} className={style.form}>
                 <label htmlFor="customer_email">
                   <div className={style.emailInput}> 
@@ -62,6 +68,7 @@ export default function Footer() {
                     />
                     <button type="submit">Subscribe</button>
                   </div>
+                  
                 </label>
               </form>
             </div>
