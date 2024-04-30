@@ -15,35 +15,38 @@ export default function Footer() {
       if (data) {
         setConfirmation(data.message);
       }
-    });
+    }
+    );
+  };
+
+  // refresh the about page onload to show 3D model
+  function refreshPage(){ 
+    window.location.href = '/about';
   };
 
   return (
     <div className={style.footer} position='static'>
         <div className={style.group45}>
           <div className={style.group32}>
-
             <div className={style.text}>
               <div className={style.name}>
                 <div>Plan Ahead Constructions</div>
                 <div className={style.blue}>Kitchen & Bath</div>
               </div>
-
               <div className={style.address}>
-              50 New Salem Street,{"\n"}
-              Wakefield, MA 01880, USA</div>
+                50 New Salem Street,<br/>
+                Wakefield, MA 01880, USA
+              </div>
             </div>
-
             <div className={style.buttonContainer}>
               <div className={style.gray}>Links</div>
               <div className={style.frame24}>
-                <Link to="/"><button class={style.button} href="#">Home</button></Link>
-                <Link to="/shop"><button class={style.button} >Shop</button></Link>
-                <Link to="/about"><button class={style.button} href="#">About</button></Link>
-                <Link to="/galery"><button class={style.button} href="#">Gallery</button></Link>
+                <Link to="/"><button class={style.button}>Home</button></Link>
+                <Link to="/shop"><button class={style.button}>Shop</button></Link>
+                <Link to="/about" onClick={ refreshPage }><button class={style.button}>About</button></Link>
+                <Link to="/galery"><button class={style.button}>Gallery</button></Link>
               </div>
             </div>
-            
             <div className={style.emailContainer}>
               <div className={style.newsletter}>Newsletter</div>
               <div className={style.newsletter.text}>
@@ -70,10 +73,9 @@ export default function Footer() {
               </form>
             </div>
           </div>
-        
           <div className={style.group44}>
             <div className={style.line4}></div>
-            <div className={style.group44text}>2023 Plan Ahead Constructions. All rights reverved</div>
+            <div className={style.group44text}>{new Date().getFullYear()} Plan Ahead Constructions. All rights reverved</div>
           </div>
         </div>
     </div>

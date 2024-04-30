@@ -17,7 +17,8 @@ import style from '../styles/Nav/Header.module.css'
 import AuthModal from './AuthModal'
 import OnlineIndicator from './OnlineIndicator'
 import MenuIcon from '@mui/icons-material/Menu';
-import CartProductCard from './CartPage/CartProductCard';
+import NavCartItem from './NavCartItem';
+import cabinetsData from "../constants/cabinetsData";
 
 export default function Header() {
   const { isLoggedIn, account, logout } = useAuth()
@@ -118,7 +119,7 @@ export default function Header() {
     // Mock product object for testing
     const testProduct = {
       id: 1,
-      name: "Test Product",
+      name: "Asgaard sofa",
       price: 10.99,
       quantity: 1, // Initial quantity
       // Other properties if needed
@@ -126,33 +127,15 @@ export default function Header() {
 
     const testProduct2 = {
       id: 2,
-      name: "Test Product2",
+      name: "Casaliving",
       price: 8.99,
       quantity: 5, // Initial quantity
-      // Other properties if needed
-    };
-
-    const testProduct3 = {
-      id: 3,
-      name: "Test Product3",
-      price: 15.99,
-      quantity: 8, // Initial quantity
-      // Other properties if needed
-    };
-
-    const testProduct4 = {
-      id: 4,
-      name: "Test Product4",
-      price: 15.99,
-      quantity: 6, // Initial quantity
       // Other properties if needed
     };
 
     // Add the test product to the cart
     addToCart(testProduct);
     addToCart(testProduct2);
-    addToCart(testProduct3);
-    addToCart(testProduct4);
   }, []);
 
   // refresh about page onload to show 3D model
@@ -162,50 +145,47 @@ export default function Header() {
 
   return (
     <div className={style.header}>
+      {/* Left */}
       <div className={style.frame168} >
         <img src="/pac_logo.jpeg" alt="Logo" className={style.logo}></img>
         <p class={style.icon}>Kitchen<br/> & Bath</p>
       </div>
-
+      {/* Middle */}
       <div className={style.buttonContainer}>
         <Link to="/"><button class={style.button}>Home</button></Link>
         <Link to="/shop"><button class={style.button} >Shop</button></Link>
         <Link to="/about" onClick={ refreshPage }><button class={style.button} >About</button></Link>
+        <Link to="/about" onClick={ refreshPage }><button class={style.button} >About</button></Link>
         <Link to="/gallery"><button class={style.button} >Gallery</button></Link>
       </div>
-
       <div className={style.menu}>
       <IconButton onClick={openNav}>
         <MenuIcon />
       </IconButton>
-
       <Popover
           anchorEl={anchorEl}
           open={nav}
           onClose={closeNav}
           anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
           transformOrigin={{vertical: 'top', horizontal: 'center'}}>
-          <List style={{width: '300px'}}>
-          
-            <Link to="/"><ListItemButton><button class={style.button}>Home</button></ListItemButton></Link>
-            <Link to="/shop"><ListItemButton><button class={style.button}>Shop</button></ListItemButton></Link>
-            <Link to="/about"><ListItemButton><button class={style.button}>About</button></ListItemButton></Link>
-            <Link to="/gallery"><ListItemButton><button class={style.button}>Gallery</button></ListItemButton></Link>
-            
+          <List style={{width: '300px', height: '300px', display:'flex', flexDirection:'column', justifyContent: 'space-around', alignItems:'center'}}>
+            <Link to="/"><ListItemButton class={style.button}>Home</ListItemButton></Link>
+            <Link to="/shop"><ListItemButton class={style.button}>Shop</ListItemButton></Link>
+            <Link to="/about" onClick={ refreshPage }><ListItemButton class={style.button}>About</ListItemButton></Link>
+            <Link to="/gallery"><ListItemButton class={style.button}>Gallery</ListItemButton></Link>
           </List>
         </Popover>
       </div>
-      
+      {/* Right */}
       <div className={style.topRightContainer}>
         <IconButton>
           <Search />
         </IconButton>
-
+        {/* Cart */}
         <div>
           <IconButton onClick={openCart}>
             <ShoppingCartIcon />
           </IconButton>
-
           <Popover
           anchorEl={anchorEl}
           open={cart}
@@ -214,74 +194,82 @@ export default function Header() {
           transformOrigin={{vertical: 'top', horizontal: 'right'}}>
           <div class={style.cartPopout}>
             <div class={style.group150}>
-            <div class={style.cartflex}>
-              <div class={style.shoppingCart}>Shopping Cart</div> 
-              <RemoveShoppingCartIcon /> 
-            </div>
-            <div class={style.line11}></div>
-            <div className={style.cartContainer}>
-              <div className={style.cartScrollable}>
-                {/* Render CartProductCard components for each item in the cart */}
-                {cartItems.map(item => (
-                  <CartProductCard 
-                    key={item.id} 
-                    cabinet={item} 
-                    onDelete={handleDelete} 
-                    onQuantityChange={handleQuantityChange} 
-                  />
-                ))}
+              <div class={style.cartflex}>
+                <div class={style.shoppingCart}>Shopping Cart</div> 
+                <IconButton onClick={closeCart}>
+                  <RemoveShoppingCartIcon /> 
+                </IconButton>
+              </div>
+              <div class={style.line11}></div>
+              <div className={style.cartContainer}>
+                <div className={style.cartScrollable}>
+                  {/* Render CartProductCard components for each item in the cart */}
+                  {cartItems.map(item => (
+                    <NavCartItem 
+                      key={item.id} 
+                      cabinet={item} 
+                      onDelete={handleDelete} 
+                      onQuantityChange={handleQuantityChange} 
+                    />
+                  ))}
+                </div>
               </div>
             </div>
-            </div>
-            <div class={style.cartflex}>
-              <div class={style.subtotal}>Subtotal</div> 
-              <div className={style.subtotalcount}>${calculateTotal()}</div>
+            <div>
+              <div class={style.cartflex}>
+                <div class={style.subtotal}>Subtotal</div> 
+                <div className={style.subtotalcount}>${calculateTotal()}</div>
+              </div>
+              <div class={style.line12}></div>
+              <div class={style.frame153}>
+                <div class={style.cartButtons}>
+                <Link to={{
+                      pathname: "/cart",
+                      state: { cartItems: cartItems,
+                      totalPrice: calculateTotal() }  // Pass cartItems to the checkout page
+                  }}><button class={style.cartButton}>Cart</button></Link>
+                </div>
+              </div>
             </div>
           </div>
-            <div class={style.line12}></div>
-            <div class={style.frame153}>
-              <div class={style.cartButtons}>
-              <Link to="/cart"><button class={style.cartButton} href="#">Cart</button></Link>
-              </div>
-            </div>
-        </Popover>
-      </div>
+          </Popover>
+        </div>
+        {/* Login */}
+        <div>
+          <IconButton onClick={openPopover}>
+            <OnlineIndicator online={isLoggedIn}>
+              <Avatar src={account?.username || ''} alt={account?.username || ''} />
+            </OnlineIndicator>
+          </IconButton>
+          
+          <Popover
+            anchorEl={anchorEl}
+            open={popover}
+            onClose={closePopover}
+            anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
+            transformOrigin={{vertical: 'top', horizontal: 'right'}}>
+            <List style={{minWidth: '100px'}}>
+              <ListSubheader style={{textAlign: 'center'}}>
+                Hello, {isLoggedIn ? account.username : 'Guest'}
+              </ListSubheader>
 
-      <div>
-        <IconButton onClick={openPopover}>
-          <OnlineIndicator online={isLoggedIn}>
-            <Avatar src={account?.username || ''} alt={account?.username || ''} />
-          </OnlineIndicator>
-        </IconButton>
-        
-        <Popover
-          anchorEl={anchorEl}
-          open={popover}
-          onClose={closePopover}
-          anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
-          transformOrigin={{vertical: 'top', horizontal: 'right'}}>
-          <List style={{minWidth: '100px'}}>
-            <ListSubheader style={{textAlign: 'center'}}>
-              Hello, {isLoggedIn ? account.username : 'Guest'}
-            </ListSubheader>
+              {isLoggedIn ? (
+                <ListItemButton onClick={logout}>Logout</ListItemButton>
+              ) : (
+                <Fragment>
+                  <ListItemButton onClick={clickLogin}>Login</ListItemButton>
+                  <ListItemButton onClick={clickRegister}>Reigster</ListItemButton>
+                </Fragment>
+              )}
+            </List>
+          </Popover>
 
-            {isLoggedIn ? (
-              <ListItemButton onClick={logout}>Logout</ListItemButton>
-            ) : (
-              <Fragment>
-                <ListItemButton onClick={clickLogin}>Login</ListItemButton>
-                <ListItemButton onClick={clickRegister}>Reigster</ListItemButton>
-              </Fragment>
-            )}
-          </List>
-        </Popover>
-
-        <AuthModal
-          open={authModal}
-          close={() => setAuthModal(false)}
-          isRegisterMode={register}
-          toggleRegister={() => setRegister((prev) => !prev)}
-        />
+          <AuthModal
+            open={authModal}
+            close={() => setAuthModal(false)}
+            isRegisterMode={register}
+            toggleRegister={() => setRegister((prev) => !prev)}
+          />
         </div>
       </div>
     </div>
