@@ -48,8 +48,8 @@ export default function Footer() {
               </div>
             </div>
             <div className={style.emailContainer}>
-              <div className={style.newsletter}>Newsletter</div>
-              <div className={style.newsletter.text}>
+              <div className={style.gray}>Newsletter</div>
+              <div className={style.gray.text}>
                 <p>
                   {confirmation}
                 </p>
