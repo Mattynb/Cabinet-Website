@@ -155,7 +155,6 @@ export default function Header() {
         <Link to="/"><button class={style.button}>Home</button></Link>
         <Link to="/shop"><button class={style.button} >Shop</button></Link>
         <Link to="/about" onClick={ refreshPage }><button class={style.button} >About</button></Link>
-        <Link to="/about" onClick={ refreshPage }><button class={style.button} >About</button></Link>
         <Link to="/gallery"><button class={style.button} >Gallery</button></Link>
       </div>
       <div className={style.menu}>
