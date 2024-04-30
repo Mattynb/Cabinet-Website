@@ -1,29 +1,16 @@
   .footer {
     /* footer */
-
-    /*
-    left: calc(50% - 1440px/2);
-    */
     position: static;
-
     width: 100% ;
     height: 394px;
-    bottom: 0px;
-
-    padding: 60px ;
-    padding-top: 40px;
-
-    background-color: white !important;
-    color: black !important;
-  
+    padding: 60px;
+    background-color: white;
+    color: black;
   }
 
   .group45 {
     width: 100%;
-    height: 272.35px;
-    top: 92px;
-    left: 100px;
-  
+    height: 272px;
     display: flex ;
     flex-direction: column;
     align-items: center;
@@ -33,9 +20,6 @@
   .group32 {
     width: 100%;
     height: 118px;
-    top: 92px;
-    left: 102px;
-
     display: flex ;
     flex-direction: row;
     align-items: center;
@@ -43,85 +27,69 @@
   }
 
   .name {
+    min-width: 190px;
     width: 100%;
     height: 100%;
-    top: 92px;
-    left: 102px;
-    
     font-family: Poppins;
     font-size: 24px;
     font-weight: 700;
     line-height: 36px;
     text-align: left;
-
     display: flex ;
     flex-direction: column; 
-
   }
 
-.blue {
-  color: #0E3A77;
-}
+  .blue {
+    color: #0E3A77;
+  }
 
   .address {
-    width: 60%;
+    width: 100%;
     height: 100%;
-    top: 159.1px;
-    left: 104.01px;
-
     font-family: Poppins;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
     text-align: left;
-
     color: #9F9F9F;
-
     display: flex ;
     flex-direction: column; 
   }
   
   .gray {
-    width: 40px;
+    width: 100%;
     height: 24px;
-
     font-family: Poppins;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
-    text-align: center;
-
+    text-align: left;
     color: gray;
   }
 
   .buttonContainer {
-    width: 316px;
+    max-width: 316px;
+    width: 100%;
     height: 92px;
-    top: 118px;
-    left: 573px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
   .button {
-    background-color: white;
+    background-color: transparent;
     border: none;
     color: black;
     font-size: 18px;
-
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
   }
 
+  /* button frame */
   .frame24 {
     width: 316px;
     height: 24px;
-    top: 38px;
-    left: 562px;
-
     display: flex;
     flex-direction: row ;
     align-items: center ;
@@ -131,45 +99,38 @@
   .emailContainer {
     width: 286px;
     height: 77px;
-    top: 118px;
-    left: 1054px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 
   }
 
+  /*input & button*/
   .emailInput {
-    display: flex;
-    flex-direction: row;
     width: 286px;
     height: 18.3px;
-    top: 176.7px;
-    left: 1054px;
     border: 1px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
 /* input box */
 .form input {
-    width: 100%;
-    padding: 0px;
+    width: 200px;
     border: 0px;
     border-bottom: 1px solid #000000;
 }
 
 .form textarea {
     width: 100%;
-    padding: 10px;
     font-family: Roboto, sans-serif;
 }
 
 .form button {
-    width: 50%;
-    padding: 0px;
-    
+    width: 75px;
     color: black;
-    background-color: white;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     font-size: 16;
@@ -180,17 +141,14 @@
 .group44 {
   width: 100%;
   height: 46.03px;
-  top: 318.32px;
-  left: 100px;
   border: 1px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
 }
 
 .group44text {
-  width: 400px;
+  width: 100%;
   height: 18.72px;
-  top: 345.63px;
-  left: 102.01px;
-
   font-family: Poppins;
   font-size: 16px;
   font-weight: 400;
@@ -202,8 +160,6 @@
 .line4 {
   width: 100%;
   height: 0px;
-  top: 318.32px;
-  left: 100px;
   border: 1px 0px 0px 0px;
   border: 1px solid #D9D9D9
 }
@@ -211,95 +167,52 @@
 .text {
   width: 322px;
   height: 100%;
-  top: 92px;
-  left: 102px;
   display: flex ;
   flex-direction: column; 
 }
 
-.newsletter {
-  width: 86px;
-  height: 18.3px;
-  top: 118px;
-  left: 1054px;
-
-  font-family: Poppins;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    text-align: center;
-
-    color: gray;
-}
-
   @media (max-width: 768px) {
     .footer {
-        padding: 0;
+      padding: 0;
     }
-
     .group45{
-      width: 100%;
       height: 100%;
-      top: 92px;
-      left: 100px;
-    
-      display: flex ;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-    
     }
-  
     .group32 {
-      width: 100%;
       height: 100%;
-      top: 92px;
-      left: 102px;
-       
-      display: flex ;
+      padding: 10px 0px 10px 0px;
       flex-direction: column;
-      align-items: center;
       justify-content: space-evenly;
     }
-
-    
     .text {
-      height: 30%;
+      height: 33%;
     }
     .gray {
       text-align: center;
     }
-
     .name {
       text-align: center;
     }
-  
     .address {
-      width: auto;
       text-align: center;
-      color: #9F9F9F;
     }
-
     .buttonContainer {
-      height: 30%;
-      align-items: center;
+      height: 33%;
       justify-content: space-evenly;
     }
-
     .emailContainer {
-      height: 30%;
-      align-items: center;
+      height: 33%;
       justify-content: space-evenly;
-      text-align: center;
     }
-    
     .emailInput {
       height: auto;
       flex-direction: column;
       align-items: center;
     }
     .form button {
-      padding: 10px;
-      
-  }
+      padding: 10px;   
+    }
+    .group44text {
+      text-align: center;
+    }
   }
