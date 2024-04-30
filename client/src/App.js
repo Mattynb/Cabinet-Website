@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Shop from "./components/ShopPage/Shop";
 import BrowserRange from "./components/home/BrowseRange";
-
+import { Checkout } from './components/CheckoutPage/Checkout';
 import ContactForm from "./components/home/ContactSection";
 import DesignInspiration from "./components/home/DesignInspiration";
 import ProductsSection from "./components/home/ProductsSection";
