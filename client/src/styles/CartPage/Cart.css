@@ -1,237 +1,343 @@
- .shop-hero {
-    position: relative;
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  
-  .shop-hero img {
-    width: 100vw;
-    height: 316px;
-  }
-  
-  .shop-hero-title,
-  .shop-hero-home,
-  .shop-hero-cart {
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .shop-hero-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 600;
-    font-size: 48px;
-    color: #0e3a77;
-  }
-  
-  .shop-hero-subtitle {
-    position: absolute;
-    bottom: 30%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  
-  .shop-hero-home {
-    font-weight: 600;
-    font-size: 16px;
-    color: #0e3a77;
-  }
-  
-  .shop-hero-cart {
-    font-weight: 300;
-    font-size: 16px;
-    color: #0e3a77;
-  }
-  /* Gray bar with text */
+.shop-hero {
+  position: relative;
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
-  .cart-header-container {
-    position: relative;
-    width: 817px;
-    height: 55px;
-    top: 0;
-    left: 101px;
-  }
+.shop-hero img {
+  width: 100vw;
+  height: auto;
+}
 
-  .cart-header {
-    position: absolute;
-    width: 817px;
-    height: 55px;
-    top: 72px;
-    left: 101px;
-    background-color: #f2f5ff;
-    display: flex;
-    align-items: center;
-    padding-left: 101px; /* Adjust padding to account for the left offset */
-    z-index: 2; /* Set a higher z-index than the cart elements */
-  }
-  
-/* Text elements */
-.cart-header-text {
-  font-size: 16px;
-  font-weight: bold;
-  margin-right: 20px;
+.shop-hero-title,
+.shop-hero-home,
+.shop-hero-cart {
+  font-family: "Poppins", sans-serif;
+}
+
+.shop-hero-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  font-size: 4vw;
+  color: #0e3a77;
+}
+
+.shop-hero-subtitle {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shop-hero-home {
+  font-weight: 600;
+  font-size: 1.3vw;
+  color: #0e3a77;
+}
+
+.shop-hero-cart {
+  font-weight: 300;
+  font-size: 1.3vw;
+  color: #0e3a77;
+}
+.shop {
+  /* Your CSS styles for the shop section */
+  margin: 0 auto;
+  width: 100%;
+}
+.cart-header-container {
+  position: relative;
+  max-width: 817px;
+  width: 70%;
+  height: 7vh; /* Adjust as needed */
+  top: 65%; /* Adjust the vertical position */
+  right: 85%;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.cart-header {
+  position: relative;
+  max-width: 817px;
+  width: 100%;
+  height: 100%;
+  top: 150%; /* Keep it at the same vertical position */
+  left: 165%; /* Adjust the x-axis position */
+  background-color: #f2f5ff;
+  display: flex;
+  align-items: center;
   z-index: 2;
 }
 
-/* Individual text elements */
-.product-text,
-.price-text,
-.quantity-text,
-.subtotal-text {
-  position: absolute; /* Set position to relative */
-  display: inline-block; /* Ensure the elements are displayed inline */
+
+.cart-header-text {
+  font-size: 1.4vw; /* Adjust font size relative to viewport width */
+  font-weight: bold;
+  margin-right: 2vw; /* Adjust margin relative to viewport width */
+  position: absolute; /* Position text elements absolutely */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
+  z-index: 2;
 }
 
 .product-text {
-  width: 63px;
-  height: 24px;
-  left: 170px;
+  width: 10vw; /* Adjust width relative to viewport width */
+  height: 6vh; /* Adjust height relative to viewport height */
+  left: 22vw; /* Adjust left position relative to viewport width */
+  position: absolute; /* Position text elements absolutely */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
 }
 
 .price-text {
-  width: 40px;
-  height: 24px;
-  left: 350px;
+  width: 10vw; /* Adjust width relative to viewport width */
+  height: 6vh; /* Adjust height relative to viewport height */
+  left: 31vw; /* Adjust left position relative to viewport width */
+  position: absolute; /* Position text elements absolutely */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
 }
 
 .quantity-text {
-  width: 70px;
-  height: 24px;
-  left: 550px;
+  width: 10vw; /* Adjust width relative to viewport width */
+  height: 6vh; /* Adjust height relative to viewport height */
+  left: 39vw; /* Adjust left position relative to viewport width */
+  position: absolute; /* Position text elements absolutely */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
 }
 
 .subtotal-text {
-  width: 69px;
-  height: 24px;
-  left: 650px;
+  width: 10vw; /* Adjust width relative to viewport width */
+  height: 6vh; /* Adjust height relative to viewport height */
+  left: 46vw; /* Adjust left position relative to viewport width */
+  position: absolute; /* Position text elements absolutely */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Center vertically */
 }
-/************************************/
 
-/* Cart total element */
 .cart-total {
+  display: inline-block;
   position: absolute;
-  width: 393px;
-  height: 390px;
-  left: 1050px;
-  top: 540px;
-  background-color: #f2f5ff; /* Add background color */
+  max-width: 393px;
+  max-height: 390px;
+  width: 30vw;
+  height: 50vw;
+  left: 70vw;
+  top: 34vw;
+  background-color: #f2f5ff;
+  z-index: 2;
 }
 
-
-/* Cart totals title */
 .cart-totals-title {
-  position: absolute;
+  display: inline-block;
+  position: relative;
   font-weight: bold;
-  font-family: "Poppins", sans-serif; /* Add font-family */
-  color: #000; /* Add color property */
-  font-size: 32px;
-  width: 179px;
-  height: 48px;
-  top: 15%; /* Move the element 50% from the top */
-  left: 50%; /* Move the element 50% from the left */
-  transform: translate(-50%, -50%); /* Center the element */
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  font-size: 2.5vw;
+  width: 50%;
+  height: 15%;
+  top: 10%;
+  left: 45%;
+  transform: translate(-30%, 10%);
   font-weight: 600;
-  z-index: 2; /* Set a higher z-index */
+  z-index: 2;
 }
 
-/* Subtotal label */
 .subtotal-label {
+  display: inline-block;
   position: absolute;
-  font-family: "Poppins", sans-serif; /* Add font-family */
-  color: #000; /* Add color property */
-  width: 69px;
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  font-size: 1.3vw;
+  width: 15%;
   height: 24px;
-  top: 35%;
-  left: 18%;
+  top: 30%;
+  left: 15%;
   font-weight: 500;
-  z-index: 2; /* Set a higher z-index */
+  z-index: 2;
 }
 
-/* Subtotal value */
 .subtotal-value {
-  position: absolute;
-  font-family: "Poppins", sans-serif; /* Add font-family */
-  color: #9F9F9F; /* Add color property */
-  width: 112px;
+  display: inline-block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  color: #9F9F9F;
+  font-size: 1.5vw;
+  width: 15%;
   height: 24px;
-  top: 35%;
-  right: 3%;
-  z-index: 2; /* Set a higher z-index */
+  top: 25%;
+  left: 0%;
+  z-index: 2;
 }
 
-/* Total label */
 .total-label {
-  position: absolute;
-  font-family: "Poppins", sans-serif; /* Add font-family */
-  color: #000; /* Add color property */
-  width: 41px;
+  position: relative;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  color: #000;
+  font-size: 1.3vw;
+  width: 15%;
   height: 24px;
-  top: 52%;
-  left: 18%;
-  z-index: 2; /* Set a higher z-index */
+  top: 45%;
+  right: 43%;
+  z-index: 2;
 }
 
-/* Total value */
 .total-value {
-  position: absolute;
-  font-family: "Poppins", sans-serif; /* Add font-family */
-  color: #0E3A77; /* Add color property */
-  width: 144px;
+  display: inline-block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  color: #0E3A77;
+  font-size: 1.7vw;
+  width: 25%;
   height: 30px;
-  top: 50%;
-  right: 1%;
-  font-size: 25px;
+  top: 33%;
+  left: 50%;
   font-weight: 500;
-  z-index: 2; /* Set a higher z-index */
+  z-index: 2;
 }
 
-/* Checkout button */
 .checkout-button {
   position: absolute;
-  width: 222px;
-  height: 58.95px;
-  top: 275px;
-  right: 20px;
-  border: 1px solid #000000; /* Add border with solid style and black color */
+  width: 30%; /* Adjust as needed */
+  max-width: 222px; /* Set a max-width to prevent it from growing too large on larger screens */
+  height: 13%; /* Adjust as needed */
+  width: 50%;
+  max-height: 58.95px; /* Set a max-height to prevent it from growing too large on larger screens */
+  top: 75%;
+  left: 50%;
+  border: 1px solid #000000;
   border-radius: 15px;
-  background-color: none; /* Set background color */
-  color: #000000; /* Set text color */
-  font-family: "Poppins", sans-serif; /* Set font family */
-  font-size: 20px; /* Set font size */
-  font-weight: 400; /* Set font weight */
-  line-height: 58.95px; /* Set line height to match button height */
-  text-align: center; /* Center text */
-  text-decoration: none; /* Remove underline */
-  cursor: pointer; /* Add cursor pointer */
-  z-index: 2; /* Set a higher z-index */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center horizontally */
+  background-color: transparent; /* Use transparent to remove background color */
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.95vw; /* Adjust the value as needed */
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  line-height: 40.95px;
 }
 
 .checkout-button:hover {
-  background-color: #e6ebff; /* Darker background color on hover */
-}
-
-
-/*Checkout Cart Element*/
-
-.checkout-cart-container {
-  width: 1440px;
-  height: 525px;
+  background-color: #e6ebff;
 }
 
 .cart-container {
   position: relative;
   width: 817px;
-  height: 335px;
-  top: 127px;
-  left: 101px;
+  height: 100%;
+  min-height: 50vh;
+  margin-top: 10%;
+  left: 10%;
   z-index: 1;
   overflow-y: auto;
 }
 
 .cart-scrollable {
-  height: 100%; /* Set a fixed height */
-  overflow-y: auto; /* Enable vertical scrolling */
+  height: 100%;
+  overflow-y: auto;
+}
+
+@media (max-width: 1144px) {
+  .cart-header-text {
+    font-size: 1.7vw; /* Adjust font size relative to viewport width */
+  }
+
+  .product-text {
+    left: 28vw;
+  }
+
+  .price-text {
+    left: 40vw;
+  }
+
+  .quantity-text {
+    left: 49vw;
+  }
+
+  .subtotal-text {
+    left: 60vw;
+  }
+}
+
+@media (max-width: 1400px) {
+  .cart-header {
+    position: relative;
+    top: 0;
+    left: 145%;
+    margin-top: 3%;
+    transition: none;
+  }
+
+  .cart-container {
+    margin: 5% auto;
+    width: 80%;
+  }
+  .cart-total {
+    position: relative;
+    max-width: 90vw;
+    width: 100%;
+    max-height: 390px;
+    top: 15%;
+    margin-top: 15%; /* Adjust the distance from the top as needed */
+    left: 5%; /* Adjust left position relative to the viewport */
+  }
+  .cart-totals-title {
+    font-size: 3.5vw;
+    width: 40%;
+    height: 15%;
+    top: 6%;
+    left: 60%;
+    transform: translateX(-50%); /* Center horizontally */
+  }
+
+  .subtotal-label {
+    font-size: 3vw;
+    width: 15%;
+    height: 24px;
+    top: 30%;
+    left: 15%;
+    font-weight: 500;
+    z-index: 2;
+  }
+
+  .subtotal-value {
+    font-size: 3vw;
+    width: 15%;
+    height: 24px;
+    top: 27%;
+    left: 28%;
+  }
+
+  .total-label {
+    font-size: 3vw;
+    width: 15%;
+    height: 24px;
+    top: 45%;
+    right: 40%;
+  }
+
+  .total-value {
+    font-size: 3.2vw;
+    width: 20%;
+    height: 30px;
+    top: 45%;
+    left: -2%;
+    font-weight: 500;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 990px) {
+  .checkout-button {
+    font-size: 2.5vw;
+    line-height: 35px;
+  }
 }

@@ -82,52 +82,44 @@ function Cart() {
 
   return (
     <section className="shop">
-      <div className="shop-hero">
-        <img src="/shop-hero.jpg" alt="Shop Hero" />
-        <div className="shop-hero-title">Cart</div>
-        <div className="shop-hero-subtitle">
-          <span className="shop-hero-home">Home &gt;</span>{" "}
-          <span className="shop-hero-cart">Cart</span>
-        </div>
-      </div>
-      <div className="checkout-cart-container">
-        <div className="cart-total">
-          <div className="cart-totals-title">Cart Totals</div>
-          <div className="subtotal-label">Subtotal</div>
-          <div className="subtotal-value">${calculateTotal()}</div>
-          <div className="total-label">Total</div>
-          <div className="total-value">${calculateTotal()}</div>
-          <Link to={{
-                    pathname: "/checkout",
-                    state: { cartItems: cartItems,
-                    totalPrice: calculateTotal() }  // Pass cartItems to the checkout page
-                }}  className="checkout-button">Checkout</Link>
-        </div>
-        <div className="cart-header-container">
-          <div className="cart-header">
-            <span className="cart-header-text product-text">Product</span>
-            <span className="cart-header-text price-text">Price</span>
-            <span className="cart-header-text quantity-text">Quantity</span>
-            <span className="cart-header-text subtotal-text">Subtotal</span>
-          </div>
-          <div className="cart-container">
-            <div className="cart-scrollable">
-              {/* Render CartProductCard components for each item in the cart */}
-              {cartItems.map(item => (
-                <CartProductCard 
-                  key={item.id} 
-                  cabinet={item} 
-                  onDelete={handleDelete} 
-                  onQuantityChange={handleQuantityChange} 
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-      <Banner />
-    </section>
-    
+  <div className="shop-hero">
+    <img src="/shop-hero.jpg" alt="Shop Hero" />
+    <div className="shop-hero-title">Cart</div>
+    <div className="shop-hero-subtitle">
+      <span className="shop-hero-home">Home &gt;</span>{" "}
+      <span className="shop-hero-cart">Cart</span>
+    </div>
+  </div>
+  <div className="cart-header-container">
+    <div className="cart-header">
+      <span className="cart-header-text product-text">Product</span>
+      <span className="cart-header-text price-text">Price</span>
+      <span className="cart-header-text quantity-text">Quantity</span>
+      <span className="cart-header-text subtotal-text">Subtotal</span>
+    </div>
+  </div>
+  <div className="cart-container">
+    <div className="cart-scrollable">
+      {/* Render CartProductCard components for each item in the cart */}
+      {cartItems.map(item => (
+        <CartProductCard 
+          key={item.id} 
+          cabinet={item} 
+          onDelete={handleDelete} 
+          onQuantityChange={handleQuantityChange} 
+        />
+      ))}
+    </div>
+  </div>
+    <div className="cart-total">
+      <div className="cart-totals-title">Cart Totals</div>
+      <div className="subtotal-label">Subtotal</div>
+      <div className="subtotal-value">${calculateTotal()}</div>
+      <div className="total-label">Total</div>
+      <div className="total-value">${calculateTotal()}</div>
+      <Link to="/checkout" className="checkout-button">Checkout</Link>
+    </div>
+</section>
   );
 
 }

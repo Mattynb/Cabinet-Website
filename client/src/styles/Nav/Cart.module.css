@@ -1,0 +1,89 @@
+.productCard {
+  width: 347px;
+  height: 105px;
+  display: flex;
+  border-bottom: none;
+  justify-content: space-between;
+}
+
+.productDetails {
+  width: 60%;
+  display: flex;
+  flex-direction: row; /* Change to row */
+  justify-content: center;
+  justify-content: space-between;
+}
+
+.productDetails img {
+  width: 105px; /* Adjust width as needed */
+  height: 105px; /* Adjust height as needed */
+}
+
+.productDetails h3 {
+  /*width: 108px;*/
+  height: 24px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: #000000;
+  margin: 0%;
+}
+
+.productDetails p {
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  text-align: left;
+}
+
+.productDetails input {
+  width: 35px; /* Adjust width as needed */
+  height: 24px;
+  margin-top: 15px;
+}
+
+.subtotalContainer {
+  position: relative;
+  margin-top: 15px;
+}
+
+.productDetails button {
+  background-color: transparent; /* Make the background transparent */
+  border: none; /* Remove the border */
+  cursor: pointer; /* Add pointer cursor */
+}
+
+.productDetails button img {
+  margin-top: -10px;
+  width: 20px; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+}
+
+.group148 {
+  width: 130px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.group147 {
+  width: 130px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+}
+
+.price {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  text-align: left;
+  color: #0E3A77;
+
+}

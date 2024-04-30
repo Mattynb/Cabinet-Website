@@ -29,6 +29,13 @@
   text-align: center;
   color: black;
   padding: 5px;
+  text-decoration: none !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 505;
+}
+
+.link-bar { /*Class to directly apply text-decoration to the links*/
   text-decoration: none;
 }
 
@@ -41,10 +48,10 @@
 
 .imageL {
   width: 404px;
-height: 582px;
-top: 592px;
-left: 186px;
-gap: 0px;
+  height: 582px;
+  top: 592px;
+  left: 186px;
+  gap: 0px;
 
 }
 
