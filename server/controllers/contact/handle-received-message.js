@@ -27,7 +27,7 @@ const handleReceivedMessage = async (req, res) => {
         // Send notification email to the admin
         await sendEmail({
             from: '"PAC Kitchen & Bath" <yourcompanyemail@gmail.com>',
-            to: process.env.ADMIN_EMAIL,
+            to: process.env.EMAIL_USER,
             subject: "New Contact Form Submission",
             text: `A new contact form submission from ${name} (${email}): ${message}`,
             html: `<p>A new contact form submission from ${name} (${email}):</p><p>${message}</p>`

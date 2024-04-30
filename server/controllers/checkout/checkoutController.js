@@ -7,14 +7,15 @@ exports.sendEmailOnCheckout = (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: 'your.email@gmail.com', // Your email address
+            user: process.env.EMAIL_USER, // Your email address
+            pass: process.env.EMAIL_PASS
 
         }
     });
 
     // Customer's email confirmation
     const customerMailOptions = {
-        from: '"PAC Kitchen & Bath " <yourcompanyemail@gmail.com>',
+        from: '"PAC Kitchen & Bath " <orders.pac.kb@@gmail.com>',
         to: email, 
         subject: 'Order Confirmation',
         text: `Dear ${firstname} ${lastname},\n\nThank you for your order! We have received your order and will process it shortly.\n\nOrder details:\nTotal Price: ${totalPrice}\nItems: ${JSON.stringify(cartItems)}\n\nMessage: ${message}\n\n`
@@ -23,7 +24,7 @@ exports.sendEmailOnCheckout = (req, res) => {
     // Send email notification to the store owner
     const ownerMailOptions = {
         from:'"PAC Kitchen & Bath" <yourcompanyemail@gmail.com>',
-        to: process.env.ADMIN_EMAIL,
+        to: process.env.EMAIL_USER,
         subject: 'New Order Placed',
         text: `New order placed by ${firstname} ${lastname}. Total Price: ${totalPrice}. Items: ${JSON.stringify(cartItems)}. Message: ${message}`
     };
