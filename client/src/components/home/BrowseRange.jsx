@@ -11,7 +11,7 @@ const BrowseRange = () => {
       <div className="image-container">
         <div className="image-wrapper">
           <Link to="../shop">
-          <img className="imageL" src="ImageL.png" alt="" />
+          <img className="imageL" src="/ImageL.png" alt="" />
             <div className="title-bar">Framed</div>
           </Link>
           <Link to="../shop">

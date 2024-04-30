@@ -20,7 +20,7 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, sliceReducer);
 
 export const store = configureStore({
-  reducer: { slice: persistedReducer },
+  reducer: { slice: sliceReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

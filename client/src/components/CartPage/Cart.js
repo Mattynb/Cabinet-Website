@@ -3,35 +3,23 @@ import "../../styles/CartPage/Cart.css";
 import CartProductCard from './CartProductCard';
 import { Link } from 'react-router-dom';
 import Banner from "../Banner";
+import { useDispatch, useSelector } from "react-redux";
 
 function Cart() {
+
+  const dispatch = useDispatch();
+
   // State to manage the items in the shopping cart
-  const [cartItems, setCartItems] = useState([]);
+  const cartItems = useSelector((state) => state.slice.cabinetData)
 
   // Function to handle adding an item to the cart
   const addToCart = (cabinet) => {
-    // Check if the item is already in the cart
-    const existingItem = cartItems.find(item => item.id === cabinet.id);
-  
-    if (existingItem) {
-      // If item already exists in cart, update quantity
-      const updatedCartItems = cartItems.map(item => {
-        if (item.id === cabinet.id) {
-          return { ...item, quantity: item.quantity + cabinet.quantity };
-        }
-        return item;
-      });
-      setCartItems(updatedCartItems);
-    } else {
-      // If item is not in cart, add it
-      setCartItems(prevItems => [...prevItems, cabinet]);
-    }
+    return dispatch(addToCart({cartItems}))
   };
 
   // Function to handle deleting an item from the cart
   const handleDelete = (id) => {
     const updatedCartItems = cartItems.filter(item => item.id !== id);
-    setCartItems(updatedCartItems);
   };
 
   // Function to handle changing the quantity of an item in the cart
@@ -42,7 +30,7 @@ function Cart() {
       }
       return item;
     });
-    setCartItems(updatedCartItems);
+
   };
 
   // Function to calculate total price
@@ -54,32 +42,32 @@ function Cart() {
   useEffect(() => {
     // Mock product object for testing
     const testProduct = {
-      id: 1,
-      name: "Test Product",
+      productId: 1,
+      description: "Test Product",
       price: 10.99,
       quantity: 1, // Initial quantity
       // Other properties if needed
     };
 
     const testProduct2 = {
-      id: 2,
-      name: "Test Product2",
+      productId: 2,
+      description: "Test Product2",
       price: 8.99,
       quantity: 5, // Initial quantity
       // Other properties if needed
     };
 
     const testProduct3 = {
-      id: 3,
-      name: "Test Product3",
+      productId: 3,
+      description: "Test Product3",
       price: 15.99,
       quantity: 8, // Initial quantity
       // Other properties if needed
     };
 
     const testProduct4 = {
-      id: 4,
-      name: "Test Product4",
+      productId: 4,
+      description: "Test Product4",
       price: 15.99,
       quantity: 6, // Initial quantity
       // Other properties if needed

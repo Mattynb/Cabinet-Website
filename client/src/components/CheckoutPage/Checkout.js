@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { addToCart } from "../../redux/slice";
+import { cabinetSlice } from "../../redux/slice.js";
+import { addToCart, resetCart } from "../../redux/slice.js";
 import styles from '../../styles/CheckoutPage/Checkout.module.css';
 import Banner from "../Banner";
 import { useLocation } from 'react-router-dom';
@@ -9,6 +10,7 @@ import axios from "../../utils/axios";
 
 
 const Checkout = () => {
+    //const dispatch = useDispatch();
     const [firstname, setFirstName] = useState('');
     const [lastname, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -23,8 +25,9 @@ const Checkout = () => {
     const location = useLocation();
     const cartItems = useSelector(state => state.slice.cabinetData); // Access cart items from Redux store
     const totalPrice = useSelector(state =>
-         state.slice.cabinetData.reduce((total, item) => total + (item.price * item.quantity), 0)); // Calculate total price using Redux state
+        state.slice.cabinetData.reduce((total, item) => total + (item.price * item.quantity), 0)); // Calculate total price using Redux state
 
+        console.log(cartItems)
 
     // useEffect to update totalPrice when cartItems change
     useEffect(() => {
@@ -64,12 +67,13 @@ const Checkout = () => {
                 lastname,
                 email,
                 message,
-                totalPrice,
+                //totalPrice,
                 cartItems
             })
             .then(response => {
                 console.log(response.data);
                 alert('Order placed successfully!');
+               
             })
             .catch(error => {
                 console.error('Error placing order:', error);
@@ -90,12 +94,12 @@ const Checkout = () => {
                  <span className="shop-hero-cart">Checkout</span>
              </div>
             </div>
-
+   
             <ul>
                 {cartItems.map(item => (
-                    <li key={item.id}>
-                        {item.name} - ${item.price}
-                    </li>
+                    <div key={item.id}>
+                       <span>{item.name}</span> - <span>${item.price * item.quantity}</span>
+                    </div>
                 ))}
             </ul>
 
@@ -225,11 +229,16 @@ const Checkout = () => {
                     <div className={styles.subtotalTitle}><strong>Subtotal</strong></div>
                   </div>
 
-                  <div className={styles.itemTitle}>Item 1</div>
+                  {cartItems.map(item => (
+                    <div key={item.id} className={styles.itemContainer}>
+                      <div className={styles.itemTitle}>{item.name}</div>
+                      <div className={styles.itemPrice}>${item.price * item.quantity}</div>
+                    </div>
+                  ))}
 
                   <div className={styles.totalPrice}>
                     <div className={styles.totalTitle}>Total</div>
-                    <div className={styles.price}> ${totalPrice}</div>
+                 {/* <div className={styles.price}> ${totalPrice}</div> */}
                   </div>
             
 
