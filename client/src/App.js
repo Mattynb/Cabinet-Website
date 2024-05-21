@@ -2,15 +2,15 @@ import React from "react";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Header from "./components/Nav/Header/Header";
 import Shop from "./components/ShopPage/Shop";
-import BrowserRange from "./components/home/BrowseRange";
+import BrowserRange from "./components/Home/BrowseRange";
 import Checkout from './components/CheckoutPage/Checkout';
-import ContactForm from "./components/home/ContactSection";
-import DesignInspiration from "./components/home/DesignInspiration";
-import ProductsSection from "./components/home/ProductsSection";
+import ContactForm from "./components/Home/ContactSection";
+import DesignInspiration from "./components/Home/DesignInspiration";
+import ProductsSection from "./components/Home/ProductsSection";
 import { useAuth } from "./contexts/AuthContext";
-import HeroSection from "./components/home/HeroSection";
+import HeroSection from "./components/Home/HeroSection";
 import Cart from "./components/CartPage/Cart";
 import About from "./components/AboutPage/About";
 
@@ -26,7 +26,7 @@ export default function App() {
             path="/"
             element={
                 <>
-                  <InDevelopmentText />
+                  {/*<InDevelopmentText />*/}
                   <HeroSection />
                   <BrowserRange />
                   <ProductsSection />

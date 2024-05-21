@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from '../../styles/home/ContactForm.module.css';
+import styles from '../../styles/Home/ContactForm.module.css';
 import axios from "../../utils/axios";
 
 const ContactForm = () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import CabinetProductCard from "../ShopPage/CabinetProductCard";
 import cabinetsData from "../../constants/cabinetsData";
-import "../../styles/home/ProductsSection.css";
+import "../../styles/Home/ProductsSection.css";
 import { Link } from "react-router-dom";
 
 function ProductsSection() {

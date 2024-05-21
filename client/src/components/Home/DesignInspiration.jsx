@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import styles from "./DesignInspiration.module.css";
+import styles from "../../styles/Home/DesignInspiration.module.css";
 
 const DesignInspiration = () => {
   const navigate = useNavigate();
