@@ -19,7 +19,7 @@ const newsletterRoutes = require('./routes/newsletterRoute');
 // Middleware to parse JSON bodies.
 server.use(express.json());
 
-const allowedOrigin = "http://localhost:3000";
+const allowedOrigin = "http://pac-kb.com";
 const secretToken = 'your-secret-token';
 
 const corsOptions = {
