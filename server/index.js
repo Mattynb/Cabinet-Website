@@ -2,6 +2,7 @@
 
 require('dotenv').config() // Secures variables
 const express = require('express');
+const cors = require('cors');
 
 // module imports
 const server = require('./utils/server') // Backend server
@@ -17,6 +18,22 @@ const newsletterRoutes = require('./routes/newsletterRoute');
 
 // Middleware to parse JSON bodies.
 server.use(express.json());
+
+const allowedOrigin = "http://localhost:3000";
+const secretToken = 'your-secret-token';
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (origin === allowedOrigin || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Forbidden'));
+      console.log('Forbidden. Origin: ', origin);
+    }
+  }
+};
+
+server.use(cors(corsOptions));
 
 
 async function bootstrap() {
