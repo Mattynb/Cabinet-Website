@@ -7,7 +7,7 @@ import Shop from "./components/ShopPage/Shop";
 import BrowserRange from "./components/Home/BrowseRange";
 import Checkout from './components/CheckoutPage/Checkout';
 import ContactForm from "./components/Home/ContactSection";
-import DesignInspiration from "./components/Home/DesignInspiration";
+import DesignInspiration from "./components/Gallery/DesignInspiration";
 import ProductsSection from "./components/Home/ProductsSection";
 import { useAuth } from "./contexts/AuthContext";
 import HeroSection from "./components/Home/HeroSection";

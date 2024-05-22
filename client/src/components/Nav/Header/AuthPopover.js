@@ -19,8 +19,6 @@ export default function AuthPopover({ anchorEl, setAnchorEl, isLoggedIn, account
 
 
   return (
-   
-
     <Popover
       anchorEl={anchorEl}
       open={Boolean(anchorEl)}
@@ -30,7 +28,7 @@ export default function AuthPopover({ anchorEl, setAnchorEl, isLoggedIn, account
     >
       <List style={{ minWidth: '100px' }}>
         <ListSubheader style={{ textAlign: 'center' }}>
-          Hello, {isLoggedIn ? account.username : 'Guest'}
+          Welcome, {isLoggedIn ? account.username : 'Guest'}
         </ListSubheader>
 
         {isLoggedIn ? (
@@ -43,6 +41,7 @@ export default function AuthPopover({ anchorEl, setAnchorEl, isLoggedIn, account
         )}
       </List>
 
+      {/* Auth Modal is where the login and register forms are */}
       <AuthModal
         open={authModal}
         close={() => setAuthModal(false)}

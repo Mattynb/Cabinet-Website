@@ -13,6 +13,14 @@ export default function AuthModal({open, close, isRegisterMode, toggleRegister})
 
   const handleChange = (e) => {
     const {name, value} = e.target
+    // check if password and confirm password match
+    if (name === 'confirmPassword' && value !== formData['password']) {
+      setError('Passwords do not match')
+    } else {
+      setError('')
+    }
+
+    // update form data skipping confirmPassword
     setFormData((prev) => ({...prev, [name]: value}))
   }
 
@@ -21,17 +29,19 @@ export default function AuthModal({open, close, isRegisterMode, toggleRegister})
     setError('')
 
     try {
+      // remove confirmPassword from form data
+      delete formData['confirmPassword']
       isRegisterMode ? await register(formData) : await login(formData)
       close()
     } catch (error) {
-      setError(error)
+      setError(error.message)
     }
 
     setLoading(false)
   }
 
   const disabledLoginButton = !formData['username'] || !formData['password']
-  const disabledRegisterButton = !formData['username'] || !formData['password']
+  const disabledRegisterButton = !formData['username'] || !formData['password'] || !formData['confirmPassword']
 
   return (
     <Dialog open={open} onClose={close}>
@@ -111,6 +121,16 @@ function RegisterForm({formData, handleChange}) {
         name='password'
         type='password'
         value={formData['password'] || ''}
+        onChange={handleChange}
+        variant='filled'
+        sx={textFieldSx}
+        required
+      />
+      <TextField
+        label='Confirm Password'
+        name='confirmPassword'
+        type='password'
+        value={formData['confirmPassword'] || ''}
         onChange={handleChange}
         variant='filled'
         sx={textFieldSx}

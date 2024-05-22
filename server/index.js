@@ -15,6 +15,7 @@ const cabinetRoutes = require('./routes/cabinetRoutes');
 const contactRoutes = require('./routes/contactRoutes');
 const collectionRoutes = require('./routes/collectionRoute');
 const newsletterRoutes = require('./routes/newsletterRoute');
+const galleryRoutes = require('./routes/galleryRoutes');
 
 // Middleware to parse JSON bodies.
 server.use(express.json());
@@ -24,7 +25,7 @@ const secretToken = 'your-secret-token';
 
 const corsOptions = {
   origin: function (origin, callback) {
-    if (origin === allowedOrigin || !origin) {
+    if (origin === allowedOrigin || origin === "http://localhost:3000" || !origin) {
       callback(null, true);
     } else {
       callback(new Error('Forbidden'));
@@ -57,8 +58,27 @@ async function bootstrap() {
   // endpoint for newsletter subscription. Make sure to sanitize input if necessary.
   server.use('/api', newsletterRoutes);
 
+  // endpoint for gallery images
+  server.use('/api', galleryRoutes);
+
   server.listen(PORT, () => {
     console.log(`✅ Server is listening on port: ${PORT}`)
+  })
+
+  // log all
+  server.on('connection', () => {
+    console.log('New connection')
+  })
+
+  // log errors
+  server.on('error', (error) => {
+    console.error('Server error:', error)
+  })
+
+  // Graceful shutdown
+  process.on('SIGINT', async () => {
+    await mongo.disconnect()
+    process.exit(0)
   })
 }
 
