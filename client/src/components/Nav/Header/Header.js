@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { IconButton, Popover, Avatar } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
+import OnlineIndicator from './OnlineIndicator';
 import style from '../../../styles/Nav/Header.module.css';
 import AuthPopover from './AuthPopover';
 import CartPopover from './CartPopover';
@@ -90,8 +91,11 @@ export default function Header() {
       </div>
       {/* Login */}
       <div>
+        
         <IconButton onClick={handleAuthClick}>
-          <Avatar src={account?.username || ''} alt={account?.username || ''} />
+          <OnlineIndicator online={isLoggedIn}>
+            <Avatar src={account?.username || ''} alt={account?.username || ''} />
+          </OnlineIndicator>  
         </IconButton>
         <AuthPopover anchorEl={authAnchorEl} setAnchorEl={setAuthAnchorEl} isLoggedIn={isLoggedIn} account={account} logout={logout} />
       </div>
