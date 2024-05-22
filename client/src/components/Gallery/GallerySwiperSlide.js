@@ -21,7 +21,7 @@ const GalletySwiperSlide = () => {
 
   return (
     <Swiper>
-      {images.map((image, index) => (
+      {/*images.map((image, index) => (
         <SwiperSlide key={index}>
           <Link to="/gallery">
             <div
@@ -33,7 +33,7 @@ const GalletySwiperSlide = () => {
             />
           </Link>
         </SwiperSlide>
-      ))}
+      ))*/}
     </Swiper>
   );
 };
